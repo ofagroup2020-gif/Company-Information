@@ -4,37 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>株式会社OFA｜加盟説明会資料（Web版）</title>
-  <meta name="description" content="株式会社OFA｜軽貨物フランチャイズ加盟説明会資料（Web版）。メンバー/パートナー/業務委託/案件オーナー/tebura（送りっぱ）まで完全まとめ。" />
-
+  <meta name="description" content="株式会社OFA｜軽貨物フランチャイズ加盟説明会資料（Web版）。メンバー/パートナー/業務委託/案件オーナー/teburaまで。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Bright & clean base */
-      --bg:#F7FAFF;
-      --paper:#FFFFFF;
-      --paper2:#FBFCFF;
-      --text:#0B1220;
-      --muted:#5B6577;
-      --line:#E4E9F2;
-      --shadow: 0 18px 50px rgba(10, 20, 50, .08);
-      --radius: 18px;
-
-      /* OFA pop colors */
-      --y:#FFD400;
-      --b:#2D7CFF;
-      --g:#16C784;
-      --r:#FF3B30;
-      --p:#FF4FD8;
-      --pu:#7C3AED;
-
-      --grad: linear-gradient(90deg, var(--r), var(--y), var(--g), var(--b), var(--pu), var(--p));
-      --gradSoft: radial-gradient(900px 420px at 20% 0%, rgba(255,212,0,.26), transparent 60%),
-                  radial-gradient(780px 420px at 88% 10%, rgba(45,124,255,.18), transparent 60%),
-                  radial-gradient(760px 420px at 25% 92%, rgba(22,199,132,.14), transparent 60%),
-                  radial-gradient(820px 520px at 92% 92%, rgba(255,79,216,.12), transparent 60%);
+      --y:#F5C400;         /* メイン黄（見本に近い） */
+      --y2:#FFE588;        /* 薄黄（背景/アクセント） */
+      --bg:#F4F4F4;        /* 全体背景 */
+      --card:#FFFFFF;      /* カード */
+      --text:#111111;      /* 文字 */
+      --muted:#333333;     /* サブ文字 */
+      --line:#E6E6E6;      /* 罫線 */
+      --shadow: 0 10px 22px rgba(0,0,0,.08);
+      --radius:16px;
 
       --safeTop: env(safe-area-inset-top);
       --safeBottom: env(safe-area-inset-bottom);
@@ -45,242 +30,241 @@
     body{
       margin:0;
       font-family:"Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      color:var(--text);
-      background: var(--gradSoft), var(--bg);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
       overflow-x:hidden;
     }
-    a{ color:inherit; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-    a:hover{ opacity:.85; }
 
-    .wrap{
-      width:min(1100px, 92vw);
+    /* ===== Top bar (見本の黄色ヘッダーっぽく) ===== */
+    .topbar{
+      position: sticky;
+      top:0;
+      z-index:50;
+      background: var(--y);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      padding: calc(10px + var(--safeTop)) 14px 10px;
+    }
+    .topbarInner{
+      width:min(980px, 94vw);
       margin:0 auto;
-      padding: calc(18px + var(--safeTop)) 0 calc(40px + var(--safeBottom));
-    }
-
-    /* ===== Header (not button-like) ===== */
-    header{
-      background: rgba(255,255,255,.75);
-      border:1px solid rgba(255,255,255,.7);
-      box-shadow: var(--shadow);
-      border-radius: calc(var(--radius) + 6px);
-      overflow:hidden;
-    }
-    .topLine{
-      height:6px;
-      background: var(--grad);
-    }
-    .headInner{
-      padding:18px 16px 16px;
-      display:grid;
-      gap:14px;
-    }
-    .brandRow{
       display:flex;
-      gap:12px;
       align-items:center;
-      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:12px;
     }
-    .logoBox{
-      width:54px;
-      height:54px;
-      border-radius:16px;
-      border:1px solid rgba(0,0,0,.08);
-      background: linear-gradient(180deg, rgba(255,212,0,.30), rgba(255,255,255,.70));
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .mark{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      background:#111;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:900;
-      color:#1A1A1A;
-      overflow:hidden;
+      letter-spacing:.02em;
       flex:0 0 auto;
+      overflow:hidden;
     }
-    .logoBox img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .brandTxt{ line-height:1.15; }
-    .brandTxt .kicker{
-      font-weight:900;
-      font-size:12px;
-      color: var(--muted);
-      letter-spacing:.06em;
-    }
-    .brandTxt h1{
-      margin:4px 0 0;
-      font-size:26px;
-      font-weight:900;
-      letter-spacing:-.02em;
+    .mark img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .btxt{
+      min-width:0;
       line-height:1.2;
     }
-    .sub{
-      margin:0;
-      color: var(--muted);
+    .btxt .t1{
+      font-weight:900;
+      font-size:14px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .btxt .t2{
       font-weight:800;
-      font-size:13px;
-      line-height:1.75;
+      font-size:11px;
+      color: rgba(0,0,0,.65);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      margin-top:2px;
     }
 
-    .kpiRow{
+    /* 見本はハンバーガーあるけど「ボタンみたいなのいらない」なので “ただのアイコン” 表示にする */
+    .menuHint{
+      font-weight:900;
+      font-size:18px;
+      line-height:1;
+      color:#111;
+      opacity:.9;
+      user-select:none;
+    }
+
+    /* ===== Layout ===== */
+    .wrap{
+      width:min(980px, 94vw);
+      margin: 14px auto 0;
+      padding-bottom: calc(30px + var(--safeBottom));
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroBand{
+      background: #FFF3BF;
+      border-bottom:1px solid var(--line);
+      padding:14px;
+    }
+    .heroBand h1{
+      margin:0;
+      font-size:20px;
+      font-weight:900;
+      line-height:1.35;
+      letter-spacing:-.01em;
+    }
+    .heroBand p{
+      margin:10px 0 0;
+      font-size:13px;
+      font-weight:800;
+      color: rgba(0,0,0,.75);
+      line-height:1.75;
+    }
+    .heroBody{
+      padding:14px;
+      display:grid;
+      gap:12px;
+    }
+    .kpis{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:10px;
     }
     .kpi{
-      background: rgba(255,255,255,.85);
+      background:#fff;
       border:1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius:14px;
       padding:12px;
     }
     .kpi b{ display:block; font-size:18px; font-weight:900; }
-    .kpi span{ display:block; margin-top:3px; font-size:12px; color:var(--muted); font-weight:800; }
-
-    @media (max-width: 900px){
-      .kpiRow{ grid-template-columns:1fr; }
-      .brandTxt h1{ font-size:24px; }
+    .kpi span{ display:block; margin-top:4px; font-size:12px; font-weight:800; color: rgba(0,0,0,.65); line-height:1.5; }
+    @media (max-width: 860px){
+      .kpis{ grid-template-columns:1fr; }
     }
 
-    /* ===== Sections ===== */
-    .sec{ margin-top:18px; }
+    .imgSlot{
+      border:1px dashed rgba(0,0,0,.25);
+      border-radius:14px;
+      background: #FAFAFA;
+      padding:10px;
+    }
+    .imgSlot .cap{
+      font-size:12px;
+      font-weight:900;
+      color: rgba(0,0,0,.55);
+      margin-bottom:8px;
+    }
+    .imgSlot .box{
+      height:180px;
+      border-radius:12px;
+      background: linear-gradient(180deg, #fff, #f1f1f1);
+      display:grid;
+      place-items:center;
+      color: rgba(0,0,0,.35);
+      font-weight:900;
+      font-size:12px;
+    }
+
+    /* ===== Section ===== */
+    .sec{ margin-top:14px; }
     .secHead{
-      margin: 6px 2px 10px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
+      background: var(--y);
+      border-radius: var(--radius);
+      padding:14px;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(0,0,0,.08);
     }
     .secHead h2{
       margin:0;
-      font-size:16px;
+      font-size:18px;
       font-weight:900;
-      letter-spacing:.04em;
+      letter-spacing:-.01em;
     }
     .secHead p{
-      margin:0;
-      color:var(--muted);
+      margin:8px 0 0;
+      font-size:13px;
       font-weight:800;
-      font-size:12px;
-      line-height:1.6;
-      max-width:620px;
+      color: rgba(0,0,0,.75);
+      line-height:1.7;
     }
 
-    .grid{
+    .cards{
+      margin-top:12px;
       display:grid;
       grid-template-columns: repeat(12, 1fr);
       gap:12px;
     }
     .card{
       grid-column: span 6;
-      background: rgba(255,255,255,.82);
+      background: var(--card);
       border:1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: 0 12px 32px rgba(10, 20, 50, .06);
-      padding:14px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
     .card.full{ grid-column: span 12; }
     .card.third{ grid-column: span 4; }
-    @media (max-width: 900px){
+    @media (max-width: 860px){
       .card, .card.third{ grid-column: span 12; }
     }
 
-    /* Label (NOT button-like) */
-    .label{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      font-size:12px;
-      letter-spacing:.02em;
-      margin-bottom:10px;
-    }
-    .bar{
-      width:10px;
-      height:10px;
-      border-radius: 4px;
+    .cardTop{
       background: var(--y);
-      box-shadow: 0 6px 18px rgba(255,212,0,.22);
-      flex:0 0 auto;
+      padding:12px 14px;
+      border-bottom:1px solid rgba(0,0,0,.10);
     }
-
-    .title{
-      margin:4px 0 8px;
+    .cardTop .ttl{
+      margin:0;
       font-size:16px;
       font-weight:900;
-      letter-spacing:-.01em;
-      line-height:1.45;
+      line-height:1.35;
     }
-    .desc{
+    .cardBody{
+      padding:14px;
+    }
+    .text{
       margin:0;
-      color: var(--muted);
-      font-weight:800;
       font-size:13px;
-      line-height:1.85;
+      font-weight:800;
+      line-height:1.9;
+      color: rgba(0,0,0,.80);
     }
-    .desc b{ color: var(--text); }
+    .text b{ color:#000; }
 
     .list{
-      margin:12px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:10px;
+      margin:10px 0 0;
+      padding-left: 1.2em;
+      font-size:13px;
+      font-weight:800;
+      line-height:1.9;
+      color: rgba(0,0,0,.80);
     }
-    .list li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:10px;
-      background: var(--paper2);
+
+    /* ===== Table (表らしく) ===== */
+    .tblWrap{
+      margin-top:10px;
       border:1px solid var(--line);
       border-radius: 14px;
-    }
-    .ico{
-      width:34px; height:34px;
-      border-radius: 12px;
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      background: rgba(45,124,255,.10);
-      border:1px solid rgba(45,124,255,.18);
-      color: var(--b);
-      flex:0 0 auto;
-    }
-    .list b{ display:block; font-size:13px; margin-bottom:2px; }
-    .list span{ display:block; font-size:12px; color:var(--muted); font-weight:800; line-height:1.65; }
-
-    /* Image slots (clean) */
-    .imgSlot{
-      margin-top:12px;
-      border-radius: 16px;
-      border:1px dashed rgba(10,20,50,.18);
-      background: rgba(255,255,255,.65);
-      padding:12px;
-    }
-    .imgSlot .cap{
-      font-size:12px;
-      color: var(--muted);
-      font-weight:900;
-      margin-bottom:10px;
-    }
-    .imgSlot .box{
-      height:180px;
-      border-radius: 14px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,.45)),
-        radial-gradient(600px 240px at 20% 30%, rgba(255,212,0,.18), transparent 60%),
-        radial-gradient(520px 240px at 80% 20%, rgba(45,124,255,.12), transparent 60%);
-      border:1px solid rgba(10,20,50,.10);
-      display:grid;
-      place-items:center;
-      color: rgba(20,25,35,.45);
-      font-weight:900;
-      font-size:12px;
-    }
-
-    /* ===== TABLE (table-like) ===== */
-    .tblWrap{
-      margin-top:12px;
-      border-radius: 16px;
-      border:1px solid rgba(10,20,50,.14);
       overflow:auto;
-      background: #fff;
+      background:#fff;
     }
     table{
       width:100%;
@@ -290,157 +274,134 @@
       font-size:13px;
     }
     thead th{
-      position:sticky;
+      position: sticky;
       top:0;
-      background: linear-gradient(180deg, #ffffff, #f5f8ff);
-      color:#1D2740;
-      font-weight:900;
-      text-align:left;
+      z-index:2;
+      background: #FFF3BF;
+      border-bottom:1px solid var(--line);
       padding:12px 12px;
-      border-bottom:1px solid rgba(10,20,50,.14);
+      text-align:left;
+      font-weight:900;
       white-space:nowrap;
     }
     tbody td{
       padding:12px 12px;
-      border-bottom:1px solid rgba(10,20,50,.08);
-      color:#1A2336;
-      font-weight:800;
+      border-bottom:1px solid #f0f0f0;
       vertical-align:top;
+      font-weight:800;
+      color: rgba(0,0,0,.82);
     }
-    tbody tr:nth-child(odd) td{
-      background: #FBFCFF;
-    }
+    tbody tr:nth-child(odd) td{ background:#FCFCFC; }
     tbody tr:last-child td{ border-bottom:none; }
+
+    /* Link (ボタン化しない) */
+    a{ color:#000; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness:2px; }
+    a:hover{ opacity:.85; }
 
     .note{
       margin-top:10px;
-      color: var(--muted);
       font-size:12px;
       font-weight:800;
-      line-height:1.7;
-    }
-
-    /* Plain Q&A (no accordion buttons) */
-    .qa{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
-    }
-    .qaItem{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.80);
-      border-radius: 16px;
-      padding:12px;
-    }
-    .qaItem .q{
-      font-weight:900;
-      font-size:13px;
-      margin:0 0 6px;
-      color:#141B2C;
-    }
-    .qaItem .a{
-      margin:0;
-      color: var(--muted);
-      font-weight:800;
-      font-size:12px;
+      color: rgba(0,0,0,.62);
       line-height:1.75;
     }
 
-    /* Contact block */
-    .contactBox{
-      background: rgba(255,255,255,.90);
-      border:1px solid var(--line);
-      border-radius: calc(var(--radius) + 4px);
-      padding:16px;
-      box-shadow: var(--shadow);
-    }
-    .contactRow{
+    /* Contact */
+    .contactGrid{
       display:grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 170px 1fr;
       gap:10px 14px;
-      margin-top:10px;
       align-items:start;
+      margin-top:6px;
     }
-    .contactRow div{ font-weight:900; color:#141B2C; }
-    .contactRow p{
-      margin:0;
-      color: var(--muted);
+    .contactGrid .k{
+      font-weight:900;
+      color:#000;
+    }
+    .contactGrid .v{
       font-weight:800;
-      line-height:1.75;
-      font-size:13px;
+      color: rgba(0,0,0,.82);
+      line-height:1.8;
     }
-    @media (max-width: 700px){
-      .contactRow{ grid-template-columns: 1fr; }
+    @media (max-width: 720px){
+      .contactGrid{ grid-template-columns: 1fr; }
     }
 
-    /* Footer */
     footer{
-      margin-top:18px;
+      margin:16px 0 0;
       text-align:center;
-      color: rgba(20,25,35,.55);
-      font-weight:800;
       font-size:12px;
-      padding: 10px 0;
+      font-weight:800;
+      color: rgba(0,0,0,.55);
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbarInner">
+      <div class="brand">
+        <div class="mark" title="ロゴを入れる場合は img を差し替え">
+          <!-- <img src="images/ofa_logo.png" alt="OFA"> -->
+          O
+        </div>
+        <div class="btxt">
+          <div class="t1">OFA GROUP</div>
+          <div class="t2">One for All, All for One</div>
+        </div>
+      </div>
+      <div class="menuHint" aria-hidden="true">≡</div>
+    </div>
+  </div>
+
   <div class="wrap">
 
-    <!-- HEADER / HERO -->
-    <header id="top">
-      <div class="topLine"></div>
-      <div class="headInner">
-        <div class="brandRow">
-          <div class="logoBox" title="ロゴを入れる場合は img を差し替え">
-            <!-- ロゴ画像を使う場合：下のコメントを外して src を変更 -->
-            <!-- <img src="images/ofa_logo.png" alt="OFA"> -->
-            OFA
-          </div>
-
-          <div class="brandTxt">
-            <div class="kicker">加盟説明会資料（Web版）｜One for All, All for One</div>
-            <h1>株式会社OFA｜軽貨物フランチャイズ & 事業説明</h1>
-          </div>
-        </div>
-
-        <p class="sub">
-          OFAはただの配送会社ではありません。<br>
-          <b>挑戦し、稼ぎ、成長し、仲間と未来をつくる場所</b>です。<br>
-          <span style="font-weight:900;">Japan Logistics Innovation</span>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="heroBand">
+        <h1>軽貨物フランチャイズOFAの成長｜全国ネットワーク化への挑戦</h1>
+        <p>
+          個人1名から4年で法人化。フランチャイズ化後3年で <b>540台規模</b>へ。<br>
+          グループ関連含め <b>FC加盟543名</b>。全国拡大中。
         </p>
+      </div>
 
-        <div class="kpiRow">
+      <div class="heroBody">
+        <div class="kpis">
           <div class="kpi"><b>543名</b><span>FC加盟ドライバー</span></div>
           <div class="kpi"><b>540台</b><span>加盟車両台数</span></div>
-          <div class="kpi"><b>全国拡大中</b><span>拠点：鹿児島／熊本／福岡／大阪／東京／他</span></div>
+          <div class="kpi"><b>全国拡大</b><span>鹿児島／熊本／福岡／大阪／東京／他</span></div>
         </div>
 
         <div class="imgSlot">
-          <div class="cap">画像差し込み（例：OFAロゴ／現場写真／OFAカー／全国拠点マップ）</div>
+          <div class="cap">画像差し込み（例：OFAロゴ／現場写真／拠点マップ）</div>
           <div class="box">IMAGE PLACEHOLDER</div>
         </div>
       </div>
-    </header>
+    </section>
 
     <!-- 代表挨拶 -->
     <section class="sec" id="greeting">
       <div class="secHead">
         <h2>代表挨拶</h2>
-        <p>短く強く。説明会の“空気”を作るパート。</p>
+        <p>軽貨物から人生を変えた経験をもとに、“全国の仲間と共に成功する仕組み”を作りました。</p>
       </div>
-      <div class="grid">
+
+      <div class="cards">
         <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>代表取締役 森下 洸</div>
-          <div class="title">軽貨物から人生を変えた経験をもとに、“全国の仲間と共に成功する仕組み”を作りました。</div>
-          <p class="desc">
-            OFAはただの配送会社ではありません。<br>
-            <b>挑戦し、稼ぎ、成長し、仲間と未来をつくる場所</b>です。
-          </p>
-          <div class="imgSlot">
-            <div class="cap">画像差し込み（例：代表写真／現場写真）</div>
-            <div class="box">IMAGE PLACEHOLDER</div>
+          <div class="cardTop"><p class="ttl">代表取締役　森下 洸</p></div>
+          <div class="cardBody">
+            <p class="text">
+              OFAはただの配送会社ではありません。<br>
+              <b>挑戦し、稼ぎ、成長し、仲間と未来をつくる場所</b>です。<br>
+              Japan Logistics Innovation
+            </p>
+            <div class="imgSlot" style="margin-top:12px;">
+              <div class="cap">画像差し込み（例：代表写真／現場写真）</div>
+              <div class="box">IMAGE PLACEHOLDER</div>
+            </div>
           </div>
         </div>
       </div>
@@ -450,100 +411,63 @@
     <section class="sec" id="overview">
       <div class="secHead">
         <h2>OFAグループ概要</h2>
-        <p>数字・拠点・価値観を整理して信頼を上げる。</p>
+        <p>数字・拠点・文化を整理して信頼を上げます。</p>
       </div>
 
-      <div class="grid">
+      <div class="cards">
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--b)"></span>会社概要</div>
-          <ul class="list">
-            <li><div class="ico">🏢</div><div><b>社名</b><span>株式会社OFA</span></div></li>
-            <li><div class="ico">💴</div><div><b>資本金</b><span>700万円</span></div></li>
-            <li><div class="ico">👥</div><div><b>社員数</b><span>5名</span></div></li>
-            <li><div class="ico">🚚</div><div><b>FC加盟数</b><span>543名</span></div></li>
-            <li><div class="ico">🚐</div><div><b>車両台数</b><span>540台</span></div></li>
-          </ul>
+          <div class="cardTop"><p class="ttl">会社概要</p></div>
+          <div class="cardBody">
+            <ul class="list">
+              <li>社名：株式会社OFA</li>
+              <li>資本金：700万円</li>
+              <li>社員数：5名</li>
+              <li>FC加盟数：543名</li>
+              <li>車両台数：540台</li>
+            </ul>
+          </div>
         </div>
 
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>拠点・モットー</div>
-          <ul class="list">
-            <li><div class="ico">🗾</div><div><b>拠点</b><span>鹿児島／熊本／福岡／大阪／東京／他</span></div></li>
-            <li><div class="ico">🔥</div><div><b>モットー</b><span>One for All, All for One</span></div></li>
-            <li><div class="ico">📣</div><div><b>文化</b><span>挑戦・成長・仲間・法令遵守</span></div></li>
-          </ul>
-
-          <div class="imgSlot">
-            <div class="cap">画像差し込み（例：全国地図／拠点マップ）</div>
-            <div class="box">IMAGE PLACEHOLDER</div>
+          <div class="cardTop"><p class="ttl">拠点・モットー</p></div>
+          <div class="cardBody">
+            <ul class="list">
+              <li>拠点：鹿児島／熊本／福岡／大阪／東京／他</li>
+              <li>モットー：One for All, All for One</li>
+              <li>文化：挑戦／成長／仲間／法令遵守</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ビジョン/使命 -->
+    <!-- ビジョン -->
     <section class="sec" id="vision">
       <div class="secHead">
         <h2>ビジョン・使命</h2>
-        <p>OFAの芯＝「人生の選択肢を増やす」</p>
+        <p>軽貨物で“人生の選択肢”を増やす。</p>
       </div>
 
-      <div class="grid">
+      <div class="cards">
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--g)"></span>Vision</div>
-          <div class="title">軽貨物で「人生の選択肢」を増やす</div>
-          <p class="desc">稼ぐ → 成長する → 独立する。<br>その道を再現性ある仕組みで支える。</p>
-        </div>
-
-        <div class="card">
-          <div class="label"><span class="bar" style="background:var(--pu)"></span>Mission</div>
-          <ul class="list">
-            <li><div class="ico">✅</div><div><b>誰でも挑戦できる</b><span>入口を広く、再現性を高く</span></div></li>
-            <li><div class="ico">💰</div><div><b>誰でも稼げる</b><span>案件×運用×教育で安定化</span></div></li>
-            <li><div class="ico">🏁</div><div><b>誰でも独立できる</b><span>拠点化・複数台運用へ</span></div></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- 業界の現状 -->
-    <section class="sec" id="industry">
-      <div class="secHead">
-        <h2>業界の現状（チャンス）</h2>
-        <p>「ドライバー不足＝始めた瞬間から仕事がある」</p>
-      </div>
-
-      <div class="grid">
-        <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--r)"></span>結論</div>
-          <div class="title">人手不足 × EC拡大 = 案件は右肩上がり</div>
-          <p class="desc">
-            Amazon・楽天などEC拡大で案件急増。<br>
-            ドライバー需要は増え続け、<b>仕事が無いより“回せない”が問題</b>になっている。
-          </p>
-          <div class="imgSlot">
-            <div class="cap">画像差し込み（例：市場グラフ／ニュース）</div>
-            <div class="box">IMAGE PLACEHOLDER</div>
+          <div class="cardTop"><p class="ttl">Vision</p></div>
+          <div class="cardBody">
+            <p class="text"><b>「軽貨物で人生の選択肢を増やす」</b></p>
+            <p class="text" style="margin-top:8px;">稼ぐ → 成長する → 独立する。再現性ある仕組みで支えます。</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 選ばれる理由 -->
-    <section class="sec" id="reasons">
-      <div class="secHead">
-        <h2>OFAが選ばれる理由</h2>
-        <p>まずは“総括”で理解させる。</p>
-      </div>
-
-      <div class="grid">
-        <div class="card third"><div class="label"><span class="bar" style="background:var(--y)"></span>理由①</div><div class="title">圧倒的な案件数</div><p class="desc">案件ネットワークで稼働を安定化。</p></div>
-        <div class="card third"><div class="label"><span class="bar" style="background:var(--g)"></span>理由②</div><div class="title">高単価×安定稼働</div><p class="desc">案件設計を分けて最適運用。</p></div>
-        <div class="card third"><div class="label"><span class="bar" style="background:var(--b)"></span>理由③</div><div class="title">研修制度が強い</div><p class="desc">実地＋座学＋同行で再現性。</p></div>
-
-        <div class="card third"><div class="label"><span class="bar" style="background:var(--pu)"></span>理由④</div><div class="title">サポートが手厚い</div><p class="desc">運用・品質・トラブル即対応。</p></div>
-        <div class="card third"><div class="label"><span class="bar" style="background:var(--p)"></span>理由⑤</div><div class="title">発信力×ブランド</div><p class="desc">OFAカー／キャラ等で拡散。</p></div>
-        <div class="card third"><div class="label"><span class="bar" style="background:var(--r)"></span>総括</div><div class="title">“稼げる型”がある</div><p class="desc">仕組みで勝つ。属人化しない。</p></div>
+        <div class="card">
+          <div class="cardTop"><p class="ttl">Mission</p></div>
+          <div class="cardBody">
+            <ul class="list">
+              <li>誰でも挑戦できる</li>
+              <li>誰でも稼げる</li>
+              <li>誰でも独立できる</li>
+              <li>再現性の高い物流プラットフォームを提供</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -551,202 +475,164 @@
     <section class="sec" id="models">
       <div class="secHead">
         <h2>OFAの4モデル（最重要）</h2>
-        <p>ここで“全体像”を一撃で理解させます。</p>
+        <p>この4つで、OFAの仕組みが全部わかります。</p>
       </div>
 
-      <div class="grid">
+      <div class="cards">
         <div class="card third">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>①</div>
-          <div class="title">OFAフランチャイズ（メンバー）</div>
-          <p class="desc"><b>本部直払い</b>モデル。個人1名〜。登録料なし。</p>
+          <div class="cardTop"><p class="ttl">① OFAフランチャイズ（メンバー）</p></div>
+          <div class="cardBody">
+            <p class="text"><b>本部から直払い</b>モデル。個人1名〜。メンバー登録料なし。</p>
+          </div>
         </div>
 
         <div class="card third">
-          <div class="label"><span class="bar" style="background:var(--b)"></span>②</div>
-          <div class="title">OFAフランチャイズ（オーナー/パートナー）</div>
-          <p class="desc"><b>本部直払い</b>モデル。複数名・拠点化・営業可能。</p>
+          <div class="cardTop"><p class="ttl">② OFAフランチャイズ（オーナー／パートナー）</p></div>
+          <div class="cardBody">
+            <p class="text"><b>本部から直払い</b>モデル。複数名運用・拠点化・営業も可能。</p>
+          </div>
         </div>
 
         <div class="card third">
-          <div class="label"><span class="bar" style="background:var(--g)"></span>③</div>
-          <div class="title">業務委託（従来型）</div>
-          <p class="desc"><b>単価抜き</b>モデル。委託単価を固定で支払う。</p>
+          <div class="cardTop"><p class="ttl">③ 業務委託（従来型）</p></div>
+          <div class="cardBody">
+            <p class="text"><b>単価抜き</b>モデル。あらかじめ決めた委託金額で支払い。</p>
+          </div>
         </div>
 
         <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--pu)"></span>④</div>
-          <div class="title">案件オーナー（案件提供型）</div>
-          <p class="desc">
-            OFAグループへ案件依頼が可能。全国ネットワークで一気に配送展開。<br>
-            <b>案件／手配／人材</b>のいずれかで協力し、運営に参画できます。
-          </p>
+          <div class="cardTop"><p class="ttl">④ 案件オーナー（案件提供型）</p></div>
+          <div class="cardBody">
+            <p class="text">
+              OFAの全国ネットワークへ案件依頼が可能。<br>
+              <b>案件／手配／人材</b>のいずれかで協力し、運営に参画できます。
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 公式定義（重要） -->
+    <!-- 公式定義 -->
     <section class="sec" id="definition">
       <div class="secHead">
-        <h2>フランチャイズと業務委託の違い（公式定義）</h2>
-        <p>ここが曖昧だと揉めます。OFAは“混ぜない”。</p>
+        <h2>フランチャイズと業務委託の違い（公式）</h2>
+        <p>OFAは混ぜません。ここを明確にして運営します。</p>
       </div>
 
-      <div class="grid">
+      <div class="cards">
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>フランチャイズ</div>
-          <div class="title">ロイヤルティモデル</div>
-          <p class="desc">
-            フランチャイズは <b>ロイヤルティ</b>で運営。<br>
-            ロイヤルティは <b>教育・品質管理・現場安定・拠点拡大</b> の原資。
-          </p>
+          <div class="cardTop"><p class="ttl">フランチャイズ</p></div>
+          <div class="cardBody">
+            <p class="text">
+              フランチャイズは <b>ロイヤルティ</b> で運営。<br>
+              ロイヤルティは「教育・品質管理・現場安定・拠点拡大」の原資です。
+            </p>
+          </div>
         </div>
 
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--g)"></span>業務委託</div>
-          <div class="title">単価抜きモデル</div>
-          <p class="desc">
-            業務委託は <b>単価抜き（差額）</b>で運営。<br>
-            あらかじめ決めた <b>委託単価</b>を支払い、差額が運営原資。
-          </p>
+          <div class="cardTop"><p class="ttl">業務委託</p></div>
+          <div class="cardBody">
+            <p class="text">
+              業務委託は <b>単価抜き</b> で運営。<br>
+              決めた委託金額で支払い、差額が運営原資です。
+            </p>
+          </div>
         </div>
 
         <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--r)"></span>一言で言い切り</div>
-          <div class="title">「OFAは、フランチャイズはロイヤルティ。業務委託は単価抜き。」</div>
-          <p class="desc">この2つを完全に分けて運営しています。</p>
+          <div class="cardTop"><p class="ttl">言い切り</p></div>
+          <div class="cardBody">
+            <p class="text"><b>「フランチャイズはロイヤルティ。業務委託は単価抜き。」</b></p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FC条件 -->
-    <section class="sec" id="fcDetails">
+    <section class="sec" id="fc">
       <div class="secHead">
         <h2>フランチャイズ条件（メンバー／パートナー）</h2>
-        <p>現行ルールを明文化（説明会でそのまま使える）。</p>
+        <p>説明会でそのまま使える“ルールの明文化”。</p>
       </div>
 
-      <div class="grid">
+      <div class="cards">
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>① メンバーフランチャイズ（個人1名）</div>
-          <p class="desc">
-            直接契約／メンバー登録料金なし／委託形式<br>
-            <b>OFA → メンバーFC</b> に案件委託
-          </p>
-          <ul class="list">
-            <li><div class="ico">📌</div><div><b>直系5人以上</b><span>パートナーに自動契約</span></div></li>
-            <li><div class="ico">💰</div><div><b>ロイヤルティ</b><span>月間 7%〜20%（担当地域による）</span></div></li>
-            <li><div class="ico">🏷</div><div><b>固定ロイヤル</b><span>指定地域：月額30,000円</span></div></li>
-            <li><div class="ico">🚐</div><div><b>車両</b><span>OFAリース／販売（軽バン・幌車）可能</span></div></li>
-          </ul>
+          <div class="cardTop"><p class="ttl">① メンバーフランチャイズ（個人1名）</p></div>
+          <div class="cardBody">
+            <ul class="list">
+              <li>直接契約／メンバー登録料金なし</li>
+              <li>委託形式：OFA → メンバーFCに案件委託</li>
+              <li>直系5人以上はパートナーに自動契約</li>
+              <li>月間ロイヤル：7%〜20%（担当地域による）</li>
+              <li>指定地域：月額固定ロイヤル 30,000円</li>
+              <li>OFAリース／販売（軽バン・幌車）可能</li>
+            </ul>
+          </div>
         </div>
 
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--b)"></span>② パートナーフランチャイズ（2〜500名）</div>
-          <p class="desc">
-            個人・法人OK／複数人を抱えて営業可能<br>
-            <b>OFA → パートナーFC</b> に委託
-          </p>
-          <ul class="list">
-            <li><div class="ico">💴</div><div><b>登録料</b><span>10万円（メンバー→パートナーは無料）</span></div></li>
-            <li><div class="ico">💰</div><div><b>ロイヤルティ</b><span>月間 5%〜15%</span></div></li>
-            <li><div class="ico">🏷</div><div><b>固定ロイヤル</b><span>指定地域：月額110,000円</span></div></li>
-            <li><div class="ico">🚫</div><div><b>上限</b><span>500名以上は協力会社契約</span></div></li>
-            <li><div class="ico">🚐</div><div><b>車両</b><span>OFAリース／販売（軽バン・幌車）可能</span></div></li>
-          </ul>
+          <div class="cardTop"><p class="ttl">② パートナーフランチャイズ（2〜500名）</p></div>
+          <div class="cardBody">
+            <ul class="list">
+              <li>個人・法人OK</li>
+              <li>登録料10万円（メンバー→パートナーは無料）</li>
+              <li>委託形式：OFA → パートナーFCに委託</li>
+              <li>月間ロイヤル：5%〜15%</li>
+              <li>指定地域：月額固定ロイヤル 110,000円</li>
+              <li>500名以上は協力会社契約</li>
+              <li>OFAリース／販売（軽バン・幌車）可能</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ボーナス制度 -->
+    <!-- ボーナス -->
     <section class="sec" id="bonus">
       <div class="secHead">
         <h2>ボーナス制度（完全まとめ）</h2>
-        <p>“やる理由”を作るパート。ここは強く。</p>
+        <p>紹介・拠点運営・本部営業まで整理。</p>
       </div>
 
-      <div class="grid">
+      <div class="cards">
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--p)"></span>メンバーシップボーナス</div>
-          <div class="title">紹介者に 3万円</div>
-          <p class="desc">メンバーを紹介いただいた方へ支払い（※メンバー対象）</p>
-        </div>
-
-        <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>リーダーシップボーナス</div>
-          <p class="desc">メンバー／パートナー対象。任されたエリアの月間売上でランクが決まる。</p>
-          <div class="tblWrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>ランク</th>
-                  <th>条件（月間売上）</th>
-                  <th>ボーナス目安</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>シルバー</td>
-                  <td>310万以上の拠点</td>
-                  <td>約3万円／月</td>
-                </tr>
-                <tr>
-                  <td>ゴールド</td>
-                  <td>1100万以上の拠点</td>
-                  <td>約10万円／月</td>
-                </tr>
-                <tr>
-                  <td>プラチナム</td>
-                  <td>5100万以上の拠点</td>
-                  <td>約50万円／月</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="cardTop"><p class="ttl">メンバーシップボーナス</p></div>
+          <div class="cardBody">
+            <p class="text">メンバー紹介：<b>紹介者に3万円</b>（※メンバー対象）</p>
           </div>
         </div>
 
         <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--g)"></span>マネージャーボーナス（本部営業メイン）</div>
-          <div class="title">月間売上 × 0.03% を支給</div>
-          <p class="desc">
-            リーダー制度とは独立した仕組み。<b>本部社員向け（招待制）</b>。<br>
-            ※現場稼働をしない従業員が対象／メンバー・パートナーは対象外。<br><br>
-            例）月200万円売上拠点 → 月6万円ボーナス
-          </p>
-        </div>
-      </div>
-    </section>
+          <div class="cardTop"><p class="ttl">リーダーシップボーナス（メンバー／パートナー対象）</p></div>
+          <div class="cardBody">
+            <p class="text">任されたエリアの月間売上でランクが決まります。</p>
 
-    <!-- 仕組み構図 -->
-    <section class="sec" id="structure">
-      <div class="secHead">
-        <h2>仕組み構図（管理組合・直払い・契約）</h2>
-        <p>透明性を出すと“信用”が上がる。</p>
-      </div>
-
-      <div class="grid">
-        <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--pu)"></span>構図</div>
-          <div class="title">OFAフランチャイズ本部 → フランチャイズ管理組合</div>
-          <p class="desc">
-            ① 本部 → ドライバー（メンバーFC）<br>
-            ② 本部 → 加盟オーナー（パートナーFC） → ドライバー
-          </p>
-
-          <ul class="list">
-            <li><div class="ico">📝</div><div><b>ドライバー契約</b><span>オーナー締結OK（名簿提出必須／脱退時は本部移管）</span></div></li>
-            <li><div class="ico">🏦</div><div><b>報酬</b><span>本部→ドライバー直接振込／本部→オーナーは管理報酬</span></div></li>
-            <li><div class="ico">📅</div><div><b>契約期間</b><span>1年で自動更新</span></div></li>
-            <li><div class="ico">🤝</div><div><b>管理組合</b><span>会費なし／運営・管理・案件発表・定例会で各地を支援</span></div></li>
-          </ul>
-
-          <div class="imgSlot">
-            <div class="cap">画像差し込み（例：矢印の仕組み図）</div>
-            <div class="box">IMAGE PLACEHOLDER</div>
+            <div class="tblWrap">
+              <table>
+                <thead>
+                  <tr><th>ランク</th><th>条件（月間売上）</th><th>ボーナス目安</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>シルバー</td><td>310万以上の拠点</td><td>約3万円／月</td></tr>
+                  <tr><td>ゴールド</td><td>1100万以上の拠点</td><td>約10万円／月</td></tr>
+                  <tr><td>プラチナム</td><td>5100万以上の拠点</td><td>約50万円／月</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
+        </div>
 
-          <p class="note">
-            ※理想の配分思想：加盟店（FC）7割／紹介店（案件オーナー）2割／本部（OFA）1割
-          </p>
+        <div class="card full">
+          <div class="cardTop"><p class="ttl">マネージャーボーナス（本部営業メイン・招待制）</p></div>
+          <div class="cardBody">
+            <p class="text">
+              月間売上 × <b>0.03%</b> を支給。<br>
+              現場稼働を行わず、営業・マネジメント・拠点開拓を担当する本部社員向けの特別報酬制度。<br>
+              <span class="note">※メンバー・パートナーは対象外</span>
+            </p>
+            <p class="note">例：月200万円売上拠点 → 月6万円ボーナス</p>
+          </div>
         </div>
       </div>
     </section>
@@ -754,274 +640,216 @@
     <!-- 単価/ロイヤルティ/リーダー制度 -->
     <section class="sec" id="unit">
       <div class="secHead">
-        <h2>業務委託単価・ロイヤリティ・リーダー制度【完全まとめ】</h2>
-        <p>案件ごとに設計を分け、現場・リーダー・本部すべてが納得する運営へ。</p>
+        <h2>業務委託単価・ロイヤリティ・リーダー制度（完全まとめ）</h2>
+        <p>表は“表らしく”。数字は一発で理解できる構成。</p>
       </div>
 
-      <div class="grid">
+      <div class="cards">
         <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>前提</div>
-          <p class="desc">
-            株式会社OFAでは、取引先ごとに異なる単価を受領し、その単価を基準として業務委託ドライバーへの報酬を支払っています。<br>
-            ロイヤリティは、現場運営・教育・品質管理・リーダー制度・本部管理を行うための運営原資であり、ドライバー報酬を削るものではありません。
-          </p>
-        </div>
-
-        <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--b)"></span>① 元請単価（OFAに入ってくる単価）</div>
-          <div class="tblWrap">
-            <table>
-              <thead>
-                <tr><th>取引先</th><th>元請単価</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>佐川急便</td><td>168円／個</td></tr>
-                <tr><td>ヤマト運輸</td><td>180円／個</td></tr>
-                <tr><td>Amazon</td><td>日額17,000円</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="note">この金額が、まず株式会社OFAに入金されます。</p>
-        </div>
-
-        <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--g)"></span>② 佐川急便（個建・ロイヤリティ13％）</div>
-          <div class="tblWrap">
-            <table>
-              <thead>
-                <tr><th>項目</th><th>金額（1個あたり）</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>個建単価</td><td>168円</td></tr>
-                <tr><td>ロイヤリティ 13％</td><td>21.84円</td></tr>
-                <tr><td><b>委託ドライバー手取り</b></td><td><b>146.16円</b></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="note">※ロイヤリティ21.84円の中で、リーダー手当および本部取り分を配分します。</p>
-          <p class="desc" style="margin-top:10px;"><b>月収例（3,300個）</b>：3,300 × 146.16円 ＝ 482,328円／月</p>
-        </div>
-
-        <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>③ ヤマト運輸（個建・ロイヤリティ15％）</div>
-          <div class="tblWrap">
-            <table>
-              <thead>
-                <tr><th>項目</th><th>金額（1個あたり）</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>個建単価</td><td>180円</td></tr>
-                <tr><td>ロイヤリティ（15％）</td><td>27円</td></tr>
-                <tr><td><b>ドライバー手取り</b></td><td><b>153円</b></td></tr>
-                <tr><td>リーダー手当</td><td>17円</td></tr>
-                <tr><td>本部取り分</td><td>10円</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="note">※リーダー手当・本部取り分はロイヤリティ27円の中で完結しています。</p>
-
-          <div class="tblWrap">
-            <table>
-              <thead>
-                <tr><th>月収イメージ（3,300個・8人チーム）</th><th>金額</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>ドライバー（1人）</td><td>3,300 × 153円 ＝ 504,900円／月</td></tr>
-                <tr><td>リーダー手当（8人分）</td><td>3,300 × 8 × 17円 ＝ 448,800円／月（約45万円）</td></tr>
-                <tr><td>本部取り分</td><td>3,300 × 8 × 10円 ＝ 264,000円／月</td></tr>
-                <tr><td><b>リーダーが自分も配達する場合 合計</b></td><td><b>953,700円／月</b></td></tr>
-              </tbody>
-            </table>
+          <div class="cardTop"><p class="ttl">① OFAに入ってくる元請単価</p></div>
+          <div class="cardBody">
+            <div class="tblWrap">
+              <table>
+                <thead><tr><th>取引先</th><th>元請単価</th></tr></thead>
+                <tbody>
+                  <tr><td>佐川急便</td><td>168円／個</td></tr>
+                  <tr><td>ヤマト運輸</td><td>180円／個</td></tr>
+                  <tr><td>Amazon</td><td>日額17,000円</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">この金額が、まず株式会社OFAに入金されます。</p>
           </div>
         </div>
 
         <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--pu)"></span>④ Amazon（固定日額・ロイヤリティ10％）</div>
-          <div class="tblWrap">
-            <table>
-              <thead>
-                <tr><th>項目</th><th>金額（1日あたり）</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>日額単価</td><td>17,000円</td></tr>
-                <tr><td>ロイヤリティ（10％）</td><td>1,700円</td></tr>
-                <tr><td><b>ドライバー手取り</b></td><td><b>15,300円／日</b></td></tr>
-                <tr><td>リーダー手当</td><td>300円／日</td></tr>
-                <tr><td>本部取り分</td><td>1,400円／日</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="note">※リーダー手当300円はロイヤリティ内から支給。</p>
-
-          <div class="tblWrap">
-            <table>
-              <thead>
-                <tr><th>月収イメージ（25日・8人）</th><th>金額</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>ドライバー（1人）</td><td>15,300 × 25日 ＝ 382,500円／月</td></tr>
-                <tr><td>リーダー手当（8人分）</td><td>300 × 8 × 25日 ＝ 60,000円／月</td></tr>
-                <tr><td>本部取り分</td><td>1,400 × 8 × 25日 ＝ 280,000円／月</td></tr>
-                <tr><td><b>リーダー兼任 合計</b></td><td><b>442,500円／月</b></td></tr>
-              </tbody>
-            </table>
+          <div class="cardTop"><p class="ttl">② 佐川急便（個建・ロイヤリティ13%）</p></div>
+          <div class="cardBody">
+            <div class="tblWrap">
+              <table>
+                <thead><tr><th>項目</th><th>金額（1個あたり）</th></tr></thead>
+                <tbody>
+                  <tr><td>個建単価</td><td>168円</td></tr>
+                  <tr><td>ロイヤリティ（13%）</td><td>21.84円</td></tr>
+                  <tr><td><b>委託ドライバー手取り</b></td><td><b>146.16円</b></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">※ロイヤル内で、リーダー手当および本部取り分を配分します。</p>
+            <p class="note">月収例：3,300個 × 146.16円 ＝ 482,328円／月</p>
           </div>
         </div>
 
         <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--r)"></span>⑤ 共通方針（言い切り）</div>
-          <ul class="list">
-            <li><div class="ico">📌</div><div><b>委託ドライバーの支払単価は案件ごとに固定</b><span>案件別に設計を分ける</span></div></li>
-            <li><div class="ico">✅</div><div><b>リーダー手当はドライバー報酬から差し引かない</b><span>リーダー・本部の取り分はロイヤリティ内で完結</span></div></li>
-            <li><div class="ico">🏢</div><div><b>ロイヤリティは搾取ではない</b><span>教育・品質管理・現場安定・拠点拡大のための原資</span></div></li>
-          </ul>
+          <div class="cardTop"><p class="ttl">③ ヤマト運輸（個建・ロイヤリティ15%）</p></div>
+          <div class="cardBody">
+            <div class="tblWrap">
+              <table>
+                <thead><tr><th>項目</th><th>金額（1個あたり）</th></tr></thead>
+                <tbody>
+                  <tr><td>個建単価</td><td>180円</td></tr>
+                  <tr><td>ロイヤリティ（15%）</td><td>27円</td></tr>
+                  <tr><td><b>ドライバー手取り</b></td><td><b>153円</b></td></tr>
+                  <tr><td>リーダー手当</td><td>17円</td></tr>
+                  <tr><td>本部取り分</td><td>10円</td></tr>
+                </tbody>
+              </table>
+            </div>
 
-          <p class="note"><b>説明トーク（そのまま）</b><br>
-            「OFAには、佐川は168円、ヤマトは180円、Amazonは日額17,000円が入ってきます。そこから案件ごとに決めたロイヤリティを控除し、残りを業務委託ドライバーに支払います。ロイヤリティは、リーダー制度と本部運営のための費用です。」
-          </p>
+            <div class="tblWrap">
+              <table>
+                <thead><tr><th>月収イメージ（3,300個・8人チーム）</th><th>金額</th></tr></thead>
+                <tbody>
+                  <tr><td>ドライバー（1人）</td><td>3,300 × 153円 ＝ 504,900円／月</td></tr>
+                  <tr><td>リーダー手当（8人分）</td><td>3,300 × 8 × 17円 ＝ 448,800円／月</td></tr>
+                  <tr><td>本部取り分</td><td>3,300 × 8 × 10円 ＝ 264,000円／月</td></tr>
+                  <tr><td><b>リーダーが自分も配達する場合 合計</b></td><td><b>953,700円／月</b></td></tr>
+                </tbody>
+              </table>
+            </div>
 
-          <p class="note"><b>最終まとめ（言い切り）</b><br>
-            佐川：低ロイヤル・安定型／ヤマト：高単価・リーダー制度向き／Amazon：日額固定・管理しやすい
-          </p>
+            <p class="note">※リーダー手当・本部取り分はロイヤル内で完結します。</p>
+          </div>
         </div>
+
+        <div class="card full">
+          <div class="cardTop"><p class="ttl">④ Amazon（固定日額・ロイヤリティ10%）</p></div>
+          <div class="cardBody">
+            <div class="tblWrap">
+              <table>
+                <thead><tr><th>項目</th><th>金額（1日あたり）</th></tr></thead>
+                <tbody>
+                  <tr><td>日額単価</td><td>17,000円</td></tr>
+                  <tr><td>ロイヤリティ（10%）</td><td>1,700円</td></tr>
+                  <tr><td><b>ドライバー手取り</b></td><td><b>15,300円／日</b></td></tr>
+                  <tr><td>リーダー手当</td><td>300円／日</td></tr>
+                  <tr><td>本部取り分</td><td>1,400円／日</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="tblWrap">
+              <table>
+                <thead><tr><th>月収イメージ（25日・8人）</th><th>金額</th></tr></thead>
+                <tbody>
+                  <tr><td>ドライバー（1人）</td><td>15,300 × 25日 ＝ 382,500円／月</td></tr>
+                  <tr><td>リーダー手当（8人分）</td><td>300 × 8 × 25日 ＝ 60,000円／月</td></tr>
+                  <tr><td>本部取り分</td><td>1,400 × 8 × 25日 ＝ 280,000円／月</td></tr>
+                  <tr><td><b>リーダー兼任 合計</b></td><td><b>442,500円／月</b></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="note">※リーダー手当はロイヤル内から支給。</p>
+          </div>
+        </div>
+
+        <div class="card full">
+          <div class="cardTop"><p class="ttl">⑤ 共通方針（言い切り）</p></div>
+          <div class="cardBody">
+            <ul class="list">
+              <li>委託ドライバーの支払単価は案件ごとに固定</li>
+              <li>リーダー手当はドライバー報酬から差し引かない</li>
+              <li>リーダー・本部の取り分はロイヤル内で完結</li>
+              <li>ロイヤルは教育・品質管理・現場安定・拠点拡大の原資</li>
+            </ul>
+            <p class="note">
+              説明トーク：<br>
+              「OFAには、佐川は168円、ヤマトは180円、Amazonは日額17,000円が入ってきます。
+              そこから案件ごとに決めたロイヤルを控除し、残りを業務委託ドライバーに支払います。
+              ロイヤルはリーダー制度と本部運営のための費用です。」
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- tebura -->
     <section class="sec" id="tebura">
       <div class="secHead">
-        <h2>tebura（手ぶら〜）／送りっぱ！ 企画概要</h2>
-        <p>“街全体をロッカーに変えるUX”を、設備レスで実現。</p>
+        <h2>tebura（手ぶら〜）／送りっぱ！</h2>
+        <p>設備を持たずに“街全体をロッカーに変える”発送UXプラットフォーム。</p>
       </div>
 
-      <div class="grid">
+      <div class="cards">
         <div class="card">
-          <div class="label"><span class="bar" style="background:var(--p)"></span>サービス概要</div>
-          <p class="desc">
-            teburaは、買い物・観光・移動中の「荷物ストレス」をなくす発送UXプラットフォーム。<br>
-            倉庫・ロッカー設備を持たず、店舗・施設・既存ロッカーを活用する<b>分散型（設備レス）モデル</b>で低コスト・高速展開。
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="label"><span class="bar" style="background:var(--y)"></span>コア：送りっぱ！（60秒）</div>
-          <ul class="list">
-            <li><div class="ico">1</div><div><b>QRを読む</b><span>店頭／施設</span></div></li>
-            <li><div class="ico">2</div><div><b>スマホ入力</b><span>写真・送り先</span></div></li>
-            <li><div class="ico">3</div><div><b>受付番号発行</b><span>管理が簡単</span></div></li>
-            <li><div class="ico">4</div><div><b>預ける</b><span>店舗／指定ロッカー</span></div></li>
-            <li><div class="ico">5</div><div><b>回収→発送</b><span>ドライバー回収し宅配網へ</span></div></li>
-          </ul>
-        </div>
-
-        <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--g)"></span>施設・店舗メリット／本質</div>
-          <ul class="list">
-            <li><div class="ico">🧾</div><div><b>QRを置くだけ導入</b><span>初期費用・月額費用なし</span></div></li>
-            <li><div class="ico">💰</div><div><b>成果報酬</b><span>1件あたり 325円（例）</span></div></li>
-            <li><div class="ico">🧭</div><div><b>回遊性UP</b><span>客単価・滞在時間向上</span></div></li>
-          </ul>
-
-          <p class="note">
-            teburaの本質は「発送」でも「ロッカー」でもない。<br>
-            <b>“街全体をロッカーに変えるUX設計”</b>である。
-          </p>
-
-          <div class="imgSlot">
-            <div class="cap">画像差し込み（例：tebura UI／QRイメージ／導線図）</div>
-            <div class="box">IMAGE PLACEHOLDER</div>
+          <div class="cardTop"><p class="ttl">サービス概要</p></div>
+          <div class="cardBody">
+            <p class="text">
+              teburaは、買い物・観光・移動中の「荷物ストレス」をなくすサービス。<br>
+              店舗・施設・既存ロッカーを活用し、<b>低コスト／高速展開</b>が可能。
+            </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Q&A（ボタン無し） -->
-    <section class="sec" id="faq">
-      <div class="secHead">
-        <h2>Q&A（よくある質問）</h2>
-        <p>説明会で必ず出る質問を“そのまま載せる”。</p>
-      </div>
+        <div class="card">
+          <div class="cardTop"><p class="ttl">コア：送りっぱ！（60秒）</p></div>
+          <div class="cardBody">
+            <ul class="list">
+              <li>QRを読み取り</li>
+              <li>スマホで写真・送り先入力</li>
+              <li>受付番号発行</li>
+              <li>荷物を店舗／指定ロッカーに預ける</li>
+              <li>ドライバー回収 → 宅配網で発送</li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="grid">
         <div class="card full">
-          <div class="qa">
-            <div class="qaItem">
-              <p class="q">Q：未経験でも本当にできますか？</p>
-              <p class="a">できます。研修制度＋同行制度で再現性を作っています。</p>
-            </div>
-            <div class="qaItem">
-              <p class="q">Q：車がなくてもできますか？</p>
-              <p class="a">レンタルOK。名義変更サポートもあります。</p>
-            </div>
-            <div class="qaItem">
-              <p class="q">Q：女性でもできますか？</p>
-              <p class="a">問題ありません。女性ドライバーも活躍しています。</p>
-            </div>
-            <div class="qaItem">
-              <p class="q">Q：フランチャイズと業務委託の違いは？</p>
-              <p class="a">フランチャイズはロイヤルティモデル。業務委託は単価抜きモデル。混ぜずに運用しています。</p>
+          <div class="cardTop"><p class="ttl">メリット／本質</p></div>
+          <div class="cardBody">
+            <ul class="list">
+              <li>QRを置くだけ導入（初期費用・月額費用なし）</li>
+              <li>成果報酬：1件あたり 325円（例）</li>
+              <li>回遊性・客単価・滞在時間の向上</li>
+            </ul>
+            <p class="note"><b>本質：</b>“街全体をロッカーに変えるUX設計”</p>
+
+            <div class="imgSlot" style="margin-top:12px;">
+              <div class="cap">画像差し込み（例：tebura UI／QR導線図）</div>
+              <div class="box">IMAGE PLACEHOLDER</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 最後に -->
-    <section class="sec" id="last">
-      <div class="secHead">
-        <h2>最後に</h2>
-        <p>刺さる言葉で締める。</p>
-      </div>
-
-      <div class="grid">
-        <div class="card full">
-          <div class="label"><span class="bar" style="background:var(--r)"></span>メッセージ</div>
-          <div class="title">“挑戦しなければ、未来は変わらない”</div>
-          <p class="desc">
-            OFAは、<br>
-            「人生を変えたい」「稼ぎたい」「独立したい」<br>
-            そんな人を全力で応援します。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT（ボタン無し・表形式で見やすく） -->
+    <!-- CONTACT -->
     <section class="sec" id="contact">
       <div class="secHead">
         <h2>お問い合わせ</h2>
-        <p>連絡先は“表らしく”整理（ボタン無し）。</p>
+        <p>リンクは“テキスト”で。ボタン化しません。</p>
       </div>
 
-      <div class="contactBox">
-        <div class="label"><span class="bar" style="background:var(--y)"></span>株式会社OFA</div>
+      <div class="cards">
+        <div class="card full">
+          <div class="cardTop"><p class="ttl">株式会社OFA</p></div>
+          <div class="cardBody">
+            <div class="contactGrid">
+              <div class="k">本部所在地</div>
+              <div class="v">鹿児島県南九州市頴娃町上別府1699-1</div>
 
-        <div class="contactRow">
-          <div>本部所在地</div>
-          <p>鹿児島県南九州市頴娃町上別府1699-1</p>
+              <div class="k">TEL</div>
+              <div class="v">
+                <a href="tel:08030003872">080-3000-3872</a> ／
+                <a href="tel:09011646645">090-1164-6645</a>
+              </div>
 
-          <div>TEL</div>
-          <p>
-            <a href="tel:08030003872">080-3000-3872</a> / <a href="tel:09011646645">090-1164-6645</a>
-          </p>
+              <div class="k">LINE</div>
+              <div class="v"><a href="https://lin.ee/we9oWpn" target="_blank" rel="noopener">https://lin.ee/we9oWpn</a></div>
 
-          <div>LINE</div>
-          <p><a href="https://lin.ee/we9oWpn" target="_blank" rel="noopener">https://lin.ee/we9oWpn</a></p>
+              <div class="k">Instagram</div>
+              <div class="v">@ofa_lightcargo</div>
+            </div>
 
-          <div>Instagram</div>
-          <p>@ofa_lightcargo</p>
+            <p class="note" style="margin-top:12px;"><b>One for All, All for One</b></p>
+          </div>
         </div>
-
-        <p class="note" style="margin-top:12px;">
-          <b>One for All, All for One</b>
-        </p>
       </div>
     </section>
 
-    <footer>
-      © 株式会社OFA｜OFA Light Cargo Franchise
-    </footer>
-
+    <footer>© 株式会社OFA</footer>
   </div>
 </body>
 </html>
