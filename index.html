@@ -7,31 +7,36 @@
 
   <style>
     :root{
-      /* ===== 背景：黄色〜オレンジ（明るめ） ===== */
-      --bg0:#FFFDF0;
-      --bg1:#FFF6BF;
-      --bg2:#FFE27A;
-      --bg3:#FFC24A;
-      --bg4:#FF9F1C;
+      /* ===== 背景：空イメージ（水色→夕方→夜） ===== */
+      --sky0:#EAF9FF;
+      --sky1:#BFEAFF;
+      --sky2:#7ED3FF;
+      --sky3:#2C8DFF;
+      --sky4:#103B9A; /* 夜 */
 
-      /* ===== 紺→緑（アクセント） ===== */
-      --green:#22C55E;       /* 明るい緑 */
-      --greenDeep:#16A34A;   /* 見出し用 */
-      --greenSoft:#DCFCE7;   /* 薄い緑 */
+      /* ===== アクセント（緑は補助として残す） ===== */
+      --green:#22C55E;
+      --greenDeep:#16A34A;
+
+      /* ===== ブルー系（メイン） ===== */
+      --blue:#1E66FF;
+      --blueDeep:#0B46D1;
+      --blueNight:#0B1F55;
+      --blueSoft:#D9ECFF;
 
       /* ===== 文字 ===== */
-      --text:#13221A;
-      --muted:#3D4B43;
+      --text:#0B1324;
+      --muted:#334155;
 
       /* ===== カード ===== */
       --card:#FFFFFFF2;
-      --border:#E6E6E6;
-      --shadow:0 14px 30px rgba(0,0,0,.10);
 
       /* ===== 強調色（OFAロゴに合わせて） ===== */
       --red:#FF3B30;
       --yellow:#FFD84D;
-      --blue:#1E66FF;
+
+      /* 黒縁（全項目） */
+      --black:#000000;
 
       /* サイズ */
       --radius:22px;
@@ -47,32 +52,41 @@
       color:var(--text);
       line-height:1.8;
 
-      /* 明るい黄→オレンジ */
+      /* 空：明るい→夕方→夜（薄い虹っぽい層も少し） */
       background:
-        radial-gradient(1200px 700px at 15% 8%, rgba(255,255,255,.85), transparent 60%),
-        radial-gradient(900px 700px at 85% 18%, rgba(255,255,255,.55), transparent 60%),
-        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 18%, var(--bg2) 45%, var(--bg3) 72%, var(--bg4) 100%);
+        radial-gradient(1100px 650px at 18% 10%, rgba(255,255,255,.85), transparent 60%),
+        radial-gradient(900px 650px at 82% 18%, rgba(255,255,255,.55), transparent 60%),
+        radial-gradient(900px 700px at 50% 0%, rgba(255,216,77,.12), transparent 60%),
+        radial-gradient(900px 700px at 65% 25%, rgba(255,59,48,.08), transparent 60%),
+        linear-gradient(180deg,
+          var(--sky0) 0%,
+          var(--sky1) 20%,
+          var(--sky2) 45%,
+          var(--sky3) 72%,
+          var(--sky4) 100%);
     }
 
     /* レイアウト */
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 16px 64px;}
     .section{margin:26px 0;}
+
+    /* ===== 黒縁：全カード ===== */
     .card{
       background:var(--card);
-      border:1px solid rgba(0,0,0,.05);
+      border:2px solid var(--black);
       border-radius:var(--radius);
       padding:var(--pad);
-      box-shadow:var(--shadow);
+      box-shadow:0 14px 30px rgba(0,0,0,.10);
     }
 
-    /* ヘッダー */
+    /* ===== HERO：水色〜ブルーへ変更（オレンジ→ブルー） ===== */
     .hero{
       padding:28px 22px 26px;
       border-radius:28px;
       background:
-        radial-gradient(900px 400px at 20% 0%, rgba(255,255,255,.65), transparent 55%),
-        linear-gradient(135deg, #FFF6BF 0%, #FFE27A 32%, #FFC24A 68%, #FF9F1C 100%);
-      border:1px solid rgba(0,0,0,.06);
+        radial-gradient(900px 420px at 20% 0%, rgba(255,255,255,.65), transparent 55%),
+        linear-gradient(135deg, #EAF9FF 0%, #BFEAFF 25%, #7ED3FF 55%, #2C8DFF 78%, #103B9A 100%);
+      border:2px solid var(--black);
       box-shadow:0 18px 38px rgba(0,0,0,.14);
     }
 
@@ -94,7 +108,7 @@
     .logo-badge{
       width:54px;height:54px;border-radius:16px;
       background:#fff;
-      border:1px solid rgba(0,0,0,.08);
+      border:2px solid var(--black);
       display:grid;place-items:center;
       box-shadow:0 10px 20px rgba(0,0,0,.12);
       flex:0 0 auto;
@@ -107,11 +121,42 @@
     .logo-text strong{
       font-size:18px;
       letter-spacing:.4px;
+      color:#0B1324;
+      text-shadow:0 1px 0 rgba(255,255,255,.35);
     }
     .logo-text span{
       font-size:12px;
-      color:rgba(0,0,0,.6);
-      font-weight:700;
+      color:rgba(11,19,36,.75);
+      font-weight:900;
+    }
+
+    /* ★ あなたが×で示した場所：ピルを目立たせて固定表示 */
+    .pills{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:2px solid var(--black);
+      background:linear-gradient(90deg, rgba(255,255,255,.72), rgba(217,236,255,.85));
+      font-weight:1000;
+      color:#0B1324;
+      box-shadow:0 10px 18px rgba(0,0,0,.10);
+      white-space:nowrap;
+    }
+    .pill b{color:var(--blueDeep);}
+    .pill .dot{
+      width:10px;height:10px;border-radius:50%;
+      background:var(--blue);
+      border:2px solid var(--black);
+      box-shadow:0 6px 10px rgba(0,0,0,.12);
     }
 
     .hero h1{
@@ -119,34 +164,36 @@
       font-size:clamp(26px, 4.9vw, 44px);
       line-height:1.18;
       letter-spacing:.2px;
+      color:#071225;
+      text-shadow:0 1px 0 rgba(255,255,255,.35);
     }
     .hero .sub{
       margin:0;
-      color:rgba(0,0,0,.68);
-      font-weight:800;
+      color:rgba(7,18,37,.80);
+      font-weight:1000;
       font-size:clamp(14px, 2.9vw, 16px);
     }
     .hero .lead{
       margin:16px 0 0;
       font-size:clamp(15px, 3.2vw, 18px);
-      font-weight:700;
-      color:rgba(0,0,0,.70);
+      font-weight:800;
+      color:rgba(7,18,37,.80);
     }
 
     /* 強弱 */
     .big{
       font-size:clamp(18px, 3.6vw, 22px);
-      font-weight:900;
+      font-weight:1000;
     }
     .hl{
       background:linear-gradient(transparent 62%, rgba(34,197,94,.30) 62%);
-      font-weight:900;
+      font-weight:1000;
     }
     .hl2{
       background:linear-gradient(transparent 62%, rgba(255,216,77,.55) 62%);
-      font-weight:900;
+      font-weight:1000;
     }
-    .muted{color:var(--muted); font-weight:650;}
+    .muted{color:var(--muted); font-weight:750;}
 
     /* 見出し（⭐大きい） */
     .title{
@@ -162,9 +209,10 @@
     .h2{
       margin:0;
       font-size:clamp(20px, 4.2vw, 28px);
-      font-weight:950;
-      color:var(--greenDeep);
+      font-weight:1000;
+      color:var(--blueDeep);
       letter-spacing:.2px;
+      text-shadow:0 1px 0 rgba(255,255,255,.35);
     }
 
     /* 小さい補足は ■ */
@@ -177,18 +225,18 @@
       margin:7px 0;
       padding-left:1.2em;
       position:relative;
-      font-weight:700;
+      font-weight:800;
     }
     .bullets li::before{
       content:"■";
       position:absolute;
       left:0;
-      color:var(--greenDeep);
+      color:var(--blueDeep);
       font-size:12px;
       transform: translateY(1px);
     }
 
-    /* テーブル（表は表らしく） */
+    /* テーブル（黒縁） */
     table{
       width:100%;
       border-collapse:separate;
@@ -196,30 +244,31 @@
       margin-top:12px;
       overflow:hidden;
       border-radius:16px;
-      border:1px solid rgba(0,0,0,.08);
+      border:2px solid var(--black);
       background:#fff;
     }
     th,td{
       padding:12px 12px;
-      border-bottom:1px solid rgba(0,0,0,.07);
+      border-bottom:1px solid rgba(0,0,0,.12);
       font-size:clamp(13px, 2.9vw, 15px);
       vertical-align:top;
     }
     th{
-      background:linear-gradient(90deg, rgba(34,197,94,.20), rgba(255,216,77,.18));
+      background:linear-gradient(90deg, rgba(30,102,255,.18), rgba(126,211,255,.22));
       text-align:left;
-      font-weight:950;
-      color:#134227;
+      font-weight:1000;
+      color:#071225;
       width:34%;
+      border-right:1px solid rgba(0,0,0,.12);
     }
     tr:last-child td, tr:last-child th{border-bottom:none;}
     .tag{
       display:inline-block;
       padding:3px 10px;
       border-radius:999px;
-      font-weight:950;
-      background:linear-gradient(90deg, rgba(34,197,94,.20), rgba(255,216,77,.28));
-      border:1px solid rgba(34,197,94,.25);
+      font-weight:1000;
+      background:linear-gradient(90deg, rgba(30,102,255,.14), rgba(126,211,255,.22));
+      border:2px solid var(--black);
       margin-left:6px;
     }
 
@@ -235,13 +284,13 @@
 
     /* 数字の目立たせ */
     .num{
-      font-weight:1000;
+      font-weight:1100;
       font-size:clamp(18px, 4vw, 24px);
-      color:#0F3A22;
+      color:#071225;
     }
     .money{
-      font-weight:1000;
-      color:#0F3A22;
+      font-weight:1100;
+      color:#071225;
     }
 
     /* シミュレーター */
@@ -251,41 +300,43 @@
       border-radius:18px;
       overflow:hidden;
       background:#fff;
-      border:1px solid rgba(0,0,0,.10);
+      border:2px solid var(--black);
       box-shadow:0 12px 26px rgba(0,0,0,.10);
       margin-top:12px;
     }
     .sim-wrap iframe{width:100%;height:100%;border:0;}
     .small{
       font-size:clamp(12px, 2.8vw, 13px);
-      color:rgba(0,0,0,.62);
-      font-weight:750;
+      color:rgba(7,18,37,.75);
+      font-weight:850;
       margin-top:10px;
     }
     .link{
-      color:#0B5C2C;
-      font-weight:950;
+      color:var(--blueDeep);
+      font-weight:1000;
       word-break:break-all;
       text-decoration:none;
-      border-bottom:2px solid rgba(34,197,94,.35);
+      border-bottom:3px solid rgba(30,102,255,.35);
     }
 
-    /* フッター */
+    /* フッター（オレンジ→ブルーへ） */
     .cta{
       text-align:center;
       padding:30px 22px;
       border-radius:28px;
       background:
         radial-gradient(700px 320px at 50% 0%, rgba(255,255,255,.70), transparent 55%),
-        linear-gradient(135deg, #FFF6BF, #FFE27A, #FFC24A, #FF9F1C);
-      border:1px solid rgba(0,0,0,.06);
+        linear-gradient(135deg, #EAF9FF, #BFEAFF, #7ED3FF, #2C8DFF, #103B9A);
+      border:2px solid var(--black);
       box-shadow:0 18px 38px rgba(0,0,0,.14);
+      color:#071225;
     }
     .cta h3{
       margin:0 0 10px;
       font-size:clamp(22px, 4.6vw, 30px);
-      font-weight:1000;
-      color:#0F3A22;
+      font-weight:1100;
+      color:#071225;
+      text-shadow:0 1px 0 rgba(255,255,255,.35);
     }
 
     /* スマホ可読性を最優先 */
@@ -294,6 +345,8 @@
       th{width:42%;}
       .star{font-size:32px;}
       .topbar{gap:10px;}
+      .pills{justify-content:flex-start;}
+      .pill{padding:9px 12px;}
     }
   </style>
 </head>
@@ -320,9 +373,10 @@
             </div>
           </div>
 
-          <div class="muted">
-            <div class="tag">軽貨物フランチャイズ</div>
-            <div class="tag">tebura-（手ぶら〜）</div>
+          <!-- ★ ×位置：ここを「軽貨物フランチャイズ / tebura-（手ぶら〜）」で固定 -->
+          <div class="pills" aria-label="サービス種別">
+            <div class="pill"><span class="dot"></span><b>軽貨物フランチャイズ</b></div>
+            <div class="pill"><span class="dot"></span><b>tebura-（手ぶら〜）</b></div>
           </div>
         </div>
 
@@ -466,58 +520,6 @@
       </div>
     </section>
 
-    <!-- 研修・サポート（追加） -->
-    <section class="section">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">研修の流れ・本部サポート</h2></div>
-
-        <div class="grid2">
-          <div>
-            <p class="big">研修の流れ</p>
-            <ul class="bullets">
-              <li>オンライン説明</li>
-              <li>書類準備</li>
-              <li>実地研修（3〜7日）</li>
-              <li>同乗研修</li>
-              <li>担当エリアで稼働開始</li>
-              <li>月次フォロー面談</li>
-            </ul>
-          </div>
-
-          <div>
-            <p class="big">OFA本部サポート</p>
-            <ul class="bullets">
-              <li>案件紹介・稼働設計</li>
-              <li>現場トラブル即対応</li>
-              <li>教育・マナー・報告体制の標準化</li>
-              <li>売上管理・品質管理</li>
-              <li>車両・保険・事務手続きサポート</li>
-              <li>相談チャット／運営フォロー</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="muted" style="margin-top:10px;">
-          未経験でも「再現できる」ように、<span class="hl">仕組みで支える</span>のがOFAです。
-        </p>
-      </div>
-    </section>
-
-    <!-- 車両リース・レッカー全国対応（追加） -->
-    <section class="section">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">車両リース・レッカー（全国対応）</h2></div>
-        <p class="big">「走れない＝売上ゼロ」。だからOFAは車両も個人任せにしません。</p>
-        <ul class="bullets">
-          <li>軽バン／幌車：リース・販売 対応（全国）</li>
-          <li>名義変更・登録・保険など手続きサポート</li>
-          <li>事故・故障など緊急時：レッカー含め全国対応</li>
-          <li>増車・入替も本部へ一括相談可能</li>
-        </ul>
-        <p class="muted"><span class="hl">「何かあっても一人にしない」</span>――これがOFAの組織力です。</p>
-      </div>
-    </section>
-
     <!-- 4モデル -->
     <section class="section">
       <div class="card">
@@ -621,20 +623,6 @@
       </div>
     </section>
 
-    <!-- 加盟までのステップ（追加） -->
-    <section class="section">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">加盟までのステップ</h2></div>
-        <table>
-          <tr><th>STEP 1</th><td>説明会参加</td></tr>
-          <tr><th>STEP 2</th><td>個別面談（条件・希望エリア確認）</td></tr>
-          <tr><th>STEP 3</th><td>契約</td></tr>
-          <tr><th>STEP 4</th><td>研修（実地＋同乗）</td></tr>
-          <tr><th>STEP 5</th><td><span class="hl">稼働開始（最短1週間）</span></td></tr>
-        </table>
-      </div>
-    </section>
-
     <!-- 月収イメージ（宅配便：個建） -->
     <section class="section">
       <div class="card">
@@ -680,18 +668,25 @@
         <div class="title"><div class="star">⭐</div><h2 class="h2">ボーナス制度（紹介／リーダー／管理・営業）</h2></div>
 
         <div class="grid2">
-          <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.06);">
+          <div class="card" style="box-shadow:none;">
             <p class="big">メンバーシップボーナス</p>
             <p class="muted">メンバーを紹介頂いた方へ支給（メンバー対象）</p>
             <p class="num">紹介者：3万円</p>
           </div>
 
-          <div class="card" style="box-shadow:none;border:1px solid rgba(0,0,0,.06);">
-            <p class="big">リーダー手当（売上規模×%）</p>
+          <!-- ★ 表記を「マネージャーシップボーナス」へ（統合の主名） -->
+          <div class="card" style="box-shadow:none;">
+            <p class="big">マネージャーシップボーナス（管理・営業）</p>
             <p class="muted">
-              エリアを任され、運営・品質・教育を担う役割。<br>
+              基本的に稼働をしない <span class="hl">業務管理／営業</span> 向け（本部招待制など運用条件あり）。<br>
               ■ 現在の基本設計：<span class="hl">売上規模 × 0.3%</span><br>
               ※拠点規模・役割によりレンジ調整する場合があります。
+            </p>
+
+            <!-- ★ リーダー手当は“この下へ”移動（あなたの指示） -->
+            <p class="big" style="margin-top:10px;">リーダー手当（拠点運営・品質・教育）</p>
+            <p class="muted" style="margin-top:6px;">
+              エリアを任され、運営・品質・教育を担う役割。計算方式は上記と同一（売上規模 × %）。
             </p>
           </div>
         </div>
@@ -705,23 +700,8 @@
           <tr><td>0.9%</td><td>2,750,000円 × 0.009</td><td><span class="num">24,750円／月</span></td></tr>
         </table>
 
-        <p class="big" style="margin-top:14px;">リーダーシップボーナス（拠点ランク）</p>
-        <table>
-          <tr><th>シルバー</th><td>月商310万円以上</td><td><span class="num">3万円／月</span></td></tr>
-          <tr><th>ゴールド</th><td>月商1,100万円以上</td><td><span class="num">10万円／月</span></td></tr>
-          <tr><th>プラチナム</th><td>月商5,100万円以上</td><td><span class="num">50万円／月</span></td></tr>
-        </table>
-        <p class="muted">対象：メンバー／パートナー</p>
-
         <p class="muted" style="margin-top:10px;">
-          ■ マネージャーボーナス＝リーダー手当（統合）<br>
-          基本的に稼働をしない <span class="hl">業務管理／営業</span> 向け（本部招待制など運用条件あり）。
-        </p>
-
-        <p class="muted" style="margin-top:10px;">
-          <span class="hl">メンバーシップ</span>＝人を集める目的 ／
-          <span class="hl">リーダーシップ</span>＝リーダーを育てる目的 ／
-          <span class="hl">マネージャーシップ</span>＝経営者を育てる目的
+          メンバーシップ＝人を集める目的／リーダーシップ＝リーダーを育てる目的／マネージャーシップ＝経営者を育てる目的
         </p>
       </div>
     </section>
@@ -840,25 +820,6 @@
           これからの軽貨物は、<span class="hl">フランチャイズで勝つ時代</span>。<br>
           OFAは全国展開を「皆で」成し遂げる。One for All, All for One。
         </p>
-      </div>
-    </section>
-
-    <!-- Q&A（追加） -->
-    <section class="section">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">Q&A</h2></div>
-
-        <p class="big">Q：未経験でも本当にできますか？</p>
-        <p class="muted">A：できます。研修＋同行＋仕組みで再現性を作っています。</p>
-
-        <p class="big">Q：車がなくても始められますか？</p>
-        <p class="muted">A：可能です。リース・販売・手続きまで全国対応でサポートします。</p>
-
-        <p class="big">Q：事故や故障など、途中で困ったら？</p>
-        <p class="muted">A：現場トラブル・車両トラブルも一人にしません。レッカー含め全国対応で、グループで解決します。</p>
-
-        <p class="big">Q：どのモデルから入るのが正解？</p>
-        <p class="muted">A：目的次第です。まず稼ぐなら「業務委託・FCメンバー」、拠点を持つなら「FCパートナー」、走らずに関わるなら「案件オーナー」。個別面談で最適設計します。</p>
       </div>
     </section>
 
