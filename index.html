@@ -2,1364 +2,685 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>株式会社OFA｜会社説明（軽貨物・FC・業務委託・案件オーナー・tebura-）</title>
-  <meta name="description" content="株式会社OFAの会社説明ページ。軽貨物事業／OFA軽貨物フランチャイズ（メンバー・パートナー）／業務委託／案件オーナー制度／tebura-（発送代行・投げっぱ等）を1枚で分かりやすく解説。" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>OFA GROUP｜会社説明（アプリ風LP）</title>
+  <meta name="description" content="株式会社OFA｜軽貨物／フランチャイズ（メンバー・パートナー）／業務委託／案件オーナー／tebura-（発送代行）をアプリ風に分かりやすく。" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --ink:#0f172a;
-      --muted:#475569;
-      --card:#ffffff;
-      --line:rgba(15,23,42,.10);
-      --shadow: 0 12px 30px rgba(2,6,23,.10);
-      --shadow2: 0 10px 24px rgba(2,6,23,.08);
-      --radius:20px;
+      --bg:#0b1020;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.12);
+      --line: rgba(255,255,255,.14);
+      --text:#ffffff;
+      --muted: rgba(255,255,255,.72);
 
-      /* OFAっぽい元気カラー（アクセント） */
-      --ofa-yellow:#FFC400;
-      --ofa-blue:#2D7CFF;
-      --ofa-green:#16C784;
-      --ofa-red:#FF3B30;
-      --ofa-pink:#FF4FD8;
-      --ofa-purple:#7C3AED;
+      /* OFAっぽい元気カラー */
+      --y:#FFC400;
+      --b:#2D7CFF;
+      --g:#16C784;
+      --r:#FF3B30;
+      --p:#FF4FD8;
+      --pu:#7C3AED;
 
-      --rainbow: linear-gradient(90deg,
-        var(--ofa-red),
-        var(--ofa-yellow),
-        var(--ofa-green),
-        var(--ofa-blue),
-        var(--ofa-purple),
-        var(--ofa-pink)
-      );
+      --rainbow: linear-gradient(90deg, var(--r), var(--y), var(--g), var(--b), var(--pu), var(--p));
+      --shadow: 0 18px 40px rgba(0,0,0,.35);
+      --radius: 22px;
 
-      --bg: radial-gradient(1200px 600px at 20% 0%, rgba(255,196,0,.25), transparent 55%),
-            radial-gradient(900px 500px at 90% 10%, rgba(45,124,255,.22), transparent 55%),
-            radial-gradient(900px 500px at 10% 80%, rgba(22,199,132,.18), transparent 60%),
-            radial-gradient(900px 500px at 90% 85%, rgba(255,79,216,.14), transparent 60%),
-            #f8fafc;
+      --safeBottom: env(safe-area-inset-bottom);
+      --safeTop: env(safe-area-inset-top);
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
     body{
       margin:0;
-      font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      color:var(--ink);
-      background:var(--bg);
+      font-family:"Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(255,196,0,.18), transparent 60%),
+        radial-gradient(900px 500px at 95% 10%, rgba(45,124,255,.16), transparent 60%),
+        radial-gradient(900px 600px at 10% 90%, rgba(22,199,132,.10), transparent 60%),
+        radial-gradient(900px 600px at 90% 90%, rgba(255,79,216,.10), transparent 60%),
+        var(--bg);
       overflow-x:hidden;
     }
     a{ color:inherit; text-decoration:none; }
-    .container{ width:min(1120px, 92vw); margin:0 auto; }
+    .wrap{
+      width:min(980px, 92vw);
+      margin:0 auto;
+      padding: calc(14px + var(--safeTop)) 0 calc(110px + var(--safeBottom));
+    }
 
-    /* Top rainbow line */
-    .topline{
-      height:6px;
-      background:var(--rainbow);
-      position:sticky;
+    /* App Header */
+    .appbar{
+      position: sticky;
       top:0;
       z-index:50;
+      padding: 10px 0 12px;
+      background: linear-gradient(to bottom, rgba(11,16,32,.92), rgba(11,16,32,.65), rgba(11,16,32,0));
+      backdrop-filter: blur(10px);
     }
-
-    /* Header / Hero */
-    header{
-      position:relative;
-      padding:34px 0 22px;
+    .appbarInner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
     }
-    .hero{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){
-      .hero{ grid-template-columns:1fr; }
-    }
-
     .brand{
       display:flex;
-      gap:14px;
       align-items:center;
-      margin-bottom:14px;
+      gap:10px;
+      min-width:0;
     }
     .logo{
-      width:54px; height:54px;
-      border-radius:16px;
+      width:44px; height:44px;
+      border-radius:14px;
       background: linear-gradient(135deg, rgba(255,196,0,.95), rgba(45,124,255,.95));
-      box-shadow: var(--shadow2);
       display:grid; place-items:center;
-      color:#0b1020;
       font-weight:900;
-      letter-spacing:.08em;
+      color:#0b1020;
+      box-shadow: var(--shadow);
+      flex:0 0 auto;
     }
-    .brand .name{
+    .brandTxt{
+      min-width:0;
       line-height:1.15;
     }
-    .brand .name b{
-      font-size:18px;
+    .brandTxt b{
       display:block;
+      font-size:14px;
+      letter-spacing:.02em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
-    .brand .name span{
-      font-size:12px;
+    .brandTxt span{
+      display:block;
+      font-size:11px;
       color:var(--muted);
-      font-weight:700;
+      font-weight:800;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
 
-    .heroCard{
-      background: rgba(255,255,255,.82);
+    .chip{
+      padding:9px 12px;
+      border-radius:999px;
       border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:22px;
-      position:relative;
-      overflow:hidden;
+      background: rgba(255,255,255,.06);
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
     }
-    .heroCard::before{
+
+    /* Hero (LP like but app) */
+    .hero{
+      margin-top:10px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::before{
       content:"";
       position:absolute;
-      inset:-2px -2px auto -2px;
-      height:10px;
-      background:var(--rainbow);
+      inset:0 auto auto 0;
+      width:100%;
+      height:6px;
+      background: var(--rainbow);
       opacity:.95;
     }
-
-    .heroTitle{
-      margin:6px 0 10px;
-      font-size: 34px;
-      line-height:1.1;
-      letter-spacing:-0.02em;
+    .heroInner{
+      padding:18px 16px 14px;
     }
-    .heroTitle .highlight{
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,196,0,.16);
+      border:1px solid rgba(255,196,0,.28);
+      font-weight:900;
+      font-size:11px;
+      color:#fff;
+    }
+    .h1{
+      margin:10px 0 8px;
+      font-size:26px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+      font-weight:900;
+    }
+    .h1 .grad{
       background: var(--rainbow);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
-      font-weight:900;
     }
-    .heroSub{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-weight:700;
-      line-height:1.6;
-    }
-
-    .chips{
-      display:flex; flex-wrap:wrap;
-      gap:8px;
-      margin:14px 0 18px;
-    }
-    .chip{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-size:12px;
-      font-weight:900;
-      display:inline-flex; align-items:center; gap:8px;
-      box-shadow: 0 6px 16px rgba(2,6,23,.06);
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background:var(--ofa-blue);
-    }
-
-    .ctaRow{
-      display:flex; flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:14px;
-      font-weight:900;
-      border:1px solid var(--line);
-      background:#fff;
-      box-shadow: 0 10px 24px rgba(2,6,23,.08);
-      transition:.18s transform ease, .18s box-shadow ease, .18s opacity ease;
-      cursor:pointer;
-      user-select:none;
-    }
-    .btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
-    .btnPrimary{
-      border:none;
-      background: var(--rainbow);
-      color:#0b1020;
-    }
-    .btnGhost{
-      background: rgba(255,255,255,.65);
-    }
-
-    .sideCard{
-      background: rgba(255,255,255,.72);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow2);
-      padding:18px;
-      overflow:hidden;
-      position:relative;
-    }
-    .sideCard::after{
-      content:"";
-      position:absolute;
-      inset:auto -40px -40px auto;
-      width:220px; height:220px;
-      border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,196,0,.45), transparent 60%),
-                  radial-gradient(circle at 70% 70%, rgba(45,124,255,.35), transparent 55%),
-                  radial-gradient(circle at 30% 70%, rgba(22,199,132,.25), transparent 60%);
-      transform: rotate(14deg);
-    }
-    .sideCard h3{
-      margin:4px 0 10px;
-      font-size:16px;
-      letter-spacing:.02em;
-    }
-    .sideCard p{
-      margin:0;
-      color:var(--muted);
-      font-weight:700;
-      line-height:1.7;
-      font-size:13px;
-      position:relative;
-      z-index:1;
-    }
-    .sideMeta{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-      margin-top:14px;
-      position:relative;
-      z-index:1;
-    }
-    .kpi{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:12px;
-      box-shadow: 0 10px 22px rgba(2,6,23,.07);
-    }
-    .kpi b{ display:block; font-size:14px; }
-    .kpi span{ color:var(--muted); font-weight:900; font-size:11px; }
-
-    /* Sticky NAV */
-    .navWrap{
-      position:sticky;
-      top:6px;
-      z-index:40;
-      margin-top:14px;
-    }
-    nav{
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      border:1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 12px 26px rgba(2,6,23,.08);
-      padding:10px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .navLeft{
-      display:flex; flex-wrap:wrap; gap:8px;
-      align-items:center;
-    }
-    .navRight{
-      display:flex; gap:8px; align-items:center;
-    }
-    .navLink{
-      padding:10px 12px;
-      border-radius: 14px;
-      font-weight:900;
-      font-size:12px;
-      border:1px solid transparent;
-      transition: .15s ease;
-      white-space:nowrap;
-    }
-    .navLink:hover{
-      background:#fff;
-      border-color: var(--line);
-    }
-    .navLink.active{
-      background: #0b1020;
-      color:#fff;
-      border-color:#0b1020;
-    }
-
-    .smallBtn{
-      padding:10px 12px;
-      border-radius:14px;
-      font-weight:900;
-      font-size:12px;
-      border:1px solid var(--line);
-      background:#fff;
-      cursor:pointer;
-      transition:.18s transform ease, .18s box-shadow ease;
-      box-shadow: 0 10px 22px rgba(2,6,23,.07);
-    }
-    .smallBtn:hover{ transform:translateY(-2px); box-shadow: var(--shadow2); }
-
-    /* Sections */
-    section{ padding: 26px 0; }
-    .sectionHead{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      margin: 6px 0 14px;
-    }
-    .sectionHead h2{
-      margin:0;
-      font-size:22px;
-      letter-spacing:-0.01em;
-    }
-    .sectionHead p{
+    .lead{
       margin:0;
       color:var(--muted);
       font-weight:800;
-      font-size:12px;
+      line-height:1.7;
+      font-size:13px;
+    }
+
+    /* KPI tiles */
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      padding: 14px 16px 16px;
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    @media (max-width: 820px){
+      .kpis{ grid-template-columns: 1fr; }
+    }
+    .kpi{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      padding:12px 12px;
+    }
+    .kpi b{ display:block; font-size:18px; letter-spacing:.02em; }
+    .kpi span{ display:block; font-size:11px; color:var(--muted); font-weight:900; margin-top:2px; }
+
+    /* Section */
+    .sec{
+      margin-top:14px;
+    }
+    .secHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin: 18px 4px 10px;
+    }
+    .secHead h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.02em;
+      font-weight:900;
+    }
+    .secHead p{
+      margin:0;
+      font-size:11px;
+      color:var(--muted);
+      font-weight:800;
       line-height:1.5;
       max-width:520px;
     }
 
+    /* Cards grid */
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
-      gap:14px;
+      gap:12px;
     }
     .card{
       grid-column: span 6;
-      background: rgba(255,255,255,.85);
-      border:1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: var(--shadow2);
-      padding:18px;
-      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 14px 34px rgba(0,0,0,.25);
+      padding:14px;
       position:relative;
+      overflow:hidden;
     }
     .card.full{ grid-column: span 12; }
     .card.third{ grid-column: span 4; }
-    @media (max-width: 920px){
+    @media (max-width: 860px){
       .card, .card.third{ grid-column: span 12; }
     }
 
-    .badge{
+    .label{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:8px 10px;
-      border-radius: 999px;
-      font-weight:900;
       font-size:11px;
-      border:1px solid var(--line);
-      background:#fff;
-      box-shadow: 0 10px 22px rgba(2,6,23,.07);
+      font-weight:900;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
     }
-    .badge .dot{ width:9px; height:9px; }
-
-    .card h3{
+    .dot{ width:9px; height:9px; border-radius:999px; background: var(--b); }
+    .title{
       margin:10px 0 8px;
-      font-size:18px;
-      letter-spacing:-0.01em;
+      font-size:16px;
+      font-weight:900;
+      letter-spacing:.01em;
     }
-    .card p{
-      margin:0 0 10px;
+    .desc{
+      margin:0;
       color:var(--muted);
-      font-weight:700;
-      line-height:1.7;
-      font-size:13px;
+      font-size:12px;
+      font-weight:800;
+      line-height:1.65;
     }
-    .list{
+
+    .bullets{
       margin:12px 0 0;
       padding:0;
       list-style:none;
       display:grid;
       gap:10px;
     }
-    .li{
+    .bullets li{
       display:flex;
       gap:10px;
+      align-items:flex-start;
+      border-radius:16px;
       padding:10px;
-      border-radius: 14px;
-      border:1px solid var(--line);
-      background:#fff;
-      box-shadow: 0 10px 22px rgba(2,6,23,.06);
-      align-items:flex-start;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
     }
-    .li .icon{
-      flex:0 0 auto;
-      width:28px; height:28px;
-      border-radius:10px;
+    .ico{
+      width:30px; height:30px;
+      border-radius:12px;
       display:grid; place-items:center;
-      background: rgba(45,124,255,.12);
-      border:1px solid rgba(45,124,255,.22);
+      background: rgba(45,124,255,.18);
+      border:1px solid rgba(45,124,255,.24);
+      flex:0 0 auto;
       font-weight:900;
     }
-    .li b{ display:block; font-size:13px; margin-bottom:2px; }
-    .li span{ display:block; font-size:12px; color:var(--muted); font-weight:800; line-height:1.55; }
+    .bullets b{ display:block; font-size:12px; margin-bottom:2px; }
+    .bullets span{ display:block; font-size:11px; color:var(--muted); font-weight:800; line-height:1.55; }
 
-    /* Plan cards */
-    .planTop{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
+    /* Stepper */
+    .steps{
+      display:grid;
       gap:10px;
-      flex-wrap:wrap;
-    }
-    .pillRow{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-top:6px;
-    }
-    .pill{
-      padding:8px 10px;
-      border-radius:999px;
-      font-weight:900;
-      font-size:11px;
-      background: rgba(15,23,42,.05);
-      border: 1px solid rgba(15,23,42,.09);
-      white-space:nowrap;
-    }
-    .ctaMini{
-      display:flex; gap:8px; flex-wrap:wrap;
       margin-top:12px;
     }
+    .step{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    .num{
+      width:34px; height:34px;
+      border-radius:14px;
+      display:grid; place-items:center;
+      font-weight:900;
+      color:#0b1020;
+      background: linear-gradient(135deg, rgba(255,196,0,.95), rgba(45,124,255,.90));
+      flex:0 0 auto;
+    }
+    .step b{ display:block; font-size:12px; }
+    .step span{ display:block; font-size:11px; color:var(--muted); font-weight:800; line-height:1.55; margin-top:2px; }
 
     /* Accordion */
     details{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius: 16px;
-      box-shadow: 0 10px 22px rgba(2,6,23,.06);
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
       overflow:hidden;
     }
     summary{
       cursor:pointer;
-      list-style:none;
-      padding:14px 14px;
+      padding:12px 12px;
       font-weight:900;
+      font-size:12px;
+      list-style:none;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:10px;
     }
     summary::-webkit-details-marker{ display:none; }
-    .sumRight{
-      display:flex; align-items:center; gap:10px;
-      color:var(--muted);
-      font-size:12px;
-      font-weight:900;
-    }
     .chev{
-      width:28px; height:28px;
-      border-radius:10px;
-      border:1px solid var(--line);
+      width:30px; height:30px;
+      border-radius:12px;
       display:grid; place-items:center;
-      background: rgba(255,255,255,.8);
-      transition:.18s transform ease;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      transition: .18s transform ease;
+      flex:0 0 auto;
     }
     details[open] .chev{ transform: rotate(180deg); }
-    .accBody{
-      padding: 0 14px 14px;
-      color:var(--muted);
+    .ans{
+      padding: 0 12px 12px;
+      color: var(--muted);
+      font-size:11px;
       font-weight:800;
-      font-size:12px;
       line-height:1.75;
     }
-    .accGrid{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
-    }
 
-    /* Footer CTA */
-    .finalCta{
-      background: rgba(255,255,255,.86);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:20px;
-      position:relative;
-      overflow:hidden;
-    }
-    .finalCta::before{
-      content:"";
-      position:absolute;
-      inset:auto -60px -60px auto;
-      width:320px; height:320px;
-      border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,59,48,.28), transparent 60%),
-                  radial-gradient(circle at 70% 70%, rgba(255,196,0,.28), transparent 55%),
-                  radial-gradient(circle at 40% 80%, rgba(45,124,255,.22), transparent 60%),
-                  radial-gradient(circle at 70% 25%, rgba(22,199,132,.18), transparent 60%);
-      transform: rotate(-8deg);
-    }
-    .finalCta h2{ margin:0 0 8px; font-size:22px; position:relative; z-index:1; }
-    .finalCta p{ margin:0 0 14px; color:var(--muted); font-weight:800; line-height:1.7; position:relative; z-index:1; }
-    .finalRow{
-      display:flex; flex-wrap:wrap;
-      gap:10px;
-      position:relative; z-index:1;
-    }
-
-    /* Helper */
-    .divider{
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(15,23,42,.12), transparent);
-      margin: 6px 0 0;
-    }
-    .note{
-      font-size:11px;
-      color:var(--muted);
-      font-weight:800;
-      line-height:1.6;
-    }
-
-    /* Tiny floating "scroll to top" */
-    .toTop{
+    /* Bottom fixed CTA (app like) */
+    .bottomBar{
       position:fixed;
-      right:14px;
-      bottom:14px;
+      left:0; right:0;
+      bottom:0;
+      padding: 10px 12px calc(10px + var(--safeBottom));
+      background: linear-gradient(to top, rgba(11,16,32,.92), rgba(11,16,32,.65), rgba(11,16,32,0));
+      backdrop-filter: blur(10px);
       z-index:60;
-      display:none;
+    }
+    .bottomInner{
+      width:min(980px, 92vw);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .cta{
       border:none;
-      border-radius: 16px;
-      padding:12px 12px;
-      background:#0b1020;
+      border-radius:18px;
+      padding:14px 12px;
+      font-weight:900;
+      font-size:14px;
+      cursor:pointer;
+      box-shadow: var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      user-select:none;
+    }
+    .ctaPrimary{
+      background: var(--rainbow);
+      color:#0b1020;
+    }
+    .ctaGhost{
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+    }
+    .subCtaNote{
+      grid-column: 1 / -1;
+      text-align:center;
+      font-size:10px;
+      color: rgba(255,255,255,.62);
+      font-weight:800;
+      margin-top:2px;
+    }
+
+    /* Tiny helper buttons */
+    .rowBtns{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin-top:12px;
+    }
+    .miniBtn{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
       color:#fff;
       font-weight:900;
-      box-shadow: var(--shadow);
+      font-size:11px;
       cursor:pointer;
     }
-    .toTop.show{ display:block; }
+
+    /* spacing anchor */
+    .anchor{ position:relative; top:-80px; }
+
   </style>
 </head>
 
 <body>
-  <div class="topline"></div>
 
-  <header id="top">
-    <div class="container">
-
-      <div class="hero">
-        <div class="heroCard">
-          <div class="brand">
-            <!-- ロゴ画像に差し替えるなら：下のdiv.logoをimgに変更してOK -->
-            <div class="logo" aria-label="OFA">OFA</div>
-            <div class="name">
-              <b>株式会社OFA｜会社説明</b>
-              <span>軽貨物 × フランチャイズ × 物流プラットフォーム</span>
-            </div>
+  <div class="appbar">
+    <div class="wrap" style="padding-bottom:0;">
+      <div class="appbarInner">
+        <div class="brand">
+          <div class="logo">O</div>
+          <div class="brandTxt">
+            <b>OFA GROUP</b>
+            <span>軽貨物 × FC × 物流プラットフォーム</span>
           </div>
-
-          <h1 class="heroTitle">
-            <span class="highlight">案件 × 人材 × 仕組み</span> をつなぐ。<br>
-            そして、全国へ。
-          </h1>
-          <p class="heroSub">
-            OFAは、軽貨物配送を軸に「働く人の独立」「地域の拠点化」「案件の安定供給」を実現する
-            <b>総合物流プラットフォーム企業</b>です。<br>
-            1枚で、OFAの全プランを分かりやすくご案内します。
-          </p>
-
-          <div class="chips">
-            <div class="chip"><span class="dot" style="background:var(--ofa-red)"></span>軽貨物配送</div>
-            <div class="chip"><span class="dot" style="background:var(--ofa-yellow)"></span>OFAフランチャイズ</div>
-            <div class="chip"><span class="dot" style="background:var(--ofa-green)"></span>業務委託</div>
-            <div class="chip"><span class="dot" style="background:var(--ofa-blue)"></span>案件オーナー</div>
-            <div class="chip"><span class="dot" style="background:var(--ofa-pink)"></span>tebura-（発送代行）</div>
-          </div>
-
-          <div class="ctaRow">
-            <a class="btn btnPrimary" href="#plans">🚚 プランを見る</a>
-            <a class="btn btnGhost" href="#why">✨ OFAが選ばれる理由</a>
-            <a class="btn" href="#contact">📩 お問い合わせ</a>
-          </div>
-
-          <div class="divider"></div>
-          <p class="note" style="margin-top:12px;">
-            ※このページは「説明者が案内しやすい」ように、各プランを “要点 → 詳細 → よくある質問” の順に整理しています。
-          </p>
         </div>
-
-        <div class="sideCard">
-          <h3>🎤 説明者のための “案内ルート”</h3>
-          <p>
-            ① まず「OFAの全体像」 → ②「5つの事業」 → ③「対象者別おすすめ」 → ④「Q&A」 → ⑤「問い合わせ」
-            の順で案内すると、相手が迷いません。
-          </p>
-
-          <div class="sideMeta">
-            <div class="kpi">
-              <b>ONE FOR ALL</b>
-              <span>All for One</span>
-            </div>
-            <div class="kpi">
-              <b>全国展開</b>
-              <span>案件/人材/仕組み</span>
-            </div>
-          </div>
-
-          <div class="ctaRow" style="margin-top:14px;">
-            <button class="btn" onclick="openAllAccordions()">✅ Q&Aを全部開く</button>
-            <button class="btn" onclick="closeAllAccordions()">🧊 Q&Aを閉じる</button>
-          </div>
-          <p class="note" style="margin-top:10px;">
-            ※数値・所在地・連絡先などはページ下の「編集ポイント」で差し替えできます。
-          </p>
-        </div>
+        <a class="chip" href="#contact">📩 相談</a>
       </div>
-
-      <div class="navWrap">
-        <nav>
-          <div class="navLeft">
-            <a class="navLink" href="#overview">全体像</a>
-            <a class="navLink" href="#business">事業</a>
-            <a class="navLink" href="#plans">プラン</a>
-            <a class="navLink" href="#recommend">おすすめ</a>
-            <a class="navLink" href="#faq">Q&A</a>
-            <a class="navLink" href="#contact">問い合わせ</a>
-          </div>
-          <div class="navRight">
-            <button class="smallBtn" onclick="window.print()">🖨 印刷</button>
-            <button class="smallBtn" onclick="copyUrl()">🔗 URLコピー</button>
-          </div>
-        </nav>
-      </div>
-
     </div>
-  </header>
+  </div>
 
-  <main>
-    <!-- Overview -->
-    <section id="overview">
-      <div class="container">
-        <div class="sectionHead">
-          <h2>🚀 OFAの全体像</h2>
-          <p>「物流で稼ぐ」だけじゃなく、<b>独立・拠点・案件</b>を仕組みにして伸ばす。OFAは“勝てる型”を提供します。</p>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="hero">
+      <div class="heroInner">
+        <span class="tag">🚚 会社説明（アプリ風 / 1枚完結）</span>
+        <h1 class="h1">
+          <span class="grad">案件 × 人材 × 仕組み</span>で、<br>全国を動かすOFA。
+        </h1>
+        <p class="lead">
+          OFAは「稼ぐ」だけで終わらない。<br>
+          <b>未経験→独立→拠点化</b>まで伸ばせる“勝てる型”を提供します。
+        </p>
+
+        <div class="rowBtns">
+          <button class="miniBtn" onclick="scrollToId('plans')">📌 プランを見る</button>
+          <button class="miniBtn" onclick="scrollToId('choose')">🎯 どれが合う？</button>
+          <button class="miniBtn" onclick="openAll()">✅ Q&Aを開く</button>
         </div>
+      </div>
 
-        <div class="grid">
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-blue)"></span>MISSION</span>
-            <h3>物流を、夢の入口に。</h3>
-            <p>未経験からでも挑戦できる環境を整え、仲間と共に成長できる仕組みをつくります。</p>
-            <ul class="list">
-              <li class="li">
-                <div class="icon">🔥</div>
-                <div>
-                  <b>挑戦を当たり前に</b>
-                  <span>はじめの一歩を最短化（研修・案件・サポート）</span>
-                </div>
-              </li>
-              <li class="li">
-                <div class="icon">🤝</div>
-                <div>
-                  <b>チームワーク</b>
-                  <span>One for All, All for One（OFA）</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-yellow)"></span>VALUE</span>
-            <h3>案件 × 人材 × 仕組み</h3>
-            <p>OFAの強みは“面”で動かせること。案件の波に強い構造です。</p>
-            <ul class="list">
-              <li class="li">
-                <div class="icon">📦</div>
-                <div>
-                  <b>案件供給力</b>
-                  <span>EC・企業配送・スポット/定期など幅広く対応</span>
-                </div>
-              </li>
-              <li class="li">
-                <div class="icon">🧩</div>
-                <div>
-                  <b>運用の型</b>
-                  <span>点呼・日報・管理・教育の仕組みを整備</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-green)"></span>GOAL</span>
-            <h3>地域に拠点を増やす</h3>
-            <p>「地域で勝つ」→「全国で強い」へ。拠点展開がOFAの成長エンジンです。</p>
-            <ul class="list">
-              <li class="li">
-                <div class="icon">🗺</div>
-                <div>
-                  <b>拠点化</b>
-                  <span>車両・人材・案件の最適化で利益を安定化</span>
-                </div>
-              </li>
-              <li class="li">
-                <div class="icon">📈</div>
-                <div>
-                  <b>スケール</b>
-                  <span>パートナーFCや案件オーナーで拡大可能</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+      <!-- KPI（数字はあなたの実数に差し替えOK） -->
+      <div class="kpis">
+        <div class="kpi"><b>543名</b><span>加盟ドライバー（例）</span></div>
+        <div class="kpi"><b>540台</b><span>加盟車両（例）</span></div>
+        <div class="kpi"><b>全国拡大中</b><span>拠点・ネットワーク</span></div>
       </div>
     </section>
 
-    <!-- Business -->
-    <section id="business">
-      <div class="container">
-        <div class="sectionHead">
-          <h2>🏁 事業内容（5つ）</h2>
-          <p>OFAは、軽貨物を中心に<b>多層の参加モデル</b>を用意。あなたの立場に合う入口が必ずあります。</p>
+    <!-- BUSINESS -->
+    <section class="sec" id="plans">
+      <div class="secHead">
+        <h2>🔥 5つの事業（要点だけ）</h2>
+        <p>文章は短く、説明はカードで。スクロールしながら理解できます。</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <span class="label"><span class="dot" style="background:var(--r)"></span>軽貨物事業</span>
+          <div class="title">① 軽貨物配送（OFA CORE）</div>
+          <p class="desc">EC・企業配送・スポット・繁忙期など、多様な案件に対応。</p>
+          <ul class="bullets">
+            <li><div class="ico">📦</div><div><b>案件幅が広い</b><span>宅配／BtoB／定期／チャーター</span></div></li>
+            <li><div class="ico">🗺</div><div><b>ネットワーク</b><span>必要な台数を必要なエリアへ</span></div></li>
+          </ul>
         </div>
 
-        <div class="grid">
-          <div class="card">
-            <span class="badge"><span class="dot" style="background:var(--ofa-red)"></span>CORE</span>
-            <h3>① 軽貨物配送事業</h3>
-            <p>
-              OFAの基盤となる事業。EC・企業配送・スポット・繁忙期など、
-              需要変動の大きい物流を<b>ネットワーク力</b>で支えます。
-            </p>
-            <div class="pillRow">
-              <span class="pill">宅配（EC/通販）</span>
-              <span class="pill">企業間配送（BtoB）</span>
-              <span class="pill">定期ルート</span>
-              <span class="pill">チャーター/スポット</span>
-              <span class="pill">繁忙期増車</span>
-            </div>
-          </div>
+        <div class="card">
+          <span class="label"><span class="dot" style="background:var(--y)"></span>OFA軽貨物フランチャイズ</span>
+          <div class="title">② フランチャイズ（2階建て）</div>
+          <p class="desc"><b>メンバー</b>＝個人向け／<b>パートナー</b>＝拠点・複数台向け。</p>
+          <ul class="bullets">
+            <li><div class="ico">⚡</div><div><b>メンバー</b><span>未経験OK／まず稼ぐ土台</span></div></li>
+            <li><div class="ico">🏆</div><div><b>パートナー</b><span>管理・拠点化・複数台運用</span></div></li>
+          </ul>
+        </div>
 
-          <div class="card">
-            <span class="badge"><span class="dot" style="background:var(--ofa-yellow)"></span>FC</span>
-            <h3>② OFA軽貨物フランチャイズ</h3>
-            <p>
-              未経験からでも「稼ぐ→伸ばす→拠点化」まで進める仕組み。
-              <b>メンバーFC</b>と<b>パートナーFC</b>の2階建てです。
-            </p>
-            <div class="pillRow">
-              <span class="pill">メンバー：個人向け</span>
-              <span class="pill">パートナー：複数台/法人向け</span>
-              <span class="pill">研修・運用サポート</span>
-              <span class="pill">案件・人材の連携</span>
-            </div>
-          </div>
+        <div class="card">
+          <span class="label"><span class="dot" style="background:var(--g)"></span>業務委託</span>
+          <div class="title">③ 業務委託（個人事業主）</div>
+          <p class="desc">自由度高め。副業・週1〜・スポット参加も相談OK。</p>
+          <ul class="bullets">
+            <li><div class="ico">🕒</div><div><b>働き方が選べる</b><span>日数・時間帯・案件タイプ</span></div></li>
+            <li><div class="ico">🧭</div><div><b>次の道も用意</b><span>慣れたらFCへステップ可能</span></div></li>
+          </ul>
+        </div>
 
-          <div class="card">
-            <span class="badge"><span class="dot" style="background:var(--ofa-green)"></span>WORK</span>
-            <h3>③ 業務委託（個人事業主）</h3>
-            <p>
-              会社に縛られず働きたい方向け。
-              稼働日数・時間帯などの自由度を確保しながら、OFAの案件に参加できます。
-            </p>
-            <div class="pillRow">
-              <span class="pill">週1〜/副業OK</span>
-              <span class="pill">スポット稼働も可</span>
-              <span class="pill">未経験サポート</span>
-              <span class="pill">独立準備にも◎</span>
-            </div>
-          </div>
+        <div class="card">
+          <span class="label"><span class="dot" style="background:var(--b)"></span>案件オーナー</span>
+          <div class="title">④ 案件オーナー制度</div>
+          <p class="desc"><b>案件／手配／人材</b>のどれかで協力し、事業参画できる仕組み。</p>
+          <ul class="bullets">
+            <li><div class="ico">🧲</div><div><b>案件</b><span>取引先・仕事の提供</span></div></li>
+            <li><div class="ico">🧠</div><div><b>手配</b><span>配車・品質・運用設計</span></div></li>
+            <li><div class="ico">👥</div><div><b>人材</b><span>ドライバー確保・協力会社</span></div></li>
+          </ul>
+        </div>
 
-          <div class="card">
-            <span class="badge"><span class="dot" style="background:var(--ofa-blue)"></span>OWNER</span>
-            <h3>④ 案件オーナー制度</h3>
-            <p>
-              OFA独自の「物流 × 事業参画」モデル。<br>
-              <b>案件／手配／人材</b>のどれかに協力し、物流事業に参加できます。
-            </p>
-            <ul class="list">
-              <li class="li">
-                <div class="icon">🧲</div>
-                <div>
-                  <b>案件（仕事）を持っている</b>
-                  <span>荷主・取引先・案件紹介など</span>
-                </div>
-              </li>
-              <li class="li">
-                <div class="icon">🧠</div>
-                <div>
-                  <b>手配（運用）に強い</b>
-                  <span>配車・管理・スケジュール・品質</span>
-                </div>
-              </li>
-              <li class="li">
-                <div class="icon">👥</div>
-                <div>
-                  <b>人材（ドライバー）を集められる</b>
-                  <span>採用・協力会社・チーム形成</span>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <div class="card full">
+          <span class="label"><span class="dot" style="background:var(--p)"></span>tebura-（発送代行）</span>
+          <div class="title">⑤ tebura-：発送を“手ぶら化”</div>
+          <p class="desc">梱包・集荷・発送をまとめて支援。<b>投げっぱ（送りっぱ）</b>も対応可能。</p>
 
-          <div class="card full">
-            <span class="badge"><span class="dot" style="background:var(--ofa-pink)"></span>tebura-</span>
-            <h3>⑤ tebura-（テブラ）｜発送代行サービス</h3>
-            <p>
-              “手ぶらで発送できる” 発送サポート。梱包・集荷・発送をまとめて代行し、
-              個人〜小規模事業者の物流をラクにします。
-            </p>
-            <div class="grid">
-              <div class="card third" style="background:#fff; box-shadow:none;">
-                <h3 style="margin-top:0;">📦 発送代行</h3>
-                <p>梱包・集荷・発送の一連をサポート。作業のムダを削減。</p>
-              </div>
-              <div class="card third" style="background:#fff; box-shadow:none;">
-                <h3 style="margin-top:0;">🎯 投げっぱ（送りっぱ）</h3>
-                <p>「とにかく任せたい」ニーズに対応。発送業務を丸投げOK。</p>
-              </div>
-              <div class="card third" style="background:#fff; box-shadow:none;">
-                <h3 style="margin-top:0;">🧾 将来拡張</h3>
-                <p>QR発送・ロッカー連携・海外発送など、拡張性ある設計。</p>
-              </div>
-            </div>
-            <p class="note">※サービス名称・内容は、運用地域・提携状況により拡張/変更可能です。</p>
+          <div class="steps">
+            <div class="step"><div class="num">1</div><div><b>発送がしんどい</b><span>梱包・ラベル・集荷が負担…</span></div></div>
+            <div class="step"><div class="num">2</div><div><b>tebura-で軽くする</b><span>発送工程を減らして売上に集中</span></div></div>
+            <div class="step"><div class="num">3</div><div><b>将来拡張もOK</b><span>QR発送・ロッカー連携・海外など</span></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Plans -->
-    <section id="plans">
-      <div class="container">
-        <div class="sectionHead">
-          <h2>🧭 プラン詳細（案内しやすい版）</h2>
-          <p>ここは “説明者の台本” になるように作っています。<b>上から順に読めば案内できます。</b></p>
-        </div>
-
-        <div class="grid">
-          <!-- Member FC -->
-          <div class="card">
-            <div class="planTop">
-              <div>
-                <span class="badge"><span class="dot" style="background:var(--ofa-yellow)"></span>OFAフランチャイズ｜メンバー</span>
-                <h3>メンバーFC（個人向け）</h3>
-              </div>
-              <div class="pillRow">
-                <span class="pill">未経験OK</span>
-                <span class="pill">車両貸出OK</span>
-                <span class="pill">研修あり</span>
-              </div>
-            </div>
-            <p>
-              「まずは稼ぐ」「現場を理解する」「独立の土台を作る」ための入口。
-              仕事の取り方が分からなくても、OFAの仕組みでスタートできます。
-            </p>
-            <ul class="list">
-              <li class="li">
-                <div class="icon">✅</div>
-                <div><b>向いてる人</b><span>未経験／転職／副業→本業／独立したい</span></div>
-              </li>
-              <li class="li">
-                <div class="icon">🛠</div>
-                <div><b>受けられるサポート</b><span>研修・案件参加・運用フォロー（現場の型）</span></div>
-              </li>
-              <li class="li">
-                <div class="icon">🎯</div>
-                <div><b>ゴール</b><span>安定稼働 → 月収UP → 次のステージ（拠点/複数台）</span></div>
-              </li>
-            </ul>
-            <div class="ctaMini">
-              <a class="btn btnPrimary" href="#contact">メンバーFC相談する</a>
-              <a class="btn" href="#faq">Q&Aを見る</a>
-            </div>
-          </div>
-
-          <!-- Partner FC -->
-          <div class="card">
-            <div class="planTop">
-              <div>
-                <span class="badge"><span class="dot" style="background:var(--ofa-yellow)"></span>OFAフランチャイズ｜パートナー</span>
-                <h3>パートナーFC（複数台・法人向け）</h3>
-              </div>
-              <div class="pillRow">
-                <span class="pill">拠点化</span>
-                <span class="pill">マネジメント</span>
-                <span class="pill">複数台運用</span>
-              </div>
-            </div>
-            <p>
-              「運ぶ」だけで終わらせず、<b>チーム・拠点・利益</b>を作っていくステージ。
-              ドライバー管理・案件調整を行い、地域の運用を強くします。
-            </p>
-            <ul class="list">
-              <li class="li">
-                <div class="icon">👑</div>
-                <div><b>向いてる人</b><span>経験者／複数台持ち／法人／拠点を作りたい</span></div>
-              </li>
-              <li class="li">
-                <div class="icon">🧩</div>
-                <div><b>役割</b><span>採用・教育・稼働管理・品質管理・配車補助など</span></div>
-              </li>
-              <li class="li">
-                <div class="icon">📈</div>
-                <div><b>ゴール</b><span>地域拠点の確立 → 安定利益 → さらなる拡大</span></div>
-              </li>
-            </ul>
-            <div class="ctaMini">
-              <a class="btn btnPrimary" href="#contact">パートナーFC相談する</a>
-              <a class="btn" href="#recommend">おすすめ判定へ</a>
-            </div>
-          </div>
-
-          <!-- Outsourcing -->
-          <div class="card">
-            <div class="planTop">
-              <div>
-                <span class="badge"><span class="dot" style="background:var(--ofa-green)"></span>業務委託</span>
-                <h3>業務委託（個人事業主）</h3>
-              </div>
-              <div class="pillRow">
-                <span class="pill">自由度高め</span>
-                <span class="pill">副業OK</span>
-                <span class="pill">スポット可</span>
-              </div>
-            </div>
-            <p>
-              「まずは短期で始めたい」「本業と両立したい」方向け。
-              稼働スタイルに合わせて案件へ参加できます。
-            </p>
-            <ul class="list">
-              <li class="li">
-                <div class="icon">🕒</div>
-                <div><b>働き方</b><span>週1〜／単発／時間帯調整など</span></div>
-              </li>
-              <li class="li">
-                <div class="icon">🚗</div>
-                <div><b>車両</b><span>持込 or 貸出（運用条件により）</span></div>
-              </li>
-              <li class="li">
-                <div class="icon">🧭</div>
-                <div><b>次の道</b><span>慣れたらメンバーFCへ、拠点化へもステップ可能</span></div>
-              </li>
-            </ul>
-            <div class="ctaMini">
-              <a class="btn btnPrimary" href="#contact">業務委託で相談する</a>
-              <a class="btn" href="#faq">契約/注意点を見る</a>
-            </div>
-          </div>
-
-          <!-- Case Owner -->
-          <div class="card">
-            <div class="planTop">
-              <div>
-                <span class="badge"><span class="dot" style="background:var(--ofa-blue)"></span>案件オーナー制度</span>
-                <h3>案件オーナー（案件・手配・人材で協力）</h3>
-              </div>
-              <div class="pillRow">
-                <span class="pill">案件参画</span>
-                <span class="pill">運用強化</span>
-                <span class="pill">人材供給</span>
-              </div>
-            </div>
-            <p>
-              「物流に参入したい」「案件はあるが運用が足りない」「人材を集められる」
-              など、<b>強みの一部</b>でOFAと組める制度です。
-            </p>
-            <ul class="list">
-              <li class="li">
-                <div class="icon">📌</div>
-                <div><b>協力ポイント</b><span>案件 / 手配 / 人材のいずれか（または複合）</span></div>
-              </li>
-              <li class="li">
-                <div class="icon">🧰</div>
-                <div><b>OFAが提供</b><span>運用の型・現場品質・ネットワーク・仕組み</span></div>
-              </li>
-              <li class="li">
-                <div class="icon">🧠</div>
-                <div><b>狙い</b><span>強みを掛け合わせて、勝てる運用を作る</span></div>
-              </li>
-            </ul>
-            <div class="ctaMini">
-              <a class="btn btnPrimary" href="#contact">案件オーナー相談する</a>
-              <a class="btn" href="#business">全体像へ戻る</a>
-            </div>
-          </div>
-
-          <!-- tebura -->
-          <div class="card full">
-            <div class="planTop">
-              <div>
-                <span class="badge"><span class="dot" style="background:var(--ofa-pink)"></span>tebura-（発送代行）</span>
-                <h3>tebura-（テブラ）｜発送を “手ぶら化” するサービス</h3>
-              </div>
-              <div class="pillRow">
-                <span class="pill">発送代行</span>
-                <span class="pill">投げっぱ（送りっぱ）</span>
-                <span class="pill">EC/個人向け</span>
-                <span class="pill">将来拡張OK</span>
-              </div>
-            </div>
-
-            <p>
-              商品の販売はできても「梱包・発送がしんどい」問題を解決。<br>
-              tebura-は、発送に関する手間を減らし、<b>売上に集中できる環境</b>を作ります。
-            </p>
-
-            <div class="grid" style="margin-top:8px;">
-              <div class="card third" style="background:#fff; box-shadow:none;">
-                <span class="badge"><span class="dot" style="background:var(--ofa-yellow)"></span>基本</span>
-                <h3 style="margin-top:10px;">発送代行</h3>
-                <p>梱包・集荷・発送のサポート（運用範囲は地域/提携で調整可能）。</p>
-                <ul class="list">
-                  <li class="li"><div class="icon">📦</div><div><b>梱包/ラベル</b><span>発送までの準備を省力化</span></div></li>
-                  <li class="li"><div class="icon">🚚</div><div><b>集荷</b><span>タイミング調整も相談OK</span></div></li>
-                </ul>
-              </div>
-
-              <div class="card third" style="background:#fff; box-shadow:none;">
-                <span class="badge"><span class="dot" style="background:var(--ofa-red)"></span>人気</span>
-                <h3 style="margin-top:10px;">投げっぱ（送りっぱ）</h3>
-                <p>「もう任せたい」ニーズに対応。発送業務を一括で引き受けます。</p>
-                <ul class="list">
-                  <li class="li"><div class="icon">🧯</div><div><b>手間ゼロ寄り</b><span>時間を売上に変える</span></div></li>
-                  <li class="li"><div class="icon">🎯</div><div><b>小規模に強い</b><span>個人/副業/小規模ECもOK</span></div></li>
-                </ul>
-              </div>
-
-              <div class="card third" style="background:#fff; box-shadow:none;">
-                <span class="badge"><span class="dot" style="background:var(--ofa-blue)"></span>未来</span>
-                <h3 style="margin-top:10px;">将来の拡張</h3>
-                <p>QR発送、宅配ロッカー連携、海外発送など、展開に合わせて拡張可能。</p>
-                <ul class="list">
-                  <li class="li"><div class="icon">🔗</div><div><b>連携</b><span>ロッカー/QR/システム等</span></div></li>
-                  <li class="li"><div class="icon">🌏</div><div><b>海外</b><span>海外展開も視野（段階導入）</span></div></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="ctaMini">
-              <a class="btn btnPrimary" href="#contact">tebura-を相談する</a>
-              <a class="btn" href="#faq">Q&A（発送代行）を見る</a>
-            </div>
-          </div>
-
-        </div>
+    <!-- CHOOSE -->
+    <section class="sec" id="choose">
+      <div class="secHead">
+        <h2>🎯 どれが合う？（一瞬で判断）</h2>
+        <p>説明者はここだけ見せてもOK。迷いが消えます。</p>
       </div>
-    </section>
 
-    <!-- Recommend -->
-    <section id="recommend">
-      <div class="container">
-        <div class="sectionHead">
-          <h2>🎯 あなたはどれ？おすすめ早見表</h2>
-          <p>相手に「どれが合うか」を一瞬で判断してもらうためのセクションです。</p>
+      <div class="grid">
+        <div class="card third">
+          <span class="label"><span class="dot" style="background:var(--y)"></span>最短で始める</span>
+          <div class="title">メンバーFC</div>
+          <p class="desc">未経験でもOK。まず“稼ぐ土台”を作る入口。</p>
+        </div>
+        <div class="card third">
+          <span class="label"><span class="dot" style="background:var(--g)"></span>自由度重視</span>
+          <div class="title">業務委託</div>
+          <p class="desc">週1〜/副業/スポット。ペース優先で参加。</p>
+        </div>
+        <div class="card third">
+          <span class="label"><span class="dot" style="background:var(--b)"></span>拠点化したい</span>
+          <div class="title">パートナーFC</div>
+          <p class="desc">複数台・管理・地域で勝つ。経営側へ。</p>
         </div>
 
-        <div class="grid">
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-yellow)"></span>最短で始めたい</span>
-            <h3>メンバーFC</h3>
-            <p>未経験からでも最短スタート。稼ぐ土台を作りたい人へ。</p>
-            <ul class="list">
-              <li class="li"><div class="icon">⚡</div><div><b>迷ってる人向け</b><span>“まず稼ぐ” を最短化</span></div></li>
-            </ul>
-          </div>
-
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-green)"></span>自由度重視</span>
-            <h3>業務委託</h3>
-            <p>週1〜・副業・スポットなど、生活に合わせて稼働したい人へ。</p>
-            <ul class="list">
-              <li class="li"><div class="icon">🕊</div><div><b>ペース重視</b><span>無理なく参加</span></div></li>
-            </ul>
-          </div>
-
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-blue)"></span>拠点化したい</span>
-            <h3>パートナーFC</h3>
-            <p>複数台運用・管理・地域で勝つ。経営側へ進みたい人へ。</p>
-            <ul class="list">
-              <li class="li"><div class="icon">🏆</div><div><b>伸ばす人向け</b><span>チーム/拠点で利益</span></div></li>
-            </ul>
-          </div>
-
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-red)"></span>案件がある</span>
-            <h3>案件オーナー</h3>
-            <p>仕事や取引先はあるが、運用が足りない人・会社に。</p>
-            <ul class="list">
-              <li class="li"><div class="icon">🧲</div><div><b>案件×OFA</b><span>運用の型で勝つ</span></div></li>
-            </ul>
-          </div>
-
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-purple)"></span>手配が得意</span>
-            <h3>案件オーナー</h3>
-            <p>配車・管理・品質の強みで参画。運用改善が武器の人に。</p>
-            <ul class="list">
-              <li class="li"><div class="icon">🧠</div><div><b>現場を整える</b><span>安定運用で利益化</span></div></li>
-            </ul>
-          </div>
-
-          <div class="card third">
-            <span class="badge"><span class="dot" style="background:var(--ofa-pink)"></span>発送がしんどい</span>
-            <h3>tebura-</h3>
-            <p>梱包・発送を手ぶら化。売上に集中したいEC/個人に。</p>
-            <ul class="list">
-              <li class="li"><div class="icon">📦</div><div><b>丸投げOK</b><span>投げっぱ（送りっぱ）</span></div></li>
-            </ul>
-          </div>
+        <div class="card third">
+          <span class="label"><span class="dot" style="background:var(--r)"></span>案件を持ってる</span>
+          <div class="title">案件オーナー</div>
+          <p class="desc">仕事はある。運用はOFAと一緒に強化。</p>
         </div>
-
-      </div>
-    </section>
-
-    <!-- Why OFA -->
-    <section id="why">
-      <div class="container">
-        <div class="sectionHead">
-          <h2>✨ OFAが選ばれる理由</h2>
-          <p>「勢い」だけじゃなく、<b>仕組みで勝つ</b>。現場で回る運用設計にこだわります。</p>
+        <div class="card third">
+          <span class="label"><span class="dot" style="background:var(--pu)"></span>手配が得意</span>
+          <div class="title">案件オーナー</div>
+          <p class="desc">配車・品質・運用改善で参画。</p>
         </div>
-
-        <div class="grid">
-          <div class="card">
-            <span class="badge"><span class="dot" style="background:var(--ofa-green)"></span>運用の型</span>
-            <h3>ルール・管理・仕組みがある</h3>
-            <p>点呼・日報・管理・教育など、現場が崩れない仕組みで“継続的に稼げる”を作ります。</p>
-            <ul class="list">
-              <li class="li"><div class="icon">🧩</div><div><b>見える化</b><span>運用ルールが明確で迷わない</span></div></li>
-              <li class="li"><div class="icon">🧯</div><div><b>トラブル抑制</b><span>事故・遅延・品質の管理を強化</span></div></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <span class="badge"><span class="dot" style="background:var(--ofa-blue)"></span>ネットワーク</span>
-            <h3>案件と人材が“面”で動く</h3>
-            <p>全国展開だから、繁忙期や増車要請にも対応しやすい。地域も守りながら伸ばせます。</p>
-            <ul class="list">
-              <li class="li"><div class="icon">🗺</div><div><b>広域対応</b><span>エリア跨ぎの調整も相談可</span></div></li>
-              <li class="li"><div class="icon">📈</div><div><b>拡大に強い</b><span>パートナーFC/案件オーナーで伸ばせる</span></div></li>
-            </ul>
-          </div>
-
-          <div class="card full">
-            <span class="badge"><span class="dot" style="background:var(--ofa-yellow)"></span>文化</span>
-            <h3>“One for All, All for One” のチーム力</h3>
-            <p>
-              OFAは、仲間の成功が自分の成功につながる文化を大切にします。<br>
-              稼ぐだけではなく、地域で信頼される“カッコいい物流”を一緒につくります。
-            </p>
-          </div>
+        <div class="card third">
+          <span class="label"><span class="dot" style="background:var(--p)"></span>発送が負担</span>
+          <div class="title">tebura-</div>
+          <p class="desc">投げっぱ対応。発送を手ぶら化。</p>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq">
-      <div class="container">
-        <div class="sectionHead">
-          <h2>❓ よくある質問（Q&A）</h2>
-          <p>説明中に必ず出る質問を先回り。必要なら「全部開く」で一気に表示できます。</p>
-        </div>
+    <section class="sec" id="faq">
+      <div class="secHead">
+        <h2>❓ Q&A（短く回答）</h2>
+        <p>“不安つぶし”だけ。長文は出さない。</p>
+      </div>
 
-        <div class="grid">
-          <div class="card full">
-            <div class="accGrid">
-              <details class="qa">
-                <summary>
-                  Q. 未経験でも本当に大丈夫？
-                  <span class="sumRight"><span>クリックで開く</span><span class="chev">▼</span></span>
-                </summary>
-                <div class="accBody">
-                  A. 大丈夫です。メンバーFCや業務委託は、未経験スタートを前提に設計しています。<br>
-                  研修・現場の型（報告/ルール/動き方）を用意し、最初の立ち上げを支援します。
-                </div>
-              </details>
+      <div class="grid">
+        <div class="card full">
+          <div style="display:grid; gap:10px;">
+            <details class="qa">
+              <summary>未経験でも大丈夫？ <span class="chev">▼</span></summary>
+              <div class="ans">大丈夫です。未経験前提で「研修」「現場の型」「案件参加」を整えています。</div>
+            </details>
 
-              <details class="qa">
-                <summary>
-                  Q. メンバーFCと業務委託の違いは？
-                  <span class="sumRight"><span>クリックで開く</span><span class="chev">▼</span></span>
-                </summary>
-                <div class="accBody">
-                  A. 業務委託は「働き方の自由度」を優先した参加モデル。<br>
-                  メンバーFCは「成長・独立・次のステージ」まで見据えた“仕組み参加”の色が濃い入口です。
-                </div>
-              </details>
+            <details class="qa">
+              <summary>メンバーFCと業務委託の違いは？ <span class="chev">▼</span></summary>
+              <div class="ans">業務委託＝自由度優先。メンバーFC＝成長・独立まで見据えた“仕組み参加”の入口です。</div>
+            </details>
 
-              <details class="qa">
-                <summary>
-                  Q. パートナーFCは何ができる？
-                  <span class="sumRight"><span>クリックで開く</span><span class="chev">▼</span></span>
-                </summary>
-                <div class="accBody">
-                  A. 複数台運用・採用・教育・稼働管理・品質管理など、地域の運用を強くできます。<br>
-                  「運ぶ」から「拠点を作る」へ進みたい方向けです。
-                </div>
-              </details>
+            <details class="qa">
+              <summary>パートナーFCは何ができる？ <span class="chev">▼</span></summary>
+              <div class="ans">複数台運用・採用・教育・稼働/品質管理など、地域拠点を作って利益を安定化できます。</div>
+            </details>
 
-              <details class="qa">
-                <summary>
-                  Q. 案件オーナーは何をすればいい？
-                  <span class="sumRight"><span>クリックで開く</span><span class="chev">▼</span></span>
-                </summary>
-                <div class="accBody">
-                  A. 「案件」「手配」「人材」のいずれか（または複合）で協力します。<br>
-                  例：取引先紹介／配車・管理の支援／ドライバー募集・協力会社連携 など。<br>
-                  強みを掛け合わせて“勝てる運用”を作るモデルです。
-                </div>
-              </details>
+            <details class="qa">
+              <summary>案件オーナーは何をすればいい？ <span class="chev">▼</span></summary>
+              <div class="ans">案件／手配／人材のどれか（または複合）で協力。強みを掛け合わせて勝てる運用を作ります。</div>
+            </details>
 
-              <details class="qa">
-                <summary>
-                  Q. tebura-（発送代行）はどんな人向け？
-                  <span class="sumRight"><span>クリックで開く</span><span class="chev">▼</span></span>
-                </summary>
-                <div class="accBody">
-                  A. EC・個人販売・副業など、発送作業が負担になっている方向けです。<br>
-                  梱包・集荷・発送をサポートし、「売上に集中できる」状態を作ります。投げっぱ（送りっぱ）対応も可能です。
-                </div>
-              </details>
+            <details class="qa">
+              <summary>相談前に準備するものは？ <span class="chev">▼</span></summary>
+              <div class="ans">希望エリア／働き方（週○日）／車両有無／経験有無／目標（稼ぐor拠点化）だけでOKです。</div>
+            </details>
 
-              <details class="qa">
-                <summary>
-                  Q. 相談したら何を準備すればいい？
-                  <span class="sumRight"><span>クリックで開く</span><span class="chev">▼</span></span>
-                </summary>
-                <div class="accBody">
-                  A. まずは下記だけでOKです。<br>
-                  ・希望エリア　・希望の働き方（週○日、時間帯）　・車両有無　・経験有無　・目標（月収/拠点化など）<br>
-                  そこから最適な入口（業務委託/メンバー/パートナー/案件オーナー/tebura-）をご案内します。
-                </div>
-              </details>
+            <div class="rowBtns">
+              <button class="miniBtn" onclick="openAll()">✅ 全部開く</button>
+              <button class="miniBtn" onclick="closeAll()">🧊 閉じる</button>
+              <button class="miniBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆ 上へ</button>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="sectionHead">
-          <h2>📩 お問い合わせ・資料請求</h2>
-          <p>説明を聞いて「合いそう」と思ったら、ここで完結。<b>LINE/電話/フォーム</b>に対応できます。</p>
-        </div>
+    <!-- CONTACT -->
+    <section class="sec" id="contact">
+      <div class="secHead">
+        <h2>📩 相談・資料請求</h2>
+        <p>ここだけ差し替えれば運用できます。</p>
+      </div>
 
-        <div class="finalCta">
-          <h2>一緒に、OFAで “勝てる物流” を作りましょう🔥</h2>
-          <p>
-            メンバーFC／パートナーFC／業務委託／案件オーナー／tebura-<br>
-            どれからでもOK。あなたの状況に合わせて、最短ルートをご案内します。
+      <div class="grid">
+        <div class="card full">
+          <span class="label"><span class="dot" style="background:var(--y)"></span>編集ポイント</span>
+          <div class="title">リンクの差し替え（ここだけ！）</div>
+          <p class="desc">
+            下の固定ボタン（LINE/電話/メール）をあなたの情報に変更してください。<br>
+            ※GitHub Pagesでそのまま動きます。
           </p>
-
-          <div class="finalRow">
-            <!-- ▼▼▼ ここはあなたの運用に合わせて差し替え ▼▼▼ -->
-            <a class="btn btnPrimary" href="https://line.me/R/ti/p/%40YOUR_LINE_ID" target="_blank" rel="noopener">📱 LINEで相談する</a>
-            <a class="btn" href="tel:0000000000">☎ 電話する</a>
-            <a class="btn btnGhost" href="mailto:info@example.com">✉ メールする</a>
-            <a class="btn" href="#top">⬆️ ページ上へ</a>
-            <!-- ▲▲▲ ここまで ▲▲▲ -->
-          </div>
-
-          <div class="divider" style="margin-top:16px;"></div>
-          <p class="note" style="margin-top:12px;">
-            ✅ 編集ポイント：<br>
-            ・LINEリンク：<b>https://line.me/R/ti/p/%40YOUR_LINE_ID</b> をあなたのLINEに変更<br>
-            ・電話：<b>tel:</b> の番号変更　・メール：<b>mailto:</b> 変更<br>
-            ・ロゴを画像にする場合は、上部の <b>div.logo</b> を <b>&lt;img&gt;</b> に差し替えOK
-          </p>
+          <ul class="bullets">
+            <li><div class="ico">📱</div><div><b>LINE</b><span>https://line.me/R/ti/p/%40YOUR_LINE_ID</span></div></li>
+            <li><div class="ico">☎</div><div><b>電話</b><span>tel:0000000000</span></div></li>
+            <li><div class="ico">✉</div><div><b>メール</b><span>mailto:info@example.com</span></div></li>
+          </ul>
         </div>
-
-        <div class="card full" style="margin-top:14px;">
-          <span class="badge"><span class="dot" style="background:var(--ofa-purple)"></span>メモ（説明者用）</span>
-          <h3>おすすめの“話し方テンプレ”</h3>
-          <p>
-            ①「OFAは案件×人材×仕組みをつなぐ会社」→ ②「5つの事業」→ ③「あなたはどれが合う？」→ ④「Q&Aで不安つぶし」→ ⑤「問い合わせ」
-            の順に案内すると、ほぼ確実に伝わります。
-          </p>
-        </div>
-
       </div>
     </section>
-  </main>
 
-  <button class="toTop" id="toTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆</button>
+  </div><!-- /wrap -->
+
+  <!-- Bottom CTA (APP like) -->
+  <div class="bottomBar" role="navigation" aria-label="bottom cta">
+    <div class="bottomInner">
+      <!-- ▼▼▼ ここを差し替え ▼▼▼ -->
+      <a class="cta ctaPrimary" href="https://line.me/R/ti/p/%40YOUR_LINE_ID" target="_blank" rel="noopener">
+        📱 LINEで相談
+      </a>
+      <a class="cta ctaGhost" href="tel:0000000000">
+        ☎ 電話する
+      </a>
+      <div class="subCtaNote">※24時間受付（返信は順次）／まずは「エリア・働き方」だけでOK</div>
+      <!-- ▲▲▲ ここまで ▲▲▲ -->
+    </div>
+  </div>
 
   <script>
-    // Nav active highlight (scroll spy)
-    const sections = ["overview","business","plans","recommend","faq","contact"].map(id => document.getElementById(id));
-    const navLinks = Array.from(document.querySelectorAll(".navLink"));
-    const toTopBtn = document.getElementById("toTop");
-
-    function setActive() {
-      const y = window.scrollY + 140;
-      let current = "overview";
-      for (const s of sections) {
-        if (s && s.offsetTop <= y) current = s.id;
-      }
-      navLinks.forEach(a => {
-        const target = a.getAttribute("href").replace("#","");
-        a.classList.toggle("active", target === current);
-      });
-      if (window.scrollY > 600) toTopBtn.classList.add("show");
-      else toTopBtn.classList.remove("show");
+    function scrollToId(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.scrollIntoView({behavior:'smooth', block:'start'});
     }
-    window.addEventListener("scroll", setActive, { passive:true });
-    window.addEventListener("load", setActive);
 
-    // Q&A open/close all
-    function openAllAccordions(){
-      document.querySelectorAll("details.qa").forEach(d => d.open = true);
+    function openAll(){
+      document.querySelectorAll('details.qa').forEach(d => d.open = true);
     }
-    function closeAllAccordions(){
-      document.querySelectorAll("details.qa").forEach(d => d.open = false);
-    }
-    window.openAllAccordions = openAllAccordions;
-    window.closeAllAccordions = closeAllAccordions;
-
-    // Copy URL
-    async function copyUrl(){
-      try{
-        await navigator.clipboard.writeText(location.href);
-        toast("URLをコピーしました 🔗");
-      }catch(e){
-        toast("コピーできませんでした（端末設定をご確認ください）");
-      }
-    }
-    window.copyUrl = copyUrl;
-
-    // Tiny toast
-    function toast(msg){
-      const el = document.createElement("div");
-      el.textContent = msg;
-      el.style.position="fixed";
-      el.style.left="50%";
-      el.style.bottom="18px";
-      el.style.transform="translateX(-50%)";
-      el.style.padding="12px 14px";
-      el.style.borderRadius="14px";
-      el.style.background="rgba(11,16,32,.92)";
-      el.style.color="#fff";
-      el.style.fontWeight="900";
-      el.style.boxShadow="0 14px 30px rgba(2,6,23,.25)";
-      el.style.zIndex="99";
-      el.style.opacity="0";
-      el.style.transition="opacity .18s ease, transform .18s ease";
-      document.body.appendChild(el);
-      requestAnimationFrame(()=>{ el.style.opacity="1"; el.style.transform="translateX(-50%) translateY(-2px)"; });
-      setTimeout(()=>{
-        el.style.opacity="0";
-        el.style.transform="translateX(-50%) translateY(2px)";
-        setTimeout(()=>el.remove(), 220);
-      }, 1600);
+    function closeAll(){
+      document.querySelectorAll('details.qa').forEach(d => d.open = false);
     }
   </script>
 </body>
