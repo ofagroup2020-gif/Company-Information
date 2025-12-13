@@ -1,943 +1,1326 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>株式会社OFA｜軽貨物フランチャイズ完全説明（tebura-含む）</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>株式会社OFA｜軽貨物フランチャイズ / tebura-（手ぶら〜）</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-<style>
-  :root{
-    --navy:#0b2a55;
-    --navy2:#0f3b78;
-    --yellow:#ffd400;
-    --yellow2:#ffef85;
-    --gold:#ffcc00;
-    --ink:#111827;
-    --muted:#6b7280;
-    --card:#ffffff;
-    --line:#e5e7eb;
-    --hl:#fff2a8;
-  }
+  <style>
+    :root{
+      /* OFA-ish */
+      --ink:#0b1020;
+      --text:#111827;
+      --muted:#5b6475;
 
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family:"Noto Sans JP",system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-    color:var(--ink);
-    background:
-      radial-gradient(900px 450px at 20% -10%, rgba(255,212,0,.35), transparent 60%),
-      radial-gradient(900px 450px at 90% 0%, rgba(255,90,0,.18), transparent 60%),
-      radial-gradient(900px 450px at 10% 40%, rgba(0,140,255,.12), transparent 60%),
-      radial-gradient(900px 450px at 80% 60%, rgba(255,0,120,.10), transparent 60%),
-      linear-gradient(180deg,#fffdf3 0%, #ffffff 45%, #f6f9ff 100%);
-  }
+      --navy:#0A2A6A;         /* 紺固定（鮮やか寄り） */
+      --blue:#1D4ED8;         /* vivid blue */
+      --cyan:#06B6D4;
+      --yellow:#FFC400;       /* OFAイエロー */
+      --yellow2:#FFE46A;
 
-  /* ===== Header ===== */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:linear-gradient(90deg,var(--yellow) 0%, var(--yellow2) 50%, var(--yellow) 100%);
-    border-bottom:1px solid rgba(0,0,0,.08);
-    backdrop-filter:saturate(1.2);
-  }
-  .head{
-    max-width:1050px; margin:0 auto;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:12px 16px;
-    gap:12px;
-  }
-  .brand{
-    display:flex; align-items:center; gap:10px;
-  }
-  .logoDot{
-    width:42px; height:42px; border-radius:12px;
-    background:linear-gradient(180deg,var(--navy) 0%, var(--navy2) 100%);
-    display:grid; place-items:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
-    color:#fff; font-weight:900;
-  }
-  .brand h1{
-    margin:0; font-size:15px; line-height:1.1;
-    letter-spacing:.2px;
-  }
-  .brand small{
-    display:block; margin-top:3px;
-    font-size:11px; color:rgba(0,0,0,.7);
-    font-weight:700;
-  }
-  .tagline{
-    display:flex; flex-direction:column; align-items:flex-end; gap:4px;
-    text-align:right;
-  }
-  .tagline .chip{
-    font-size:11px; font-weight:900; color:#fff;
-    background:linear-gradient(180deg,var(--navy) 0%, var(--navy2) 100%);
-    padding:6px 10px; border-radius:999px;
-    box-shadow:0 10px 22px rgba(0,0,0,.12);
-  }
-  .tagline .sub{
-    font-size:11px; color:rgba(0,0,0,.75); font-weight:800;
-  }
+      --card:#ffffff;
+      --line:#e7eaf0;
 
-  /* ===== Layout ===== */
-  .wrap{max-width:1050px; margin:0 auto; padding:18px 16px 64px;}
-  .hero{
-    margin-top:14px;
-    background:linear-gradient(135deg,var(--navy) 0%, var(--navy2) 60%);
-    color:#fff;
-    border-radius:22px;
-    padding:28px 18px;
-    box-shadow:0 18px 55px rgba(0,0,0,.18);
-    position:relative;
-    overflow:hidden;
-  }
-  .hero:before{
-    content:"";
-    position:absolute; inset:-2px;
-    background:
-      radial-gradient(500px 200px at 15% 10%, rgba(255,212,0,.35), transparent 60%),
-      radial-gradient(500px 220px at 85% 0%, rgba(255,90,0,.22), transparent 65%),
-      radial-gradient(420px 220px at 70% 70%, rgba(0,180,255,.12), transparent 60%);
-    pointer-events:none;
-  }
-  .hero *{position:relative}
-  .hero h2{
-    margin:0 0 10px; font-size:22px; line-height:1.35; font-weight:900;
-  }
-  .hero p{
-    margin:0; font-size:14px; line-height:1.9; color:rgba(255,255,255,.9);
-  }
-  .kpi{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-    margin-top:16px;
-  }
-  .kpi .card{
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.18);
-    border-radius:16px;
-    padding:14px;
-  }
-  .kpi .n{
-    font-size:22px; font-weight:900;
-  }
-  .kpi .t{
-    font-size:12px; opacity:.9; margin-top:4px; font-weight:700;
-  }
-  .note{
-    margin-top:10px;
-    font-size:11px; opacity:.85;
-  }
+      --shadow: 0 14px 35px rgba(10,42,106,.16);
+      --radius: 18px;
+      --radius2: 26px;
 
-  /* ===== Section ===== */
-  .sec{margin-top:26px;}
-  .secTitle{
-    display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
-    margin:0 0 12px;
-  }
-  .secTitle h3{
-    margin:0;
-    font-size:18px;
-    letter-spacing:.2px;
-  }
-  .secTitle .hint{
-    font-size:11px; color:var(--muted); font-weight:700;
-  }
+      --max: 1040px;
+    }
 
-  /* ===== Star Blocks ===== */
-  .block{
-    background:var(--card);
-    border:1px solid rgba(17,24,39,.08);
-    border-radius:18px;
-    box-shadow:0 14px 40px rgba(0,0,0,.06);
-    overflow:hidden;
-    margin-bottom:14px;
-  }
-  .blockHead{
-    display:flex; align-items:center; gap:10px;
-    padding:14px 16px;
-    background:linear-gradient(90deg,var(--yellow) 0%, var(--yellow2) 50%, var(--yellow) 100%);
-    border-bottom:1px solid rgba(0,0,0,.08);
-  }
-  .starBadge{
-    width:38px; height:38px;
-    border-radius:14px;
-    background:linear-gradient(180deg,var(--navy) 0%, var(--navy2) 100%);
-    display:grid; place-items:center;
-    box-shadow:0 10px 22px rgba(0,0,0,.16);
-    position:relative;
-  }
-  .starBadge span{
-    color:#fff; font-size:18px;
-    animation:spark 2.1s ease-in-out infinite;
-    text-shadow:0 0 10px rgba(255,255,255,.35);
-  }
-  @keyframes spark{
-    0%{transform:translateY(0) scale(1); opacity:.8}
-    50%{transform:translateY(-1px) scale(1.18); opacity:1}
-    100%{transform:translateY(0) scale(1); opacity:.8}
-  }
-  .blockHead b{
-    font-size:15px; letter-spacing:.1px;
-  }
-  .blockBody{
-    padding:16px;
-    line-height:1.95;
-    font-size:14px;
-  }
-  .hl{
-    background:linear-gradient(transparent 62%, var(--hl) 62%);
-    font-weight:900;
-  }
-  .muted{color:var(--muted)}
-  .bul{
-    margin:10px 0 0; padding-left:18px;
-  }
-  .bul li{margin:6px 0}
-  .mini{
-    font-size:12px; color:var(--muted); font-weight:700;
-  }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 700px at 10% 0%, rgba(255,196,0,.28), transparent 55%),
+        radial-gradient(900px 600px at 90% 20%, rgba(29,78,216,.16), transparent 55%),
+        radial-gradient(1000px 800px at 50% 95%, rgba(6,182,212,.14), transparent 60%),
+        linear-gradient(135deg,
+          rgba(255,196,0,.22) 0%,
+          rgba(255,230,154,.16) 18%,
+          rgba(182,241,255,.14) 40%,
+          rgba(198,212,255,.14) 60%,
+          rgba(255,205,246,.12) 78%,
+          rgba(255,196,0,.20) 100%);
+      overflow-x:hidden;
+    }
 
-  /* ===== Tables ===== */
-  .tblWrap{
-    overflow:auto;
-    border:1px solid var(--line);
-    border-radius:14px;
-    background:#fff;
-  }
-  table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:680px;
-  }
-  th,td{
-    padding:12px 10px;
-    border-bottom:1px solid var(--line);
-    text-align:center;
-    font-size:13px;
-  }
-  th{
-    background:#fff7cc;
-    font-weight:900;
-  }
-  td.left, th.left{text-align:left}
-  .em{
-    font-weight:900;
-    color:var(--navy);
-  }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
 
-  /* ===== Footer CTA ===== */
-  .end{
-    margin-top:30px;
-    background:linear-gradient(135deg,var(--navy) 0%, var(--navy2) 70%);
-    color:#fff;
-    border-radius:22px;
-    padding:22px 18px;
-    box-shadow:0 18px 55px rgba(0,0,0,.18);
-  }
-  .end h4{margin:0 0 10px; font-size:18px}
-  .end p{margin:0; line-height:1.9; font-size:14px; opacity:.95}
-  .end .linebox{
-    margin-top:14px;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.2);
-    padding:14px;
-    border-radius:16px;
-    font-weight:800;
-  }
+    /* Top */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.65);
+      border-bottom: 1px solid rgba(231,234,240,.75);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:0;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: radial-gradient(80% 80% at 20% 20%, rgba(255,255,255,.35), transparent 60%),
+                  linear-gradient(135deg, var(--navy), #0b3aa6);
+      display:grid; place-items:center; box-shadow: 0 10px 22px rgba(10,42,106,.22);
+      flex:0 0 auto;
+    }
+    .logo span{
+      color:white; font-weight:900; letter-spacing:.5px;
+      transform: translateY(-.5px);
+    }
+    .brand-txt{min-width:0}
+    .brand-txt .name{
+      font-weight:900; font-size:14px; letter-spacing:.6px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .brand-txt .motto{
+      font-size:11px; color:rgba(17,24,39,.70);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .tagline{
+      display:flex; gap:10px; align-items:center; justify-content:flex-end;
+      text-align:right; flex:0 0 auto;
+    }
+    .tagline .t1{
+      font-size:12px; font-weight:900; color:var(--navy);
+      letter-spacing:.4px;
+    }
+    .tagline .t2{
+      font-size:12px; font-weight:900; color:var(--blue);
+      letter-spacing:.4px;
+    }
+    .tagline .sep{
+      width:1px; height:14px; background:rgba(10,42,106,.18);
+    }
 
-  /* ===== Scroll reveal ===== */
-  .reveal{opacity:0; transform:translateY(12px); transition:all .6s ease;}
-  .reveal.show{opacity:1; transform:none;}
+    /* Section spacing */
+    section{padding:26px 0}
+    .hero{padding:22px 0 28px}
 
-  @media (min-width:860px){
-    .hero{padding:34px 28px}
-    .hero h2{font-size:28px}
-    .kpi{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .kpi .n{font-size:26px}
-  }
-</style>
+    /* Hero card */
+    .hero-card{
+      border-radius: var(--radius2);
+      background:
+        radial-gradient(900px 520px at 15% 15%, rgba(255,255,255,.22), transparent 55%),
+        linear-gradient(140deg, rgba(10,42,106,.95) 0%, rgba(29,78,216,.88) 48%, rgba(6,182,212,.78) 100%);
+      color:#fff;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      border:1px solid rgba(255,255,255,.20);
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(420px 220px at 10% 15%, rgba(255,196,0,.75), transparent 60%),
+        radial-gradient(520px 320px at 90% 10%, rgba(255,255,255,.25), transparent 60%),
+        radial-gradient(700px 500px at 50% 120%, rgba(255,196,0,.38), transparent 55%);
+      opacity:.55;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+    .hero-in{
+      position:relative;
+      padding:22px 18px 18px;
+    }
+    .hero-eyebrow{
+      display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+      margin-bottom:10px;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.20);
+      font-size:12px; font-weight:800;
+      letter-spacing:.35px;
+    }
+    .hero-title{
+      margin:6px 0 10px;
+      font-size:28px;
+      line-height:1.2;
+      font-weight:900;
+      letter-spacing:.6px;
+      text-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .hero-sub{
+      margin:0 0 16px;
+      color:rgba(255,255,255,.92);
+      line-height:1.75;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+    .hero-sub .hl{
+      background: linear-gradient(90deg, rgba(255,196,0,.55), rgba(255,255,255,.16));
+      padding:0 .25em;
+      border-radius:6px;
+      font-weight:900;
+    }
+
+    /* Stats (no "button" look / just tiles) */
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    .stat{
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:16px;
+      padding:14px 14px;
+    }
+    .stat .v{
+      font-size:22px; font-weight:900; letter-spacing:.3px;
+    }
+    .stat .k{
+      margin-top:4px; font-size:12px; color:rgba(255,255,255,.88); font-weight:700;
+    }
+    .note{
+      margin-top:10px; font-size:11px; color:rgba(255,255,255,.85); line-height:1.6
+    }
+
+    /* Headings with star (no box) */
+    .h2{
+      display:flex; align-items:center; gap:10px;
+      margin:0 0 14px;
+    }
+    .h2 .star{
+      width:22px; height:22px; flex:0 0 auto;
+      filter: drop-shadow(0 8px 18px rgba(10,42,106,.18));
+      animation: twinkle 2.4s ease-in-out infinite;
+      transform-origin:center;
+    }
+    .h2 h2{
+      margin:0;
+      font-size:20px;
+      font-weight:900;
+      letter-spacing:.5px;
+      color:var(--navy);
+    }
+    .lead{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.9;
+      font-weight:600;
+    }
+    .lead .hl{
+      background: linear-gradient(90deg, rgba(255,196,0,.70), rgba(255,230,154,.20), rgba(29,78,216,.10));
+      padding:0 .25em;
+      border-radius:6px;
+      font-weight:900;
+      color:#0b1c44;
+    }
+
+    /* Cards */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    .card{
+      background: rgba(255,255,255,.82);
+      border:1px solid rgba(231,234,240,.95);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px rgba(10,42,106,.08);
+      overflow:hidden;
+      position:relative;
+    }
+    .card .bar{
+      padding:12px 14px;
+      font-weight:900;
+      letter-spacing:.4px;
+      color:#061739;
+      background: linear-gradient(90deg,
+        rgba(255,196,0,.90),
+        rgba(255,230,154,.72),
+        rgba(255,255,255,.00));
+      border-bottom:1px solid rgba(231,234,240,.95);
+    }
+    .card .body{padding:14px 14px 16px}
+    .ul{
+      margin:0; padding-left:1.1em;
+      color:var(--text);
+      line-height:1.9;
+      font-weight:600;
+    }
+    .ul li{margin:4px 0}
+    .ul .hl{
+      background: linear-gradient(90deg, rgba(255,196,0,.65), rgba(255,255,255,0));
+      padding:0 .25em; border-radius:6px; font-weight:900;
+    }
+
+    /* "Important line" */
+    .call{
+      margin-top:10px;
+      padding:14px;
+      border-radius:16px;
+      border:1px dashed rgba(29,78,216,.25);
+      background:
+        radial-gradient(700px 300px at 10% 0%, rgba(29,78,216,.08), transparent 55%),
+        radial-gradient(600px 280px at 90% 30%, rgba(255,196,0,.10), transparent 60%),
+        rgba(255,255,255,.70);
+      color:#0b1c44;
+      line-height:1.9;
+      font-weight:700;
+    }
+
+    /* Tables (表は表らしく) */
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(231,234,240,.95);
+      background:#fff;
+      box-shadow: 0 10px 22px rgba(10,42,106,.06);
+      margin-top:10px;
+    }
+    thead th{
+      text-align:left;
+      padding:12px 12px;
+      font-size:12px;
+      letter-spacing:.3px;
+      background: linear-gradient(90deg, rgba(10,42,106,.10), rgba(255,196,0,.25));
+      color:#0b1c44;
+      border-bottom:1px solid rgba(231,234,240,.95);
+      font-weight:900;
+    }
+    tbody td{
+      padding:12px 12px;
+      border-bottom:1px solid rgba(231,234,240,.85);
+      vertical-align:top;
+      font-weight:600;
+      color:#111827;
+      line-height:1.65;
+    }
+    tbody tr:last-child td{border-bottom:none}
+    .mono{font-variant-numeric: tabular-nums; font-feature-settings:"tnum" 1}
+    .small{font-size:12px; color:var(--muted); line-height:1.8}
+    .badge{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:999px;
+      background: rgba(29,78,216,.10);
+      color: var(--navy);
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size:12px;
+      border:1px solid rgba(29,78,216,.18);
+      white-space:nowrap;
+    }
+    .badge.y{
+      background: rgba(255,196,0,.18);
+      border-color: rgba(255,196,0,.30);
+      color:#5a3b00;
+    }
+
+    /* Image placeholders */
+    .imgph{
+      border-radius:16px;
+      border:1px solid rgba(231,234,240,.95);
+      background:
+        linear-gradient(135deg, rgba(255,196,0,.18), rgba(29,78,216,.10), rgba(6,182,212,.08));
+      height:160px;
+      display:grid; place-items:center;
+      color:rgba(11,28,68,.70);
+      font-weight:900; letter-spacing:.35px;
+      margin-top:10px;
+      overflow:hidden;
+      position:relative;
+    }
+    .imgph::after{
+      content:"画像をここに挿入（任意）";
+      position:relative;
+      z-index:1;
+      padding:0 12px;
+      text-align:center;
+      font-size:13px;
+    }
+
+    /* Scroll reveal (動き) */
+    .reveal{opacity:0; transform: translateY(10px); transition: .55s ease}
+    .reveal.in{opacity:1; transform: translateY(0)}
+
+    /* Sparkle stars floating */
+    .sparkles{
+      pointer-events:none;
+      position:absolute; inset:0;
+      overflow:hidden;
+      opacity:.75;
+    }
+    .sparkles i{
+      position:absolute;
+      width:10px; height:10px;
+      background: radial-gradient(circle, rgba(255,255,255,.9) 0%, rgba(255,255,255,.0) 70%);
+      filter: drop-shadow(0 6px 16px rgba(255,196,0,.28));
+      border-radius:50%;
+      animation: floaty 6s linear infinite;
+    }
+
+    @keyframes twinkle{
+      0%,100%{transform: scale(1) rotate(0deg); opacity:.95}
+      50%{transform: scale(1.08) rotate(6deg); opacity:1}
+    }
+    @keyframes floaty{
+      0%{transform: translateY(18px); opacity:0}
+      10%{opacity:.9}
+      100%{transform: translateY(-260px); opacity:0}
+    }
+
+    /* Footer CTA (no button look: keep it like a panel) */
+    .cta{
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(231,234,240,.95);
+      border-radius: 22px;
+      box-shadow: 0 16px 34px rgba(10,42,106,.10);
+      overflow:hidden;
+    }
+    .cta .head{
+      padding:14px 14px;
+      font-weight:900;
+      color:#061739;
+      background: linear-gradient(90deg, rgba(10,42,106,.12), rgba(255,196,0,.35), rgba(255,255,255,0));
+      border-bottom:1px solid rgba(231,234,240,.95);
+    }
+    .cta .body{padding:14px 14px 16px}
+    .contacts{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .row{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(231,234,240,.95);
+      background:#fff;
+      font-weight:700;
+      color:#0b1c44;
+    }
+    .row .k{font-size:12px; color:var(--muted); font-weight:900; letter-spacing:.25px}
+    .row .v{margin-top:4px; font-size:14px}
+    .lineLink{
+      display:block;
+      margin-top:8px;
+      font-weight:900;
+      color: var(--blue);
+      word-break: break-all;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Responsive */
+    @media (min-width: 780px){
+      .hero-title{font-size:34px}
+      .stats{grid-template-columns: repeat(4, minmax(0,1fr))}
+      .grid{grid-template-columns: 1fr 1fr}
+      .cta .body{display:grid; grid-template-columns: 1.2fr .8fr; gap:12px; align-items:start}
+      .contacts{grid-template-columns:1fr}
+      .imgph{height:220px}
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <div class="head">
-    <div class="brand">
-      <div class="logoDot">O</div>
-      <div>
-        <h1>株式会社OFA</h1>
-        <small>One for All, All for One</small>
+  <!-- Sticky top -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand" aria-label="OFA">
+          <div class="logo" aria-hidden="true"><span>O</span></div>
+          <div class="brand-txt">
+            <div class="name">株式会社OFA</div>
+            <div class="motto">One for All, All for One</div>
+          </div>
+        </div>
+
+        <div class="tagline" aria-label="headline">
+          <div class="t1">OFA 軽貨物フランチャイズ</div>
+          <div class="sep" aria-hidden="true"></div>
+          <div class="t2">tebura-（手ぶら〜）</div>
+        </div>
       </div>
     </div>
-    <div class="tagline">
-      <div class="chip">軽貨物台数 西日本 No.1 を目指す</div>
-      <div class="sub">OFA 軽貨物フランチャイズ / tebura-</div>
-    </div>
-  </div>
-</header>
-
-<div class="wrap">
+  </header>
 
   <!-- HERO -->
-  <section class="hero reveal">
-    <h2>軽貨物で「稼ぐ」だけじゃない。<br>個人を“経営者”へ育てるフランチャイズ。</h2>
-    <p>
-      全国ネットワーク × 教育 × 運営の仕組み × 収益拡張（紹介・リーダー制度）。<br>
-      <span class="hl">止まらず伸びる環境</span>を、OFAグループは本気でつくっています。
-    </p>
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-card reveal">
+        <div class="sparkles" aria-hidden="true" id="sparklesHero"></div>
 
-    <div class="kpi">
-      <div class="card"><div class="n">700万円</div><div class="t">資本金</div></div>
-      <div class="card"><div class="n">5名</div><div class="t">社員（本部体制）</div></div>
-      <div class="card"><div class="n">543名</div><div class="t">FC加盟数</div></div>
-      <div class="card"><div class="n">540台</div><div class="t">加盟車両</div></div>
-    </div>
+        <div class="hero-in">
+          <div class="hero-eyebrow">
+            <span class="chip">軽バン1台から始まった全国ネットワーク</span>
+            <span class="chip">「個人を経営者へ」育てる仕組み</span>
+            <span class="chip">説明会・商談で“スクロールしながら”案内OK</span>
+          </div>
 
-    <div class="note">※拠点：鹿児島／熊本／福岡／大阪／東京／他（全国拡大中）</div>
-  </section>
+          <h1 class="hero-title">
+            軽貨物で、<br>
+            「稼ぐ」だけじゃない。<br>
+            個人を“経営者”へ育てるフランチャイズ。
+          </h1>
 
-  <!-- 代表 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>代表挨拶</h3><div class="hint">“全国の仲間と共に成功する仕組み”</div>
-    </div>
+          <p class="hero-sub">
+            全国ネットワーク × 教育・運営の仕組み × 収益拡張（紹介・リーダー制度）で、
+            <span class="hl">止まらず伸びる環境</span>をつくっています。
+          </p>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>代表取締役　森下 洸</b></div>
-      <div class="blockBody">
-        軽貨物から人生を変えた経験をもとに、<span class="hl">全国の仲間と共に成功する仕組み</span>を作りました。<br>
-        OFAはただの配送会社ではありません。<br>
-        挑戦し、稼ぎ、成長し、仲間と未来をつくる場所です。
-      </div>
-    </div>
-  </section>
+          <div class="stats" role="list" aria-label="OFA概要">
+            <div class="stat" role="listitem">
+              <div class="v mono">700万円</div>
+              <div class="k">資本金</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="v mono">5名</div>
+              <div class="k">社員（本部体制）</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="v mono">543名</div>
+              <div class="k">FC加盟数</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="v mono">540台</div>
+              <div class="k">加盟車両</div>
+            </div>
+          </div>
 
-  <!-- 会社概要 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>OFAグループ概要</h3><div class="hint">会社の土台（信頼）</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>会社概要</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>社名：株式会社OFA</li>
-          <li>資本金：700万円</li>
-          <li>社員数：5名</li>
-          <li>FC加盟数：543名</li>
-          <li>加盟車両台数：540台</li>
-          <li>モットー：One for All, All for One</li>
-        </ul>
-        <div class="mini">※拠点情報は運営状況により随時更新します。</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ビジョン使命 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>ビジョン・使命</h3><div class="hint">“人生の選択肢”を増やす</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>ビジョン</b></div>
-      <div class="blockBody">
-        「軽貨物で<span class="hl">人生の選択肢</span>を増やす」
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>ミッション</b></div>
-      <div class="blockBody">
-        誰でも挑戦できる。誰でも稼げる。誰でも独立できる。<br>
-        <span class="hl">再現性の高い物流プラットフォーム</span>を提供します。
-      </div>
-    </div>
-  </section>
-
-  <!-- 市場追い風 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>市場の追い風（ドキドキ・ワクワク）</h3><div class="hint">ECが止まらない＝仕事が止まらない</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>EC需要は止まらない</b></div>
-      <div class="blockBody">
-        近年、日本のEC市場は急拡大。スマホ普及・ライフスタイル変化・共働き・高齢化により、<br>
-        「店舗に行かず、家に届く」が当たり前の時代になりました。<br><br>
-        伸びている分野：
-        <ul class="bul">
-          <li>日用品・食品</li>
-          <li>アパレル・雑貨</li>
-          <li>医療・衛生関連商品</li>
-          <li>定期購入・サブスクリプション</li>
-        </ul>
-        ECは一時的なブームではなく、<span class="hl">生活インフラ</span>です。
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>軽貨物市場規模は3兆円超へ</b></div>
-      <div class="blockBody">
-        ラストワンマイル市場規模は推定<span class="hl">約3.3兆円超</span>。<br>
-        この5年で2倍以上、今後も右肩上がりが予測されます。<br><br>
-        ECが増えれば、必ず「最後に届ける人」が必要になる。<br>
-        軽貨物は、<span class="hl">ECが存在する限り無くならない仕事</span>です。
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>結論：市場は伸びるが、勝てるのは組織だけ</b></div>
-      <div class="blockBody">
-        需要は増える。だが荷主が求める条件も厳しい：安定供給／スピード／品質均一／即対応。<br>
-        これは個人や少人数運営では限界がある領域。<br><br>
-        <span class="hl">市場は拡大する。勝てるのは“組織”だけ。</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- なぜFC必要 & なぜOFA -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>なぜ今、軽貨物フランチャイズが必要なのか</h3><div class="hint">業界構造が変わった</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>理由①：荷主が“個人”ではなく“組織”を選ぶ</b></div>
-      <div class="blockBody">
-        荷主は全国規模で安定対応できる組織を選ぶ時代へ。<br>
-        個人単独では継続受注が難しくなっています。
-      </div>
-    </div>
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>理由②：独立環境が厳しい</b></div>
-      <div class="blockBody">
-        営業・保険・車両管理・案件確保・トラブル対応…<br>
-        すべてを一人で抱えるのは負担が大きい。結果として継続できず辞める人も多い。
-      </div>
-    </div>
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>理由③：品質と信頼が最重要視される</b></div>
-      <div class="blockBody">
-        配送品質のバラつきは荷主のリスク。<br>
-        フランチャイズは教育・マナー・報告体制を統一し、<span class="hl">任せても安心</span>をブランドとして積み上げます。
-      </div>
-    </div>
-
-    <div class="secTitle" style="margin-top:22px">
-      <h3>なぜ株式会社OFAフランチャイズなのか</h3><div class="hint">個人を経営者へ</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>OFAは「個人を経営者へ育てる軽貨物フランチャイズ」</b></div>
-      <div class="blockBody">
-        OFAは案件を投げるだけの会社ではありません。<br>
-        <span class="hl">走り続けられる仕組み</span>を本部とグループ全体で構築しています。
-        <ul class="bul">
-          <li>本部一括による安定案件供給</li>
-          <li>研修・教育・マナー・管理体制の標準化</li>
-          <li>車両リース・車両管理</li>
-          <li>事故・緊急対応までグループ完結</li>
-          <li>紹介制度・リーダー制度による収益拡張</li>
-          <li>個人 → チーム → 法人化までの成長設計</li>
-        </ul>
-        困ったときに一人にならない。止まらない。<br>
-        これがOFAの最大の強みです。
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>グループ完結型だから、困ることがない</b></div>
-      <div class="blockBody">
-        車両トラブルが起きても、人が足りなくなっても、案件が増えても、<br>
-        <span class="hl">すべてグループで解決できる体制</span>があります。<br>
-        個人や少人数では対応できない問題も、組織なら解決できる。
-      </div>
-    </div>
-  </section>
-
-  <!-- OFAの4モデル -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>OFAの4つのモデル（体系化）</h3><div class="hint">この4つで、OFAの仕組みが全部わかる</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>① OFA-FCメンバー（単独）</b></div>
-      <div class="blockBody">
-        本部から<span class="hl">直払い</span>モデル。個人1名〜。<br>
-        メンバー登録料なし。<br>
-        <div class="mini">※直系5名以上になった場合は、パートナー契約へステップアップ（自動契約）</div>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>② OFA-FCパートナー（オーナー／親方）</b></div>
-      <div class="blockBody">
-        本部から<span class="hl">直払い</span>モデル。2名〜最大500名まで。個人・法人契約可。<br>
-        パートナーはメンバーを複数人抱えて営業・運営・拠点化が可能。<br>
-        <div class="mini">※500名以上は協力会社として契約（パートナーFCは受付不可）</div>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>③ 業務委託（従来型）</b></div>
-      <div class="blockBody">
-        <span class="hl">単価抜きモデル</span>。あらかじめ決めた委託金額で支払い（委託金額固定）。<br>
-        ※フランチャイズ＝ロイヤルティ／業務委託＝単価抜き、が明確なルールです。
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>④ 案件オーナー（案件提供型）</b></div>
-      <div class="blockBody">
-        OFAの全国ネットワークへ案件依頼が可能。<br>
-        案件／手配／人材のいずれかで協力し、運営に参画できます。
-      </div>
-    </div>
-  </section>
-
-  <!-- 単価レンジ -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>案件単価レンジ（説明会で一発で伝える）</h3><div class="hint">宅配便／Amazon／企業専属便</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>宅配便（ヤマト・佐川・郵便）※まとめて“宅配便”表記</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>佐川：<span class="hl">153円〜178円</span>（手取り単価レンジ）</li>
-          <li>ヤマト：<span class="hl">165円〜190円</span>（手取り単価レンジ）</li>
-        </ul>
-        ※現場条件（エリア・コース・品質要件）によりレンジ変動
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>Amazon（固定日額）</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>日額：<span class="hl">17,000円〜22,000円</span></li>
-        </ul>
-        ※セール等により上振れあり
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>企業専属便／ルート便</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>日額：<span class="hl">12,000円〜16,000円</span></li>
-        </ul>
-        毎日決まったルートや、企業間配送など。初心者でも始めやすい案件が多いのが特徴。
-      </div>
-    </div>
-  </section>
-
-  <!-- 佐川月収イメージ -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>宅配便｜月収イメージ（例）</h3><div class="hint">説明で一番刺さるのは“月いくら”</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>月3,300個 配った場合（個建）</b></div>
-      <div class="blockBody">
-        <div class="tblWrap">
-          <table>
-            <tr>
-              <th>手取り単価</th>
-              <th>計算</th>
-              <th>月収（概算）</th>
-            </tr>
-            <tr>
-              <td class="em">153円</td>
-              <td>3,300個 × 153円</td>
-              <td class="em">504,900円</td>
-            </tr>
-            <tr>
-              <td class="em">165円</td>
-              <td>3,300個 × 165円</td>
-              <td class="em">544,500円</td>
-            </tr>
-            <tr>
-              <td class="em">178円</td>
-              <td>3,300個 × 178円</td>
-              <td class="em">587,400円</td>
-            </tr>
-          </table>
+          <div class="note">
+            ※拠点：鹿児島／熊本／福岡／大阪／東京／他（全国拡大中）
+          </div>
         </div>
-        <div class="mini">※経費（燃料／車両／保険等）は個別条件で変動。説明会では「売上の見える化」として提示。</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ロイヤルティの考え方 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>ロイヤルティの考え方（OFAの基本）</h3><div class="hint">“搾取”ではなく、現場を回す原資</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>ロイヤルティ＝運営原資（現場安定のため）</b></div>
-      <div class="blockBody">
-        ロイヤルティは、現場運営・教育・品質管理・リーダー制度・本部管理を行うための原資です。<br>
-        <span class="hl">ドライバー報酬を削るものではありません。</span><br><br>
-        ルール：<span class="hl">リーダー手当・本部取り分はロイヤル内で完結</span>（ドライバー手取りから引かない）
+    <!-- 代表挨拶 -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFC400"/>
+              <stop offset="0.55" stop-color="#FFE46A"/>
+              <stop offset="1" stop-color="#1D4ED8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>代表挨拶</h2>
       </div>
-    </div>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>フランチャイズと業務委託の違い（言い切り）</b></div>
-      <div class="blockBody">
-        <span class="hl">フランチャイズはロイヤルティ。</span><br>
-        <span class="hl">業務委託は単価抜き（委託金額固定で支払い）。</span><br><br>
-        案件ごとに最適設計できるから、現場・リーダー・本部が成立します。
+      <p class="lead reveal">
+        <b>代表取締役 森下 洸</b><br>
+        軽貨物から人生を変えた経験をもとに、<span class="hl">“全国の仲間と共に成功する仕組み”</span>を作りました。<br>
+        OFAはただの配送会社ではありません。挑戦し、稼ぎ、成長し、仲間と未来をつくる場所です。
+      </p>
+
+      <div class="imgph reveal">（ここに代表写真やOFAロゴ画像を挿入）</div>
+    </section>
+
+    <!-- ビジョン -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar2)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#06B6D4"/>
+              <stop offset="0.45" stop-color="#1D4ED8"/>
+              <stop offset="1" stop-color="#FFC400"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>ビジョン・使命</h2>
       </div>
-    </div>
-  </section>
 
-  <!-- 単価/ロイヤル 具体例（元請単価など） -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>単価・ロイヤル・リーダー制度（完全まとめ）</h3><div class="hint">説明会で“納得”が取れる</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>① OFAに入ってくる元請単価（例）</b></div>
-      <div class="blockBody">
-        <div class="tblWrap">
-          <table>
-            <tr><th>取引先</th><th>元請単価（例）</th></tr>
-            <tr><td>佐川</td><td class="em">168円／個</td></tr>
-            <tr><td>ヤマト</td><td class="em">180円／個</td></tr>
-            <tr><td>Amazon</td><td class="em">日額 17,000円</td></tr>
-          </table>
+      <div class="grid">
+        <div class="card reveal">
+          <div class="bar">ビジョン</div>
+          <div class="body">
+            <div class="call">
+              「軽貨物で <b>“人生の選択肢”</b>を増やす」
+            </div>
+          </div>
         </div>
-        <div class="mini">※まずこの金額が株式会社OFAへ入金されます。</div>
-      </div>
-    </div>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>② 佐川（個建・ロイヤル13% 例）</b></div>
-      <div class="blockBody">
-        168円 × 13% = 21.84円（ロイヤル）／手取り 146.16円（例）<br>
-        ロイヤル内で、リーダー手当・本部運営費を配分。<br><br>
-        <span class="hl">月収例：3,300個 × 146.16円 ＝ 482,328円／月</span>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>③ ヤマト（個建・ロイヤル15% 例）</b></div>
-      <div class="blockBody">
-        180円：ロイヤル27円（15%）／手取り153円（例）<br>
-        ロイヤル内で：リーダー手当17円／本部10円（例）<br><br>
-        <span class="hl">ドライバー：3,300個 × 153円＝504,900円／月</span><br>
-        リーダーが8人チームの場合：<br>
-        リーダー手当：3,300個 × 8人 × 17円＝448,800円／月（約45万）<br>
-        本部取り分：3,300個 × 8人 × 10円＝264,000円／月
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>④ Amazon（固定日額・ロイヤル10% 例）</b></div>
-      <div class="blockBody">
-        日額17,000円：ロイヤル1,700円／手取り15,300円（例）<br>
-        ロイヤル内で：リーダー300円／本部1,400円（例）<br><br>
-        <span class="hl">月収例：15,300円 × 25日＝382,500円／月</span><br>
-        8人分リーダー手当：300円 × 8人 × 25日＝60,000円／月
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>⑤ 委託・リーダー制度の基本方針（共通）</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>委託ドライバーの支払単価は案件ごとに固定</li>
-          <li>リーダー手当はドライバー報酬から差し引かない</li>
-          <li>リーダー・本部の取り分はロイヤル内で完結</li>
-          <li>ロイヤル＝搾取ではなく、教育・品質管理・現場安定・拠点拡大の原資</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>⑥ 説明時に使える総まとめトーク</b></div>
-      <div class="blockBody">
-        「OFAには、佐川は168円、ヤマトは180円、Amazonは日額17,000円が入ってきます。<br>
-        そこから案件ごとに決めたロイヤルティを控除し、残りを業務委託ドライバーに支払います。<br>
-        ロイヤルティは、リーダー制度と本部運営のための費用です。」
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>最終まとめ（言い切り）</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>佐川：低ロイヤル・安定型</li>
-          <li>ヤマト：高単価・リーダー制度向き</li>
-          <li>Amazon：日額固定・管理しやすい</li>
-        </ul>
-        案件ごとに設計を分けることで、現場・リーダー・本部すべてが納得する運営が可能になります。
-      </div>
-    </div>
-
-  </section>
-
-  <!-- リーダー手当 0.3/0.5/0.9 計算例 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>リーダー手当（計算例）</h3><div class="hint">売上規模ベースで分かりやすく</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>前提条件（例）</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>ドライバー月収：55万円</li>
-          <li>ドライバー人数：5名</li>
-          <li>拠点の月間売上規模：55万円 × 5名 = <span class="hl">275万円</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>支給額の計算（売上規模ベース）</b></div>
-      <div class="blockBody">
-        <div class="tblWrap">
-          <table>
-            <tr><th>支給率</th><th>計算</th><th>支給額（月）</th></tr>
-            <tr><td class="em">0.3%</td><td>2,750,000 × 0.003</td><td class="em">8,250円</td></tr>
-            <tr><td class="em">0.5%</td><td>2,750,000 × 0.005</td><td class="em">13,750円</td></tr>
-            <tr><td class="em">0.9%</td><td>2,750,000 × 0.009</td><td class="em">24,750円</td></tr>
-          </table>
+        <div class="card reveal">
+          <div class="bar">ミッション</div>
+          <div class="body">
+            <ul class="ul">
+              <li><span class="hl">誰でも挑戦できる</span></li>
+              <li><span class="hl">誰でも稼げる</span></li>
+              <li><span class="hl">誰でも独立できる</span></li>
+              <li>再現性の高い物流プラットフォームを提供する</li>
+            </ul>
+          </div>
         </div>
-        <div class="mini">※基本は売上規模 × 0.3%（運用設計により率は調整可能）</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 成功条件 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>成功するための条件（OFAの文化）</h3><div class="hint">ここが一致する人ほど伸びる</div>
-    </div>
-
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>成功条件</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>素直</li>
-          <li>行動が早い</li>
-          <li>継続できる</li>
-          <li>挨拶・マナー</li>
-          <li>法令遵守</li>
-          <li>仲間を大切にする</li>
-        </ul>
-        OFAの文化と完全に一致します。
+    <!-- EC追い風 -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar3)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFC400"/>
+              <stop offset="0.5" stop-color="#FF7AD9"/>
+              <stop offset="1" stop-color="#1D4ED8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>EC需要拡大と軽貨物市場：いま“追い風”が止まらない</h2>
       </div>
-    </div>
-  </section>
 
-  <!-- 全国展開 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>全国展開計画（2025〜2030）</h3><div class="hint">本気で“全国1,000台”へ</div>
-    </div>
+      <div class="card reveal">
+        <div class="bar">ドキドキワクワクの理由（市場の波）</div>
+        <div class="body">
+          <p class="lead" style="margin:0 0 10px">
+            近年、日本のEC（電子商取引）市場は急拡大。<br>
+            日用品・食品／アパレル・雑貨／医療・衛生／定期購入など、<span class="hl">ECは生活インフラ</span>になりました。
+          </p>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>ロードマップ（例）</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>2025：600台体制</li>
-          <li>2026：東京強化</li>
-          <li>2027：関西・中部へ加速</li>
-          <li>2028：1,000台体制へ</li>
-          <li>2030：全国30拠点</li>
-        </ul>
+          <div class="call">
+            ECが増えれば、必ず「最後に届ける人」が必要になる。<br>
+            <b>軽貨物は、ECが存在する限り“なくならない仕事”</b>です。
+          </div>
+
+          <table aria-label="市場の追い風まとめ">
+            <thead>
+              <tr>
+                <th>ポイント</th>
+                <th>いま起きていること</th>
+                <th>意味（チャンス）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge y">EC需要</span></td>
+                <td>「家に届く」が当たり前</td>
+                <td>配達ニーズが常に発生</td>
+              </tr>
+              <tr>
+                <td><span class="badge">市場</span></td>
+                <td>ラストワンマイル市場は <b class="mono">約3.3兆円超（推定）</b></td>
+                <td>伸び続ける成長領域</td>
+              </tr>
+              <tr>
+                <td><span class="badge">荷主の要求</span></td>
+                <td>安定供給／品質均一／即対応</td>
+                <td><b>個人より“組織”が選ばれる</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="small" style="margin-top:10px">
+            結論：市場は拡大する。<span style="font-weight:900;background:linear-gradient(90deg, rgba(255,196,0,.7), rgba(255,255,255,0));padding:0 .25em;border-radius:6px;">勝てるのは組織だけ。</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>メッセージ</b></div>
-      <div class="blockBody">
-        一人では1台。仲間がいれば100台。仕組みがあれば1,000台。<br>
-        これからの軽貨物は、フランチャイズしか勝てない。少数運営は正直厳しい。<br><br>
-        <span class="hl">One for All, All for One。</span><br>
-        それが、株式会社OFAフランチャイズです。
+    <!-- なぜFCが必要か -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar4)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar4" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1D4ED8"/>
+              <stop offset="0.55" stop-color="#06B6D4"/>
+              <stop offset="1" stop-color="#FFC400"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>なぜ今、軽貨物フランチャイズが必要なのか</h2>
       </div>
-    </div>
-  </section>
 
-  <!-- 案件オーナー実績 -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>案件オーナーの実績・活用例</h3><div class="hint">案件／手配／人材 いずれでも協力OK</div>
-    </div>
+      <div class="grid">
+        <div class="card reveal">
+          <div class="bar">理由①：業界構造が変わった</div>
+          <div class="body">
+            <p class="lead" style="margin:0">
+              荷主は「個人」ではなく、<span class="hl">全国規模で安定対応できる組織</span>を選ぶ時代へ。
+            </p>
+          </div>
+        </div>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>実績例①：アパレル配送（全国案件）</b></div>
-      <div class="blockBody">
-        全国展開アパレル企業様より全国配送案件を一括でOFAにご依頼。<br>
-        <ul class="bul">
-          <li>月間配送個数：約<span class="hl">63,000個</span></li>
-          <li>配送エリア：全国</li>
-          <li>対応体制：OFA自社便＋OFAグループ配送網で安定供給</li>
-        </ul>
-        全国同一品質・同一ルールで配送を実現し、案件オーナー様の管理負担を大幅に削減。
+        <div class="card reveal">
+          <div class="bar">理由②：独立環境が厳しくなった</div>
+          <div class="body">
+            <p class="lead" style="margin:0">
+              営業／保険／車両管理／案件確保／トラブル対応…<br>
+              個人が全部抱えるのは負担が大きく、継続できずに辞める人も少なくありません。
+            </p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="bar">理由③：品質と信頼が最重要</div>
+          <div class="body">
+            <p class="lead" style="margin:0">
+              品質のバラつきは荷主のリスク。<br>
+              フランチャイズは教育・マナー・報告体制を統一し、<span class="hl">「任せても安心」</span>をブランドとして積み上げます。
+            </p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="bar">結論</div>
+          <div class="body">
+            <div class="call">
+              EC需要拡大 → 市場は伸び続ける。<br>
+              しかし選ばれるのは、<b>安定供給・品質統一・即対応ができる“組織”</b>。<br>
+              だから今、軽貨物フランチャイズが必要です。
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>実績例②：既存案件をOFAへ委託</b></div>
-      <div class="blockBody">
-        御社保有の案件をそのままOFAへ委託可能。<br>
-        御社：案件提供／OFA：配送設計・車両手配・人材配置・運行管理。<br>
-        単発／エリア限定／全国展開予定まで、内容に合わせて最適提案。<br>
-        ご要望があれば<span class="hl">OFAが営業代行として動く</span>ことも可能です。
+    <!-- なぜOFAか -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar5)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar5" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFC400"/>
+              <stop offset="0.55" stop-color="#1D4ED8"/>
+              <stop offset="1" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>なぜ株式会社OFAフランチャイズなのか</h2>
       </div>
-    </div>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>実績例③：人材派遣・人員調整型活用</b></div>
-      <div class="blockBody">
-        「人が余っている／一時的に配送へ回したい／でも管理はしたくない」<br>
-        その場合も<span class="hl">丸投げでOK</span>。<br>
-        従業員はOFAの配送レールに乗せるだけ。教育・割り振り・管理はすべてOFA対応。
+      <div class="card reveal">
+        <div class="bar">OFAは「個人を経営者へ育てる軽貨物フランチャイズ」</div>
+        <div class="body">
+          <p class="lead" style="margin:0 0 10px">
+            OFAは案件を投げるだけの会社ではありません。<br>
+            <span class="hl">走り続けられる仕組み</span>を本部とグループ全体で構築しています。
+          </p>
+
+          <ul class="ul">
+            <li>本部一括による <span class="hl">安定案件供給</span></li>
+            <li>研修・教育・マナー・管理体制の <span class="hl">標準化</span></li>
+            <li>車両リース・車両管理（軽バン／幌車 など）</li>
+            <li>事故・緊急対応まで <span class="hl">グループ完結</span></li>
+            <li>紹介制度・リーダー制度による <span class="hl">収益拡張</span></li>
+            <li>個人 → チーム → 法人化までの成長設計</li>
+          </ul>
+
+          <div class="call">
+            困ったときに一人にならない。止まらない。<br>
+            これがOFAの最大の強みです。
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>案件オーナー様へ（個別設計）</b></div>
-      <div class="blockBody">
-        案件規模・エリア・単価・管理範囲・展開構想はすべて異なります。<br>
-        OFAは画一的な提案はしません。<span class="hl">個別に最適な形をご相談・設計</span>します。
+    <!-- OFA 4モデル -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar6)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar6" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#06B6D4"/>
+              <stop offset="0.5" stop-color="#FFC400"/>
+              <stop offset="1" stop-color="#1D4ED8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>OFAの4つのモデル（全体像）</h2>
       </div>
-    </div>
-  </section>
 
-  <!-- tebura -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>tebura-（手ぶら〜）事業</h3><div class="hint">宅配でもロッカーでもない</div>
-    </div>
+      <div class="card reveal">
+        <div class="bar">この4つで、OFAの仕組みが全部わかります。</div>
+        <div class="body">
+          <table aria-label="OFA 4モデル">
+            <thead>
+              <tr>
+                <th>モデル</th>
+                <th>対象</th>
+                <th>特徴</th>
+                <th>収益設計の基本</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>① OFA-FC メンバー（単独）</b></td>
+                <td>個人1名〜</td>
+                <td>本部から直払いモデル。メンバー登録料なし。まずは1台で安定稼働から。</td>
+                <td><span class="badge y">ロイヤルティ</span>（案件運営・教育・品質・管理の原資）</td>
+              </tr>
+              <tr>
+                <td><b>② OFA-FC パートナー（FCオーナー／親方）</b></td>
+                <td>2〜500名（個人/法人OK）</td>
+                <td>複数名運用・拠点化・営業も可能。メンバー直系5人以上はパートナーへ自動契約。</td>
+                <td><span class="badge y">ロイヤルティ</span>＋チーム運営で拡張</td>
+              </tr>
+              <tr>
+                <td><b>③ 業務委託（従来型）</b></td>
+                <td>委託ドライバー</td>
+                <td>単価抜きモデル。あらかじめ決めた「委託金額」で支払い。</td>
+                <td><span class="badge">単価抜き（委託金額固定）</span></td>
+              </tr>
+              <tr>
+                <td><b>④ 案件オーナー（案件提供型）</b></td>
+                <td>荷主/事業者</td>
+                <td>OFAの全国ネットワークへ案件依頼が可能。案件/手配/人材のいずれかで協力し、運営に参画。</td>
+                <td>案件設計・手配・運行管理を個別に最適化</td>
+              </tr>
+            </tbody>
+          </table>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>コンセプト（超わかりやすく）</b></div>
-      <div class="blockBody">
-        <span class="hl">tebura-（手ぶら〜）</span>は、買い物や観光で増えた荷物を、<br>
-        <span class="hl">「その場で預けて、あとから届ける」</span>サービスです。<br><br>
-        QRを読み込んで、荷物を預ける。あとは手ぶらで歩くだけ。<br>
-        ロッカーも集荷点もいりません。街の店舗・施設がそのまま“預かり場所”になります。<br><br>
-        tebura-は宅配でもロッカーでもない。<br>
-        <span class="hl">「手ぶらで動ける体験」をつくる仕組み</span>です。
+          <p class="small" style="margin-top:10px">
+            ※「フランチャイズ＝ロイヤルティ」「業務委託＝単価抜き（委託金額固定）」を基本として、案件ごとに最適設計します。
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>コアサービス：「送りっぱ！」</b></div>
-      <div class="blockBody">
-        利用者フロー：
-        <ol style="margin:10px 0 0; padding-left:18px;">
-          <li>店頭・施設のQRを読み取る</li>
-          <li>スマホで荷物写真・送り先を入力</li>
-          <li>受付番号を発行</li>
-          <li>荷物を店舗 or 指定ロッカーへ預ける</li>
-          <li>後からドライバーが回収し宅配網で発送</li>
-        </ol>
-        伝票記入不要／並ばない／持ち歩かない。<br>
-        <span class="hl">60秒で完結する発送体験</span>へ。
+    <!-- 料金/報酬は“キャリア名を出さずに”ロイヤル/単価で -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar7)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar7" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1D4ED8"/>
+              <stop offset="0.55" stop-color="#FFC400"/>
+              <stop offset="1" stop-color="#FF7AD9"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>報酬レンジ（例）｜ロイヤルティ / 単価抜き で説明</h2>
       </div>
-    </div>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>tebura-が解決する課題</b></div>
-      <div class="blockBody">
-        利用者：荷物が多い／宅配出しが面倒／伝票・待ち時間がストレス。<br>
-        店舗・施設：ロッカー設置が高コスト／スペース不足／空き待ち・故障対応。<br><br>
-        tebura-は<span class="hl">「設備を持たない仕組み」</span>で解決します。
+      <div class="card reveal">
+        <div class="bar">説明会で“分かりやすい”のはここ（数字はレンジで提示）</div>
+        <div class="body">
+          <table aria-label="報酬レンジ">
+            <thead>
+              <tr>
+                <th>区分</th>
+                <th>支払い形態</th>
+                <th>委託ドライバー手取り（目安）</th>
+                <th>補足</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>宅配便（個建）</b></td>
+                <td><span class="badge y">ロイヤルティ型（FC）</span></td>
+                <td class="mono"><b>153円〜190円 / 個</b></td>
+                <td>案件/エリア/条件で単価が変動。<b>“ロイヤル内で運営原資を設計”</b></td>
+              </tr>
+              <tr>
+                <td><b>EC定額（固定日額）</b></td>
+                <td><span class="badge y">ロイヤルティ型（FC）</span></td>
+                <td class="mono"><b>17,000円〜22,000円 / 日</b></td>
+                <td>管理しやすい定額レーン。繁忙期は上振れ設計も可能</td>
+              </tr>
+              <tr>
+                <td><b>企業専属便 / ルート便</b></td>
+                <td><span class="badge">委託金額固定（業務委託）</span></td>
+                <td class="mono"><b>12,000円〜16,000円 / 日</b></td>
+                <td>ルート固定・初心者も入りやすい。稼働が安定しやすい</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="call">
+            ロイヤルティは“搾取”ではなく、<b>現場運営・教育・品質管理・リーダー制度・本部管理</b>の原資。<br>
+            <b>ドライバー報酬を削るためではなく、走り続けるための仕組み</b>です。
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>店舗・施設側のメリット（導入しやすい）</b></div>
-      <div class="blockBody">
-        <ul class="bul">
-          <li>QRを置くだけで導入</li>
-          <li>初期費用・月額費用なし</li>
-          <li>1件あたり 325円 成果報酬（設計例）</li>
-          <li>回遊性・客単価UP</li>
-        </ul>
-        店舗は「預かるだけ」で収益と付加価値を同時に得られます。
+      <div class="card reveal">
+        <div class="bar">月収イメージ（宅配便・個建｜例）</div>
+        <div class="body">
+          <table aria-label="月収イメージ">
+            <thead>
+              <tr>
+                <th>前提</th>
+                <th>手取り単価（例）</th>
+                <th>計算</th>
+                <th>月収（概算）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>月 <b class="mono">3,300個</b> 配った場合</td>
+                <td class="mono"><b>153円</b></td>
+                <td class="mono">3,300 × 153</td>
+                <td class="mono"><b>504,900円</b></td>
+              </tr>
+              <tr>
+                <td>月 <b class="mono">3,300個</b> 配った場合</td>
+                <td class="mono"><b>165円</b></td>
+                <td class="mono">3,300 × 165</td>
+                <td class="mono"><b>544,500円</b></td>
+              </tr>
+              <tr>
+                <td>月 <b class="mono">3,300個</b> 配った場合</td>
+                <td class="mono"><b>178円</b></td>
+                <td class="mono">3,300 × 178</td>
+                <td class="mono"><b>587,400円</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="small" style="margin-top:10px">
+            ※経費（燃料/車両/保険等）は個別条件で変動。説明会では「売上の見える化」として提示します。
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>将来展開</b></div>
-      <div class="blockBody">
-        Uber型集荷／インバウンド特化／法人イベント／海外展開（空港・商業施設）。<br>
-        tebura-は物流会社でもロッカー会社でもない。<br>
-        <span class="hl">発送体験を再定義するプラットフォーム</span>として成長します。
+    <!-- リーダー制度（0.3%） -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar8)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar8" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFC400"/>
+              <stop offset="0.55" stop-color="#1D4ED8"/>
+              <stop offset="1" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>リーダー制度｜売上規模ベースで“シンプルに一本化”</h2>
       </div>
-    </div>
-  </section>
 
-  <!-- 加盟まで -->
-  <section class="sec reveal">
-    <div class="secTitle">
-      <h3>加盟までのステップ</h3><div class="hint">最短1週間で稼働</div>
-    </div>
-    <div class="block">
-      <div class="blockHead"><div class="starBadge"><span>★</span></div><b>流れ</b></div>
-      <div class="blockBody">
-        1. 説明会参加<br>
-        2. 個別面談<br>
-        3. 契約<br>
-        4. 研修（実地＋座学・同乗）<br>
-        5. 稼働開始（最短1週間）<br>
-        6. 月次フォロー面談
+      <div class="card reveal">
+        <div class="bar">基本：リーダー手当＝売上規模 × 0.3%（ロイヤル内で完結）</div>
+        <div class="body">
+          <div class="call">
+            リーダー手当は <b>ドライバー報酬から差し引かない</b>。<br>
+            <b>ロイヤルティ内で完結</b>し、現場の安定・教育・品質を強化します。
+          </div>
+
+          <table aria-label="リーダー手当（計算例）">
+            <thead>
+              <tr>
+                <th>前提条件</th>
+                <th>数値</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ドライバー月収（例）</td>
+                <td class="mono"><b>55万円</b></td>
+              </tr>
+              <tr>
+                <td>ドライバー人数（例）</td>
+                <td class="mono"><b>5名</b></td>
+              </tr>
+              <tr>
+                <td>拠点の月間売上規模（例）</td>
+                <td class="mono"><b>55万円 × 5名 ＝ 275万円</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table aria-label="支給額の計算例">
+            <thead>
+              <tr>
+                <th>支給率</th>
+                <th>計算</th>
+                <th>支給額</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>0.3%</b></td>
+                <td class="mono">2,750,000 × 0.003</td>
+                <td class="mono"><b>8,250円 / 月</b></td>
+              </tr>
+              <tr>
+                <td><b>0.5%</b></td>
+                <td class="mono">2,750,000 × 0.005</td>
+                <td class="mono"><b>13,750円 / 月</b></td>
+              </tr>
+              <tr>
+                <td><b>0.9%</b></td>
+                <td class="mono">2,750,000 × 0.009</td>
+                <td class="mono"><b>24,750円 / 月</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="small" style="margin-top:10px">
+            ※支給率はエリア運営の役割/規模/難易度により設計します（説明会では基本0.3%で案内）。
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 最後 CTA -->
-  <section class="end reveal">
-    <h4>最後に</h4>
-    <p>
-      “挑戦しなければ、未来は変わらない”<br>
-      OFAは「人生を変えたい」「稼ぎたい」「独立したい」そんな人を全力で応援します。
-    </p>
-
-    <div class="linebox">
-      ✅ この説明を聞いたら、最後にLINE追加してください。<br>
-      ▶ LINE：<a href="https://lin.ee/we9oWpn" target="_blank" rel="noopener noreferrer">https://lin.ee/we9oWpn</a>
-      <div style="margin-top:10px; font-weight:700; opacity:.95;">
-        TEL：080-3000-3872 / 090-1164-6645
+    <!-- 紹介/ボーナス -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar9)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar9" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FF7AD9"/>
+              <stop offset="0.5" stop-color="#FFC400"/>
+              <stop offset="1" stop-color="#1D4ED8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>収益拡張（紹介・リーダー・本部制度）</h2>
       </div>
-      <div style="margin-top:6px; font-size:12px; opacity:.9;">
-        本部所在地：鹿児島県南九州市頴娃町上別府1699-1
+
+      <div class="card reveal">
+        <div class="bar">ボーナス制度（要点）</div>
+        <div class="body">
+          <ul class="ul">
+            <li><b>メンバーシップボーナス：</b>紹介者に <span class="hl">3万円</span>（※メンバー対象）</li>
+            <li><b>リーダー制度：</b>売上規模ベースで <span class="hl">0.3%（基本）</span> を支給（ロイヤル内）</li>
+            <li><b>マネージャーボーナス：</b>本部招待制（現場稼働をしない本部社員向けの特別報酬制度）</li>
+          </ul>
+          <p class="small" style="margin-top:10px">
+            ※拠点開拓・営業・運用設計など、役割に応じて制度を最適化します。
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-</div>
+    <!-- 案件オーナー 実績 -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar10)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar10" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#06B6D4"/>
+              <stop offset="0.45" stop-color="#1D4ED8"/>
+              <stop offset="1" stop-color="#FFC400"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>案件オーナーの実績・活用例</h2>
+      </div>
 
-<script>
-  // Scroll reveal
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting) e.target.classList.add('show');
-    });
-  },{threshold:.12});
-  els.forEach(el=>io.observe(el));
-</script>
+      <div class="grid">
+        <div class="card reveal">
+          <div class="bar">実績例①：アパレル配送（全国案件）</div>
+          <div class="body">
+            <ul class="ul">
+              <li>月間配送個数：<b class="mono">約63,000個</b></li>
+              <li>配送エリア：全国</li>
+              <li>対応体制：OFA自社便＋OFAグループ配送網で安定供給</li>
+              <li><span class="hl">全国同一品質・同一ルール</span>で配送し、管理負担を大幅削減</li>
+            </ul>
+            <div class="imgph">（ここに実績イメージ画像を挿入）</div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="bar">実績例②：既存案件をOFAへ委託</div>
+          <div class="body">
+            <ul class="ul">
+              <li>御社：案件提供</li>
+              <li>OFA：配送設計・車両手配・人材配置・運行管理</li>
+              <li>単発／エリア限定／全国展開予定…すべて対応</li>
+              <li>要望があれば <span class="hl">OFAが営業代行</span>として動くことも可能</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="bar">実績例③：人材派遣・人員調整型活用</div>
+          <div class="body">
+            <ul class="ul">
+              <li>人だけ出す／現場は任せる、が可能</li>
+              <li>配送教育・案件割り振り・管理は <span class="hl">すべてOFA対応</span></li>
+              <li>御社側の煩雑な管理は不要</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="bar">案件オーナー様へ（個別最適）</div>
+          <div class="body">
+            <div class="call">
+              案件規模／エリア／単価／管理範囲／将来展開…はすべて異なります。<br>
+              OFAは画一的な提案は行いません。<b>案件内容・事業フェーズに合わせて個別に設計</b>します。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- tebura -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar11)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar11" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFC400"/>
+              <stop offset="0.4" stop-color="#06B6D4"/>
+              <stop offset="1" stop-color="#1D4ED8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>tebura-（手ぶら〜）｜コンセプトとサービス内容</h2>
+      </div>
+
+      <div class="card reveal">
+        <div class="bar">一言でいうと：街全体を“ロッカー”に変える体験</div>
+        <div class="body">
+          <p class="lead" style="margin:0 0 10px">
+            <b>tebura-（手ぶら〜）</b>は、買い物や観光で増えた荷物を、<span class="hl">その場で預けて、あとから届ける</span>サービスです。
+          </p>
+
+          <div class="call">
+            QRを読み込んで、荷物を預ける。あとは手ぶらで歩くだけ。<br>
+            ロッカーも、集荷点もいりません。<br>
+            街にある店舗や施設が、そのまま <b>“預かり場所”</b>になります。
+          </div>
+
+          <table aria-label="teburaの位置づけ">
+            <thead>
+              <tr>
+                <th>比較</th>
+                <th>ロッカー</th>
+                <th>従来の宅配</th>
+                <th>tebura-</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>本質</b></td>
+                <td>ハード（設備）</td>
+                <td>発送手続き中心</td>
+                <td><b>ソフト（受付・管理・発送指示）</b></td>
+              </tr>
+              <tr>
+                <td><b>必要なもの</b></td>
+                <td>設備投資が重い</td>
+                <td>伝票/受付/待ち</td>
+                <td><b>QRだけ</b>（設備レス・低コスト）</td>
+              </tr>
+              <tr>
+                <td><b>体験</b></td>
+                <td>空き待ち/故障</td>
+                <td>並ぶ/書く</td>
+                <td><b>“手ぶらで動ける体験”</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="card" style="margin-top:12px">
+            <div class="bar">コアサービス：「送りっぱ！」（発送代行）</div>
+            <div class="body">
+              <ol class="ul" style="padding-left:1.25em">
+                <li>店頭/施設のQRを読み取る</li>
+                <li>スマホで荷物の写真・送り先を入力</li>
+                <li>受付番号を発行</li>
+                <li>荷物を店舗または指定ロッカーに預ける</li>
+                <li>後からドライバーが回収し、宅配網で発送</li>
+              </ol>
+              <div class="call">
+                利用者は <b>伝票記入不要 / 並ばない / 荷物を持ち歩かない</b>。<br>
+                つまり teubra-は、宅配でもロッカーでもない。<span class="hl">「手ぶら体験」</span>を作る仕組みです。
+              </div>
+              <div class="imgph">（ここにtebura-の利用シーン画像を挿入）</div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <div class="bar">店舗・施設側メリット</div>
+            <div class="body">
+              <ul class="ul">
+                <li>QRを置くだけで導入可能（設備投資ゼロ）</li>
+                <li>初期費用・月額費用なし</li>
+                <li>1件あたり成果報酬（設計例：<b class="mono">325円</b>）</li>
+                <li>回遊性・客単価UP、運用負担も小さい</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <div class="bar">将来展開</div>
+            <div class="body">
+              <ul class="ul">
+                <li>Uber型集荷（即時回収）</li>
+                <li>観光・インバウンド向け特化</li>
+                <li>法人・イベント・展示会対応</li>
+                <li>海外展開（空港・商業施設）</li>
+              </ul>
+              <p class="small" style="margin-top:8px">
+                tebura-は「発送体験を再定義するプラットフォーム」として拡張していきます。
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2030 -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar12)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar12" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1D4ED8"/>
+              <stop offset="0.55" stop-color="#FFC400"/>
+              <stop offset="1" stop-color="#06B6D4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>2030年ビジョン</h2>
+      </div>
+
+      <div class="card reveal">
+        <div class="bar">OFAグループ 1,000台体制へ</div>
+        <div class="body">
+          <p class="lead" style="margin:0 0 10px">
+            2030年までに全国<b>1,000台体制</b>を目指します。<br>
+            これは本部だけの目標ではありません。ドライバー、リーダー、FCオーナー、パートナー全員で成し遂げる全国展開です。
+          </p>
+          <div class="call">
+            一人では1台。仲間がいれば100台。仕組みがあれば1,000台。<br>
+            <b>One for All, All for One。</b>それが、株式会社OFAです。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最後：LINE追加 -->
+    <section>
+      <div class="h2 reveal">
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="url(#gStar13)" d="M12 2.2l2.7 6.2 6.7.6-5 4.3 1.5 6.5L12 16.9 6.1 19.8 7.6 13.3 2.6 9l6.7-.6L12 2.2z"/>
+          <defs>
+            <linearGradient id="gStar13" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFC400"/>
+              <stop offset="0.45" stop-color="#1D4ED8"/>
+              <stop offset="1" stop-color="#FF7AD9"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>最後に｜このあとLINE追加でご案内します</h2>
+      </div>
+
+      <div class="cta reveal">
+        <div class="head">説明を聞いたら、LINE追加 → 個別案内へ</div>
+        <div class="body">
+          <div>
+            <p class="lead" style="margin:0 0 10px">
+              ここまでの内容を踏まえて、<span class="hl">あなたに合うプラン（FC/業務委託/案件オーナー/tebura-）</span>を個別に設計します。<br>
+              気になる点は、その場で全部聞いてください。
+            </p>
+
+            <div class="call">
+              ✅ LINE追加後に、<b>案件状況／稼働開始までの流れ／エリア設計／契約の進め方</b>を案内します。
+            </div>
+
+            <div class="imgph" style="height:180px;margin-top:12px">（ここにLINE QR画像を挿入）</div>
+          </div>
+
+          <div class="contacts" aria-label="会社情報/連絡先">
+            <div class="row">
+              <div class="k">会社名</div>
+              <div class="v">株式会社OFA</div>
+            </div>
+            <div class="row">
+              <div class="k">本部所在地</div>
+              <div class="v">鹿児島県南九州市頴娃町上別府1699-1</div>
+            </div>
+            <div class="row">
+              <div class="k">電話</div>
+              <div class="v mono">080-3000-3872<br>090-1164-6645</div>
+            </div>
+            <div class="row">
+              <div class="k">LINE追加</div>
+              <div class="v">
+                <a class="lineLink" href="https://lin.ee/we9oWpn" target="_blank" rel="noopener">https://lin.ee/we9oWpn</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="k">モットー</div>
+              <div class="v">One for All, All for One</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="small reveal" style="margin-top:12px">
+        ※このページは1枚完結（縦スクロール）で、説明会・商談・採用・加盟案内にそのまま使えます。画像（ロゴ/現場写真/tebura-イメージ/LINE QR）は差し替えて完成です。
+      </p>
+    </section>
+
+    <section style="padding-top:6px; padding-bottom:22px">
+      <p class="small" style="text-align:center">
+        © OFA GROUP
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // --- Scroll reveal ---
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); }
+      })
+    }, {threshold: 0.12});
+
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    // --- Sparkles in hero (キラキラ動かす) ---
+    (function(){
+      const box = document.getElementById('sparklesHero');
+      if(!box) return;
+
+      const N = 22;
+      for(let i=0;i<N;i++){
+        const s = document.createElement('i');
+        const left = Math.random()*100;
+        const top = 70 + Math.random()*40; // start from lower area
+        const size = 6 + Math.random()*10;
+        const dur = 4 + Math.random()*6;
+        const delay = Math.random()*3;
+
+        s.style.left = left + '%';
+        s.style.top = top + '%';
+        s.style.width = size + 'px';
+        s.style.height = size + 'px';
+        s.style.animationDuration = dur + 's';
+        s.style.animationDelay = delay + 's';
+        box.appendChild(s);
+      }
+    })();
+  </script>
 </body>
 </html>
