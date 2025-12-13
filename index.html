@@ -1,133 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>株式会社OFA｜軽貨物フランチャイズ完全説明</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --navy:#0B1E44;
-  --navy2:#132E6B;
   --yellow:#FFD500;
   --yellow2:#FFB800;
+  --navy:#0B1E44;
+  --navy2:#102A63;
   --bg:#F5F7FB;
   --line:#E6EAF2;
 }
+
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:"Noto Sans JP",sans-serif;
+  font-family:'Noto Sans JP',sans-serif;
   background:linear-gradient(#F5F7FB,#ffffff);
-  color:#101828;
+  color:#102A43;
+  line-height:1.9;
 }
+
 header{
-  position:sticky;top:0;z-index:10;
+  position:sticky;
+  top:0;
+  z-index:50;
   background:linear-gradient(135deg,var(--yellow),var(--yellow2));
-  padding:14px 18px;
-  border-bottom:1px solid rgba(0,0,0,.08);
+  border-bottom:1px solid rgba(0,0,0,.1);
 }
-header .wrap{
-  display:flex;align-items:center;justify-content:space-between;
-}
-.brand{
-  display:flex;align-items:center;gap:12px;font-weight:900;
+.header-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 .logo{
-  width:42px;height:42px;border-radius:14px;
-  background:var(--navy);color:#fff;
-  display:flex;align-items:center;justify-content:center;
+  width:42px;
+  height:42px;
+  background:var(--navy);
+  color:#fff;
+  font-weight:900;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.brand{
   font-weight:900;
 }
 .brand small{
-  display:block;font-size:11px;font-weight:700;
+  display:block;
+  font-size:12px;
+  opacity:.8;
 }
-.menu{font-size:22px;font-weight:900}
 
 .container{
-  width:min(980px,92vw);
-  margin:20px auto 40px;
+  max-width:1100px;
+  margin:auto;
+  padding:24px 16px 60px;
 }
 
-.section-title{
-  margin:34px 0 16px;
-  border-bottom:3px solid rgba(11,30,68,.18);
+/* section */
+.section{
+  margin-top:48px;
+}
+.section h2{
+  font-size:24px;
+  font-weight:900;
+  color:var(--navy);
+  border-bottom:4px solid rgba(11,30,68,.15);
   padding-bottom:8px;
 }
-.section-title h2{
-  margin:0;font-size:22px;font-weight:900;color:var(--navy);
-}
-.section-title span{
-  font-size:12px;font-weight:900;color:#667085;
-}
 
+/* block */
 .block{
   background:#fff;
   border:1px solid var(--line);
   border-radius:20px;
-  margin-bottom:16px;
+  margin-top:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
   overflow:hidden;
-  box-shadow:0 14px 30px rgba(0,0,0,.08);
 }
 .block-head{
   background:linear-gradient(135deg,var(--yellow),var(--yellow2));
-  padding:14px 16px;
-  display:flex;align-items:center;gap:12px;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 .star{
-  width:42px;height:42px;border-radius:50%;
-  background:var(--navy);color:#fff;
-  display:flex;align-items:center;justify-content:center;
+  width:40px;
+  height:40px;
+  background:var(--navy);
+  color:#fff;
   font-weight:900;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .block-head h3{
-  margin:0;font-size:16px;font-weight:900;
+  margin:0;
+  font-size:16px;
+  font-weight:900;
 }
 .block-body{
-  padding:16px;
-  font-size:14px;
-  line-height:1.9;
+  padding:18px;
   font-weight:700;
 }
+.hl{
+  background:linear-gradient(transparent 60%, rgba(255,213,0,.8) 60%);
+  font-weight:900;
+}
 
-.hlY{background:linear-gradient(transparent 55%,rgba(255,213,0,.7) 55%);font-weight:900}
-.hlN{background:linear-gradient(transparent 55%,rgba(11,30,68,.18) 55%);font-weight:900}
-
+/* table */
+.table-wrap{
+  overflow:auto;
+  margin-top:12px;
+  border-radius:16px;
+  border:1px solid var(--line);
+}
 table{
   width:100%;
   border-collapse:collapse;
-  margin-top:12px;
-  font-size:13px;
+  min-width:680px;
 }
 th,td{
-  border:1px solid #E6EAF2;
-  padding:10px;
+  padding:12px;
+  border-bottom:1px solid var(--line);
   text-align:center;
 }
 th{
-  background:#FFF4C7;
+  background:#FFF4C2;
   font-weight:900;
 }
-
-.final{
-  background:linear-gradient(135deg,var(--navy),var(--navy2));
-  color:#fff;
-  border-radius:22px;
-  padding:24px;
-  margin-top:40px;
-}
-.final h2{margin:0;font-size:22px;font-weight:900}
-.final p{font-size:14px;font-weight:700;line-height:1.9}
-.final a{color:#FFD500;font-weight:900;text-decoration:underline}
-
-footer{
-  text-align:center;
-  margin:24px 0;
-  font-size:12px;
+tfoot td{
+  background:#F9FAFB;
   font-weight:900;
-  color:#667085;
+}
+.note{
+  font-size:13px;
+  opacity:.8;
+  margin-top:8px;
 }
 </style>
 </head>
@@ -135,192 +156,204 @@ footer{
 <body>
 
 <header>
-  <div class="wrap">
+  <div class="header-inner">
+    <div class="logo">O</div>
     <div class="brand">
-      <div class="logo">O</div>
-      <div>
-        OFA GROUP
-        <small>One for All, All for One</small>
-      </div>
+      OFA GROUP
+      <small>One for All, All for One</small>
     </div>
-    <div class="menu">≡</div>
   </div>
 </header>
 
 <div class="container">
 
-<!-- なぜ今 -->
-<div class="section-title">
-  <h2>なぜ今、軽貨物フランチャイズが必要なのか</h2>
-  <span>業界構造の変化</span>
+<!-- WHY -->
+<section class="section">
+<h2>なぜ今、軽貨物フランチャイズが必要なのか</h2>
+
+<div class="block">
+<div class="block-head">
+<div class="star">★</div>
+<h3>業界構造が変わった</h3>
+</div>
+<div class="block-body">
+荷主は「個人」ではなく、<span class="hl">全国で安定対応できる組織</span>を選ぶ時代へ。<br>
+個人請負だけでは選ばれなくなっています。
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">★</div><h3>荷主は「個人」ではなく「組織」を選ぶ</h3></div>
-  <div class="block-body">
-    荷主は、単発対応の個人ではなく、<span class="hlY">全国規模で安定供給できる組織</span>を求めています。
-  </div>
+<div class="block-head">
+<div class="star">★</div>
+<h3>個人独立の限界</h3>
+</div>
+<div class="block-body">
+営業・案件確保・車両・保険・事故対応…  
+すべてを一人で抱えるのは現実的ではありません。  
+<span class="hl">続かず辞めていく人が多い理由</span>です。
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">★</div><h3>個人独立は継続が難しい</h3></div>
-  <div class="block-body">
-    営業・案件確保・車両管理・保険・トラブル対応。<br>
-    すべてを一人で抱える時代は終わり、<span class="hlY">続けられずに辞める人</span>が増えています。
-  </div>
+<div class="block-head">
+<div class="star">★</div>
+<h3>品質と信頼の時代</h3>
+</div>
+<div class="block-body">
+配送品質は荷主のリスク。  
+教育・マナー・報告体制を統一できる<span class="hl">フランチャイズが必須</span>になっています。
+</div>
+</div>
+</section>
+
+<!-- EC -->
+<section class="section">
+<h2>EC需要拡大 × 軽貨物市場</h2>
+
+<div class="block">
+<div class="block-head">
+<div class="star">★</div>
+<h3>EC需要は止まらない</h3>
+</div>
+<div class="block-body">
+日用品・食品・アパレル・医療・定期購入。  
+ECは一過性ではなく<span class="hl">生活インフラ</span>です。
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">★</div><h3>品質と信頼が最重要</h3></div>
-  <div class="block-body">
-    配送品質のバラつきは荷主のリスク。<br>
-    フランチャイズは教育・マナー・報告体制を統一し、<span class="hlN">「任せて安心」をブランド化</span>します。
-  </div>
+<div class="block-head">
+<div class="star">★</div>
+<h3>市場規模 3兆円超</h3>
 </div>
-
-<!-- なぜOFA -->
-<div class="section-title">
-  <h2>なぜ株式会社OFAフランチャイズなのか</h2>
-  <span>個人を経営者へ</span>
+<div class="block-body">
+ラストワンマイル市場は約<span class="hl">3.3兆円</span>。  
+この5年で2倍以上、今後も右肩上がり。
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">核</div><h3>個人を経営者へ育てる軽貨物FC</h3></div>
-  <div class="block-body">
-    OFAは案件を投げるだけの会社ではありません。<br>
-    <span class="hlY">走り続けられる仕組み</span>を本部とグループで構築しています。
-  </div>
+<div class="block-head">
+<div class="star">★</div>
+<h3>結論</h3>
+</div>
+<div class="block-body">
+市場は拡大する。  
+<span class="hl">勝てるのは組織だけ。</span>
+</div>
+</div>
+</section>
+
+<!-- OFA -->
+<section class="section">
+<h2>なぜ株式会社OFAなのか</h2>
+
+<div class="block">
+<div class="block-head">
+<div class="star">★</div>
+<h3>個人を経営者へ育てる軽貨物FC</h3>
+</div>
+<div class="block-body">
+OFAは案件を投げるだけではありません。  
+<span class="hl">走り続けられる仕組み</span>を本部とグループで構築しています。
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">体</div><h3>グループ完結型</h3></div>
-  <div class="block-body">
-    車両トラブル・人員不足・案件増加も、<br>
-    <span class="hlY">すべてグループで解決</span>できます。
-  </div>
+<div class="block-head">
+<div class="star">★</div>
+<h3>グループ完結型</h3>
 </div>
+<div class="block-body">
+車両・人員・案件増加・事故対応まで  
+<span class="hl">すべてグループ内で解決</span>できます。
+</div>
+</div>
+</section>
 
-<!-- 4モデル -->
-<div class="section-title">
-  <h2>OFAの4つのモデル</h2>
+<!-- MODELS -->
+<section class="section">
+<h2>OFAの4つのモデル</h2>
+
+<div class="block">
+<div class="block-head"><div class="star">★</div><h3>① OFA-FC メンバー</h3></div>
+<div class="block-body">
+本部直払い／1名〜／登録料なし  
+ロイヤルティ制で安定運営
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">①</div><h3>OFA-FC メンバー（単独）</h3></div>
-  <div class="block-body">
-    本部直払い。1名〜。登録料なし。<br>
-    ロイヤルティ制で安定運営。
-  </div>
+<div class="block-head"><div class="star">★</div><h3>② OFA-FC パートナー</h3></div>
+<div class="block-body">
+複数名運用・拠点化・営業可能  
+フランチャイズオーナー向け
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">②</div><h3>OFA-FC パートナー（親方）</h3></div>
-  <div class="block-body">
-    複数名管理・拠点化・営業可能。<br>
-    チーム運営で収益拡張。
-  </div>
+<div class="block-head"><div class="star">★</div><h3>③ 業務委託（従来型）</h3></div>
+<div class="block-body">
+単価抜きモデル  
+委託金額固定で支払い
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">③</div><h3>業務委託</h3></div>
-  <div class="block-body">
-    <span class="hlY">単価抜き</span>。委託金額固定で支払い。
-  </div>
+<div class="block-head"><div class="star">★</div><h3>④ 案件オーナー</h3></div>
+<div class="block-body">
+全国配送網を活用  
+案件・手配・人材のいずれかで参画
+</div>
+</div>
+</section>
+
+<!-- TEBURA -->
+<section class="section">
+<h2>tebura（手ぶら〜）事業</h2>
+
+<div class="block">
+<div class="block-head"><div class="star">★</div><h3>コンセプト</h3></div>
+<div class="block-body">
+街全体をロッカーに変える。  
+<span class="hl">設備を持たない発送UX</span>。
+</div>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">④</div><h3>案件オーナー</h3></div>
-  <div class="block-body">
-    案件・手配・人材のいずれかで協力可能。
-  </div>
+<div class="block-head"><div class="star">★</div><h3>送りっぱ！</h3></div>
+<div class="block-body">
+QR → 入力 → 預ける → あとは配送  
+伝票不要・並ばない・60秒発送
 </div>
-
-<!-- 宅配便 -->
-<div class="section-title">
-  <h2>宅配便｜月収イメージ（例）</h2>
-  <span>説明会で一番刺さる部分</span>
 </div>
 
 <div class="block">
-  <div class="block-head"><div class="star">例</div><h3>月3,300個 配った場合（個建）</h3></div>
-  <div class="block-body">
-    <table>
-      <tr><th>手取り単価</th><th>計算</th><th>月収（概算）</th></tr>
-      <tr><td>153円</td><td>3,300個 × 153円</td><td><span class="hlY">504,900円</span></td></tr>
-      <tr><td>165円</td><td>3,300個 × 165円</td><td><span class="hlY">544,500円</span></td></tr>
-      <tr><td>178円</td><td>3,300個 × 178円</td><td><span class="hlY">587,400円</span></td></tr>
-    </table>
-    <p style="font-size:12px;color:#555;">
-      ※経費（燃料・車両・保険等）は条件により変動。説明会では「売上の見える化」として提示。
-    </p>
-  </div>
+<div class="block-head"><div class="star">★</div><h3>OFAとの親和性</h3></div>
+<div class="block-body">
+軽貨物ネットワーク × 発送UX  
+<span class="hl">OFAだから実現できる新物流</span>
 </div>
+</div>
+</section>
 
-<!-- リーダー -->
-<div class="section-title">
-  <h2>リーダー制度</h2>
-  <span>売上規模ベース</span>
-</div>
+<!-- MESSAGE -->
+<section class="section">
+<h2>メッセージ</h2>
 
 <div class="block">
-  <div class="block-head"><div class="star">%</div><h3>リーダー手当</h3></div>
-  <div class="block-body">
-    売上規模 × <span class="hlY">0.3〜0.9％</span><br><br>
+<div class="block-head"><div class="star">★</div><h3>未来へ</h3></div>
+<div class="block-body">
+一人では1台。  
+仲間がいれば100台。  
+<span class="hl">仕組みがあれば1,000台。</span><br><br>
 
-    例：月55万円 × 5名 ＝ 275万円<br>
-    ・0.3％ → 8,250円<br>
-    ・0.5％ → 13,750円<br>
-    ・0.9％ → 24,750円
-  </div>
+これからの軽貨物は、フランチャイズしか勝てない。  
+One for All, All for One。
+</div>
 </div>
 
-<!-- tebura -->
-<div class="section-title">
-  <h2>tebura（手ぶら〜）事業</h2>
-  <span>軽貨物以外の成長軸</span>
-</div>
-
-<div class="block">
-  <div class="block-head"><div class="star">UX</div><h3>街全体をロッカーにする発送体験</h3></div>
-  <div class="block-body">
-    QRで受付、預けるだけ。<br>
-    <span class="hlY">60秒で発送完了</span>する新しい物流UX。
-  </div>
-</div>
-
-<!-- ビジョン -->
-<div class="section-title">
-  <h2>2030年ビジョン</h2>
-</div>
-
-<div class="block">
-  <div class="block-head"><div class="star">2030</div><h3>全国1,000台体制</h3></div>
-  <div class="block-body">
-    個人 → チーム → 地域 → 全国へ。<br>
-    全員で成し遂げる全国展開。
-  </div>
-</div>
-
-<!-- LINE -->
-<div class="final">
-  <h2>最後に</h2>
-  <p>
-    一人では1台。<br>
-    仲間がいれば100台。<br>
-    仕組みがあれば1,000台。
-  </p>
-  <p>
-    LINE追加はこちら<br>
-    <a href="https://lin.ee/we9oWpn" target="_blank">https://lin.ee/we9oWpn</a>
-  </p>
-  <p>
-    TEL：080-3000-3872 ／ 090-1164-6645
-  </p>
-</div>
-
-<footer>
-© 株式会社OFA
-</footer>
+</section>
 
 </div>
 </body>
