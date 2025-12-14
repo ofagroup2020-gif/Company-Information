@@ -332,8 +332,7 @@
     /* ===== 画像カード ===== */
     .imgcard{
       padding:14px;
-      /* ここでマージンを下にずらす - さらに大きく調整 */
-      margin-top: 36px; 
+      margin-top: 36px;
     }
     .banner{
       width:100%;
@@ -361,6 +360,33 @@
       overflow:hidden;
     }
 
+    /* ===== Franchise summary（フランチャイズ本部概要） ===== */
+    .fr-head{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; flex-wrap:wrap; margin-bottom:10px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border:2px solid #000; border-radius:999px;
+      background:rgba(255,255,255,.7);
+      font-weight:1100;
+      box-shadow:0 10px 18px rgba(0,0,0,.08);
+    }
+    .badge .mini{
+      width:10px;height:10px;border-radius:50%;
+      background:#111;border:2px solid #000;
+    }
+    .region-chips{ margin-top:10px; }
+    .region-chips .chip{ margin:6px 8px 0 0; }
+    .note-strong{
+      margin-top:10px;
+      padding:12px 14px;
+      border:2px solid #000;
+      border-radius:16px;
+      background:linear-gradient(90deg, rgba(255,160,64,.20), rgba(255,255,255,.75));
+      font-weight:950;
+    }
+
     /* スマホ最適化 */
     @media (max-width: 520px){
       .card{padding:18px;}
@@ -369,7 +395,7 @@
       .topbar{gap:10px;}
       .pill{padding:7px 10px;}
       .logo-text strong{font-size:16px;}
-      .imgcard{padding:12px; margin-top: 26px;} /* スマホでもマージン調整 */
+      .imgcard{padding:12px; margin-top: 26px;}
     }
   </style>
 </head>
@@ -395,6 +421,9 @@
           </div>
 
           <div class="pills" aria-label="labels">
+            <span class="pill"><span class="dot"></span> 軽貨物フランチャイズ</span>
+            <span class="pill"><span class="dot"></span> 直払いモデル</span>
+            <span class="pill"><span class="dot"></span> 全国展開</span>
           </div>
         </div>
 
@@ -425,19 +454,60 @@
       </div>
     </section>
 
+    <!-- ★ここを「フランチャイズ本部概要」に変更（資本金は非表示・役員と直払いを明記） -->
     <section class="section">
       <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">OFAグループ概要</h2></div>
+        <div class="title"><div class="star">⭐</div><h2 class="h2">フランチャイズ本部概要</h2></div>
+
+        <div class="fr-head">
+          <div class="badge"><span class="mini"></span> Franchise HQ</div>
+          <div class="badge"><span class="mini"></span> 信頼の直払いモデル</div>
+        </div>
 
         <table>
-          <tr><th>社名</th><td>株式会社OFA</td></tr>
-          <tr><th>資本金</th><td><span class="num">700万円</span></td></tr>
-          <tr><th>社員数</th><td>5名</td></tr>
+          <tr><th>フランチャイズ本部</th><td><span class="num">株式会社OFA</span></td></tr>
+          <tr><th>代表取締役</th><td><span class="hl2">森下 洸</span></td></tr>
+          <tr><th>副社長／グループ統括</th><td><span class="hl2">太田 一弥</span></td></tr>
+
           <tr><th>FC加盟数</th><td><span class="num">543名</span></td></tr>
-          <tr><th>車両台数</th><td><span class="num">540台</span></td></tr>
-          <tr><th>拠点</th><td>鹿児島／熊本／福岡／大阪／東京／他</td></tr>
+          <tr><th>稼働車両</th><td><span class="num">540台</span></td></tr>
+
+          <tr>
+            <th>展開エリア</th>
+            <td>
+              <span class="muted">九州〜関東まで拡大中（例：下記）</span>
+              <div class="region-chips" aria-label="展開拠点">
+                <span class="chip">鹿児島</span><span class="chip">熊本</span><span class="chip">福岡</span><span class="chip">宮崎</span>
+                <span class="chip">佐賀</span><span class="chip">長崎</span><span class="chip">沖縄</span><span class="chip">山口</span>
+                <span class="chip">広島</span><span class="chip">兵庫</span><span class="chip">大阪</span><span class="chip">京都</span>
+                <span class="chip">長野</span><span class="chip">静岡</span><span class="chip">神奈川</span><span class="chip">東京</span>
+                <span class="chip">埼玉</span><span class="chip">など</span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th>運用体制</th>
+            <td>
+              教育／品質統一／運行管理／割り振り／トラブル即対応<br>
+              <span class="muted">車両・事故・緊急対応までグループ完結</span>
+            </td>
+          </tr>
+
+          <tr>
+            <th>報酬の考え方</th>
+            <td>
+              <span class="hl">原則：本部 → ドライバー本人へ直接支払い（直払い）</span><br>
+              <span class="muted">オーナー（パートナー）は運営・管理に対する管理報酬を受領</span>
+            </td>
+          </tr>
+
           <tr><th>モットー</th><td><span class="hl2">One for All, All for One</span></td></tr>
         </table>
+
+        <div class="note-strong">
+          本部が「案件設計〜教育〜運行管理」まで標準化。だから、全国で“同じ品質”を再現できます。
+        </div>
 
         <div class="hr"></div>
         <p class="muted">
@@ -649,11 +719,11 @@
             <text x="180" y="230" text-anchor="middle" font-size="16" font-weight="900" fill="#111">オーナー（パートナー）</text>
             <text x="180" y="255" text-anchor="middle" font-size="13" font-weight="800" fill="#444">管理・教育・運営</text>
             <text x="180" y="280" text-anchor="middle" font-size="13" font-weight="900" fill="#111">ドライバー契約締結</text>
-            
+
             <rect x="590" y="190" width="220" height="90" rx="18" fill="#fff" stroke="#000" stroke-width="3" filter="url(#shadow)"/>
             <text x="700" y="230" text-anchor="middle" font-size="16" font-weight="900" fill="#111">各ドライバー</text>
             <text x="700" y="258" text-anchor="middle" font-size="13" font-weight="800" fill="#444">本人へ直接振込</text>
-            
+
             <line x1="335" y1="95" x2="260" y2="190" stroke="#111" stroke-width="4" marker-end="url(#arrow)"/>
             <text x="295" y="140" text-anchor="middle" font-size="12" font-weight="900" fill="#111">案件・管理</text>
 
@@ -686,7 +756,7 @@
         <p class="big">直払い（原則）に関するQ&A</p>
         <ul class="bullets">
           <li><span class="hl2">Q：なぜ直払いが原則？</span> → 支払いの透明性・信頼性を担保し、ドライバーの不安をゼロにするためです。</li>
-          <li><span class="hl2">Q：Q：オーナーは何をする？</span> → 管理・教育・運営（稼働体制構築／品質統一／現場フォロー）を担い、管理報酬を受領します。</li>
+          <li><span class="hl2">Q：オーナーは何をする？</span> → 管理・教育・運営（稼働体制構築／品質統一／現場フォロー）を担い、管理報酬を受領します。</li>
           <li><span class="hl2">Q：例外は？</span> → 案件特性・地域・体制により、別の支払い設計をご提案する場合があります（事前合意の上で運用）。</li>
         </ul>
 
@@ -971,61 +1041,8 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">tebura-（手ぶら〜）｜“手ぶらで動ける体験”をつくる</h2></div>
-
-        <p class="big">
-          tebura-（手ぶら〜）は、買い物や観光で増えた荷物を、<span class="hl">その場で預けて、あとから届ける</span>サービスです。
-        </p>
-        <p class="muted">
-          QRを読み込んで、荷物を預ける。あとは手ぶらで歩くだけ。<br>
-          ロッカーも、集荷点もいりません。街にある店舗や施設が、そのまま“預かり場所”になります。<br>
-          tebura-は宅配でもロッカーでもない。<span class="hl">「手ぶらで動ける体験」</span>をつくる仕組みです。
-        </p>
-
-        <div class="hr"></div>
-
-        <p class="big">コアサービス：「送りっぱ！」</p>
-        <table>
-          <tr>
-            <th>利用者フロー</th>
-            <td>
-              ■ QR読み取り → ■ 送り先入力（写真もOK） → ■ 受付番号発行 → ■ 店舗/施設へ預ける → ■ ドライバー回収 → 発送
-            </td>
-          </tr>
-          <tr>
-            <th>利用者メリット</th>
-            <td>
-              ■ 伝票記入不要 ■ 並ばない ■ 持ち歩かない（60秒で完結）
-            </td>
-          </tr>
-          <tr>
-            <th>店舗・施設メリット</th>
-            <td>
-              ■ QRを置くだけ ■ 低コスト導入 ■ 成果報酬型 ■ 回遊性・客単価UP
-            </td>
-          </tr>
-          <tr>
-            <th>本質</th>
-            <td>
-              “街全体をロッカーに変えるUX”<br>
-              設備レス・低コスト・高速展開・撤退コストが低い
-            </td>
-          </tr>
-          <tr>
-            <th>将来展開</th>
-            <td>
-              ■ 即時回収（Uber型） ■ インバウンド特化 ■ 法人/イベント対応 ■ 海外展開（空港・商業施設）
-            </td>
-          </tr>
-        </table>
-
-        <p class="big" style="margin-top:14px;">
-          OFAの軽貨物ネットワークと思想（One for All, All for One）と<span class="hl">完全に一致</span>しています。
-        </p>
-      </div>
-    </section>
+    <!-- ※このファイルは「軽貨物フランチャイズ」版として整備しています。
+         tebura-セクションは必要なら復活できます。 -->
 
     <section class="section">
       <div class="card">
@@ -1071,8 +1088,7 @@
         </p>
 
         <p class="muted" style="margin-top:14px;">
-          株式会社OFA
-          <br>
+          株式会社OFA<br>
           本部所在地：鹿児島県南九州市頴娃町上別府1699-1
         </p>
 
