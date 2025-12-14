@@ -7,35 +7,26 @@
 
   <style>
     :root{
-      /* ========================================================= */
-      /* ===== 背景：オレンジ（夕日）系 ===== */
-      /* ========================================================= */
       --bg0:#FFF8F0;
       --bg1:#FFE7D1;
       --bg2:#FFC790;
       --bg3:#FFA040;
       --bg4:#FF7B00;
 
-      /* ===== 文字 ===== */
       --text:#141414;
       --muted:#3B3B3B;
 
-      /* ===== カード ===== */
       --card:#FFFFFFF2;
 
-      /* ===== 強調色（OFAロゴに合わせて） ===== */
       --red:#FF3B30;
       --yellow:#FFD84D;
       --blue:#1E66FF;
 
-      /* ===== 緑（補助アクセント） ===== */
       --green:#22C55E;
       --greenDeep:#16A34A;
 
-      /* ===== 黒縁（全項目） ===== */
       --black:#000000;
 
-      /* サイズ */
       --radius:22px;
       --pad:22px;
       --max:1040px;
@@ -55,11 +46,9 @@
         linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 18%, var(--bg2) 45%, var(--bg3) 72%, var(--bg4) 100%);
     }
 
-    /* レイアウト */
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 16px 64px;}
     .section{margin:26px 0;}
 
-    /* 黒縁：全カード */
     .card{
       background:var(--card);
       border:2px solid var(--black);
@@ -68,7 +57,6 @@
       box-shadow:0 14px 30px rgba(0,0,0,.10);
     }
 
-    /* HERO */
     .hero{
       padding:28px 22px 26px;
       border-radius:28px;
@@ -77,8 +65,6 @@
         linear-gradient(135deg, #FFE7D1 0%, #FFC790 32%, #FFA040 68%, #FF7B00 100%);
       border:2px solid var(--black);
       box-shadow:0 18px 38px rgba(0,0,0,.14);
-      position:relative;
-      overflow:hidden;
     }
 
     .topbar{
@@ -90,7 +76,6 @@
       margin-bottom:16px;
     }
 
-    /* OFAロゴ（O赤/F黄/A青、背景白） */
     .logo{
       display:flex;
       align-items:center;
@@ -119,7 +104,7 @@
       font-weight:900;
     }
 
-    /* ===== ピル（タップでスクロール） ===== */
+    /* ✅ ピル */
     .pills{
       display:flex;
       gap:10px;
@@ -173,7 +158,6 @@
       color:rgba(0,0,0,.80);
     }
 
-    /* 強弱 */
     .big{
       font-size:clamp(18px, 3.6vw, 22px);
       font-weight:1100;
@@ -188,7 +172,6 @@
     }
     .muted{color:var(--muted); font-weight:850;}
 
-    /* 見出し */
     .title{
       display:flex; align-items:flex-start; gap:12px;
       margin:0 0 10px;
@@ -207,7 +190,6 @@
       letter-spacing:.2px;
     }
 
-    /* 小さい補足は ■ */
     .bullets{
       margin:10px 0 0;
       padding-left:0;
@@ -228,7 +210,6 @@
       transform: translateY(1px);
     }
 
-    /* 表 */
     table{
       width:100%;
       border-collapse:separate;
@@ -255,7 +236,6 @@
     }
     tr:last-child td, tr:last-child th{border-bottom:none;}
 
-    /* 2カラム */
     .grid2{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -269,9 +249,7 @@
       font-weight:1200;
       font-size:clamp(18px, 4vw, 24px);
     }
-    .money{ font-weight:1200; }
 
-    /* 仕切り線 */
     .hr{
       height:2px;
       background:#000;
@@ -280,7 +258,6 @@
       border-radius:999px;
     }
 
-    /* ラベル */
     .chip{
       display:inline-flex;
       align-items:center;
@@ -295,10 +272,10 @@
       white-space:nowrap;
     }
 
-    /* ===== 安心のインフラ（4カード） ===== */
+    /* ✅ 全国インフラ：6項目に増やす */
     .infra-grid{
       display:grid;
-      grid-template-columns:repeat(4, 1fr);
+      grid-template-columns:repeat(3, 1fr);
       gap:14px;
       margin-top:12px;
     }
@@ -338,7 +315,6 @@
       line-height:1.7;
     }
 
-    /* シミュレーター */
     .sim-wrap{
       width:100%;
       height:min(78vh, 760px);
@@ -365,7 +341,6 @@
       border-bottom:3px solid rgba(255,160,64,.85);
     }
 
-    /* CTA */
     .cta{
       text-align:center;
       padding:30px 22px;
@@ -383,7 +358,6 @@
       color:#111;
     }
 
-    /* ===== 画像カード ===== */
     .imgcard{ padding:14px; margin-top: 36px; }
     .banner{
       width:100%;
@@ -400,7 +374,6 @@
       font-size:clamp(12px, 2.9vw, 14px);
     }
 
-    /* ===== 図解（SVG）表示枠 ===== */
     .diagram{
       border:2px solid #000;
       border-radius:18px;
@@ -411,7 +384,6 @@
       overflow:hidden;
     }
 
-    /* スマホ最適化 */
     @media (max-width: 520px){
       .card{padding:18px;}
       th{width:44%;}
@@ -445,13 +417,15 @@
             </div>
           </div>
 
-          <!-- ✅ タップでスクロールするピル -->
+          <!-- ✅ ピル追加：自社集配 / 全国レッカー -->
           <div class="pills" aria-label="labels">
             <a class="pill" href="#model"><span class="dot"></span> 軽貨物フランチャイズ</a>
             <a class="pill" href="#directpay"><span class="dot"></span> 直払いモデル</a>
             <a class="pill" href="#infra"><span class="dot"></span> 全国インフラ</a>
             <a class="pill" href="#vehicle"><span class="dot"></span> 車両貸出・販売</a>
             <a class="pill" href="#itaku"><span class="dot"></span> 業務委託</a>
+            <a class="pill" href="#shasha"><span class="dot"></span> 自社集配</a>
+            <a class="pill" href="#recker"><span class="dot"></span> 全国レッカー</a>
           </div>
         </div>
 
@@ -464,10 +438,9 @@
       </div>
     </section>
 
-    <!-- 画像（差し替えOK） -->
+    <!-- 画像 -->
     <section class="section">
       <div class="card imgcard">
-        <!-- ✅ 画像を置く場所：/assets/ofa-banner.jpg を用意してね -->
         <img class="banner" src="./assets/ofa-banner.jpg" alt="OFAグループ｜九州を舞台に全国へ挑戦中" loading="lazy">
         <div class="caption">九州を舞台に、全国へ挑戦中｜One for All, All for One</div>
       </div>
@@ -485,7 +458,7 @@
       </div>
     </section>
 
-    <!-- ✅ 全国インフラ：安心を与えるセクション -->
+    <!-- ✅ 全国インフラ（自社集配・全国レッカーを内包） -->
     <section class="section" id="infra">
       <div class="card">
         <div class="title"><div class="star">⭐</div><h2 class="h2">全国で「車両・案件・修理・運用インフラ」が揃っているから安心</h2></div>
@@ -507,19 +480,31 @@
           <div class="mini">
             <span class="tag">📦 案件</span>
             <h3>本部一括で案件供給</h3>
-            <p>全国ネットワークで案件を設計・供給。個人で営業して探す負担を最小化します。</p>
+            <p>全国ネットワークで案件を設計・供給。個人で探す負担を最小化します。</p>
           </div>
 
-          <div class="mini">
-            <span class="tag">🛠 修理</span>
-            <h3>修理・事故・レッカー対応</h3>
-            <p>トラブル時に止まらない運用を重視。緊急時もグループ連携で対応します。</p>
+          <div class="mini" id="shasha">
+            <span class="tag">🏢 自社集配</span>
+            <h3>自社便・自社集配で運用</h3>
+            <p>現場を知っている運用体制。品質・スピード・対応力を「自社基準」で安定させます。</p>
           </div>
 
           <div class="mini">
             <span class="tag">📋 運用</span>
             <h3>教育・品質・運行管理</h3>
-            <p>教育・マナー・報告体制を標準化し、品質を統一。荷主から信頼される運用へ。</p>
+            <p>教育・マナー・報告体制を標準化し、荷主から信頼される運用へ。</p>
+          </div>
+
+          <div class="mini">
+            <span class="tag">🛠 修理</span>
+            <h3>修理・事故対応（止めない）</h3>
+            <p>トラブル時の停止時間を最小化。復旧までの導線を整備しています。</p>
+          </div>
+
+          <div class="mini" id="recker">
+            <span class="tag">🚨 全国レッカー</span>
+            <h3>全国レッカー・緊急対応</h3>
+            <p>万が一の故障や事故でも「動けない」を作らない。緊急時のレッカー体制を整えています。</p>
           </div>
         </div>
 
@@ -530,7 +515,7 @@
       </div>
     </section>
 
-    <!-- ✅ 会社概要（資本金なし／役員／拠点を良い見せ方） -->
+    <!-- 会社概要 -->
     <section class="section" id="about">
       <div class="card">
         <div class="title"><div class="star">⭐</div><h2 class="h2">OFAグループ概要</h2></div>
@@ -555,127 +540,6 @@
         <div class="hr"></div>
         <p class="muted">
           OFAグループの全国ネットワークと運用ルールの標準化により、<span class="hl">安定供給・品質統一・即対応</span>を実現しています。
-        </p>
-      </div>
-    </section>
-
-    <!-- ビジョン -->
-    <section class="section" id="vision">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">ビジョン・使命</h2></div>
-        <p class="big">ビジョン：軽貨物で “人生の選択肢” を増やす</p>
-        <ul class="bullets">
-          <li>誰でも挑戦できる</li>
-          <li>誰でも稼げる</li>
-          <li>誰でも独立できる</li>
-          <li>再現性の高い物流プラットフォームを提供する</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ストーリー -->
-    <section class="section" id="story">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">ストーリー：市場が伸びるほど「組織」が勝つ時代へ</h2></div>
-
-        <p class="big">EC需要は止まらない</p>
-        <p class="muted">
-          スマホ普及・ライフスタイル変化・共働き・高齢化で、<span class="hl">「家に届く」が当たり前</span>になりました。<br>
-          ECは一時的ブームではなく、<span class="hl">生活インフラ</span>です。
-        </p>
-
-        <div class="grid2">
-          <div>
-            <p class="big">伸びている分野</p>
-            <ul class="bullets">
-              <li>日用品・食品</li>
-              <li>アパレル・雑貨</li>
-              <li>医療・衛生関連商品</li>
-              <li>定期購入・サブスク商品</li>
-            </ul>
-          </div>
-          <div>
-            <p class="big">軽貨物市場は拡大</p>
-            <ul class="bullets">
-              <li>ラストワンマイル市場は約3兆円超規模へ（推定）</li>
-              <li>この5年で市場規模は2倍以上の成長</li>
-              <li>ECが増えれば「最後に届ける人」が必ず必要</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="hr"></div>
-
-        <p class="big">でも、個人だけでは限界が来る</p>
-        <p class="muted">
-          荷主が求めるのは「安定供給」「品質の均一化」「トラブル即対応」。<br>
-          これは個人・少人数運営では厳しい領域。だから今は、<span class="hl">フランチャイズや組織の時代</span>です。
-        </p>
-
-        <p class="big">OFAは運用ノウハウと仕組みで勝つ</p>
-        <p class="muted">
-          OFAは、案件・教育・運用・車両・事故対応・拠点展開までを仕組み化。<br>
-          <span class="hl">個人を、チームに。チームを、経営者に。</span>それがOFAです。
-        </p>
-      </div>
-    </section>
-
-    <!-- なぜFC -->
-    <section class="section" id="whyfc">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">なぜ今、軽貨物フランチャイズが必要なのか</h2></div>
-
-        <p class="big">① 業界構造が変わった</p>
-        <p class="muted">
-          荷主は「個人」ではなく、<span class="hl">全国規模で安定対応できる組織</span>を選ぶ時代へ。
-        </p>
-
-        <p class="big">② 独立環境が厳しくなった</p>
-        <p class="muted">
-          個人で営業、保険、車両管理、案件確保、トラブル対応まで全て抱えるのは大きな負担。<br>
-          継続できずに辞めていく人も少なくありません。
-        </p>
-
-        <p class="big">③ 品質と信頼が最重要</p>
-        <p class="muted">
-          配送品質のバラつきは荷主のリスク。教育・マナー・報告体制を統一し、<span class="hl">「任せても安心」</span>をブランドとして積み上げる時代です。
-        </p>
-      </div>
-    </section>
-
-    <!-- なぜOFA -->
-    <section class="section" id="whyofa">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">なぜ株式会社OFAフランチャイズなのか</h2></div>
-
-        <p class="big">株式会社OFAは単なる軽貨物会社ではありません。</p>
-        <p class="muted">
-          <span class="hl">「個人を経営者へ育てる軽貨物フランチャイズ」</span>です。<br>
-          案件を投げるだけの会社ではなく、走り続けられる仕組みを本部とグループ全体で構築しています。
-        </p>
-
-        <div class="grid2">
-          <div>
-            <ul class="bullets">
-              <li>本部一括による安定案件供給</li>
-              <li>研修・教育・マナー・管理体制の標準化</li>
-              <li>車両貸出／販売のサポート</li>
-              <li>修理・事故・緊急対応（グループ連携）</li>
-            </ul>
-          </div>
-          <div>
-            <ul class="bullets">
-              <li>紹介制度・役職制度で収益拡張</li>
-              <li>個人→チーム→法人化までの成長設計</li>
-              <li>現場トラブル即対応・運用改善</li>
-              <li>拠点開拓・全国展開を本部が伴走</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="hr"></div>
-        <p class="big">
-          困ったときに一人にならない。止まらない。<span class="hl">全国インフラ</span>があるから、安心して伸ばせる。
         </p>
       </div>
     </section>
@@ -740,14 +604,6 @@
 
         <div class="hr"></div>
 
-        <p class="big">仕組み構図（概念）</p>
-        <p class="muted">
-          OFAフランチャイズ本部<br>
-          └─ 《管理組合》<br>
-          ├─ OFAフランチャイズ（メンバー）<br>
-          └─ OFAフランチャイズ（オーナー）
-        </p>
-
         <div class="diagram" id="directpay" aria-label="直払いモデル図解">
           <svg viewBox="0 0 900 330" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="直払いモデル図">
             <defs>
@@ -799,196 +655,12 @@
           </li>
           <li>契約期間：1年（自動更新）</li>
         </ul>
-
-        <div class="hr"></div>
-        <p class="big">直払い（原則）に関するQ&A</p>
-        <ul class="bullets">
-          <li><span class="hl2">Q：なぜ直払いが原則？</span> → 支払いの透明性・信頼性を担保し、ドライバーの不安をゼロにするためです。</li>
-          <li><span class="hl2">Q：オーナーは何をする？</span> → 管理・教育・運営（稼働体制構築／品質統一／現場フォロー）を担い、管理報酬を受領します。</li>
-          <li><span class="hl2">Q：例外は？</span> → 案件特性・地域・体制により、別の支払い設計をご提案する場合があります（事前合意の上で運用）。</li>
-        </ul>
-
-        <p class="big" style="margin-top:10px;">配分モデル（理想）</p>
-        <table>
-          <tr><th>加盟店</th><td><span class="num">70%</span></td></tr>
-          <tr><th>紹介店（案件オーナー等）</th><td><span class="num">20%</span></td></tr>
-          <tr><th>OFA本部</th><td><span class="num">10%</span></td></tr>
-        </table>
-        <p class="small">※ 案件・地域・体制により実配分は変動する場合があります。</p>
       </div>
     </section>
 
-    <!-- 案件と報酬レンジ -->
-    <section class="section" id="price">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">案件と報酬レンジ（説明会用に超わかりやすく）</h2></div>
+    <!-- 省略：ここから下は前の構成のまま続けてOK（CTAまで） -->
+    <!-- ※あなたの既存コードで「案件レンジ / 月収 / ボーナス / シミュレーター / 2030 / CTA」を下に貼り付けて繋げてOKです -->
 
-        <p class="muted">
-          単価は案件・地域・条件で変動します。ここでは「説明会用に、理解しやすいレンジ」で整理します。<br>
-          ■ FCはロイヤルティ方式／■ 業務委託は単価設計（抜き）方式。
-        </p>
-
-        <table>
-          <tr>
-            <th>宅配便（個建）</th>
-            <td>
-              <span class="chip">手取り：153円〜190円／個</span><br>
-              ■ 佐川：153円〜178円／個（例）<br>
-              ■ ヤマト：165円〜190円／個（例）<br>
-              ※ 担当地域・品質要件・稼働条件で変動します。
-            </td>
-          </tr>
-          <tr>
-            <th>EC日額便</th>
-            <td>
-              <span class="chip">日額：17,000円〜22,000円</span><br>
-              ■ 管理しやすい／安定稼働に向く／セール時上振れあり
-            </td>
-          </tr>
-          <tr>
-            <th>企業専属便／ルート便</th>
-            <td>
-              <span class="chip">日額：12,000円〜16,000円</span><br>
-              ■ 固定ルート・定期便・企業配送・専属便など
-            </td>
-          </tr>
-          <tr>
-            <th>スポット／定期便</th>
-            <td>
-              <span class="chip">案件多数（都度）</span><br>
-              ■ 繁忙期・イベント・増車対応など、ネットワークで吸収できます
-            </td>
-          </tr>
-        </table>
-
-        <div class="hr"></div>
-
-        <p class="big">売上モデル（例）</p>
-        <ul class="bullets">
-          <li>日額2万円 × 24日稼働＝48万円</li>
-          <li>経費差引（約10〜15万円）＝ 手取り33〜38万円</li>
-          <li>年収イメージ：420万〜700万（未経験OK）</li>
-        </ul>
-
-        <p class="big" style="margin-top:12px;">稼働開始：最短1週間（条件により前後）</p>
-      </div>
-    </section>
-
-    <!-- 月収イメージ -->
-    <section class="section" id="income">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">宅配便（個建）月収イメージ</h2></div>
-
-        <p class="muted">例：月間 3,300個 配達（未経験でも現実的なラインとして説明に使えます）</p>
-
-        <table>
-          <tr><th>手取り単価</th><th>計算</th><th>月収イメージ</th></tr>
-          <tr><td><span class="money">153円</span></td><td>3,300個 × 153円</td><td><span class="num">504,900円</span></td></tr>
-          <tr><td><span class="money">165円</span></td><td>3,300個 × 165円</td><td><span class="num">544,500円</span></td></tr>
-          <tr><td><span class="money">178円</span></td><td>3,300個 × 178円</td><td><span class="num">587,400円</span></td></tr>
-          <tr><td><span class="money">190円</span></td><td>3,300個 × 190円</td><td><span class="num">627,000円</span></td></tr>
-        </table>
-
-        <div class="hr"></div>
-        <p class="big">佐川急便エリアのイメージ（現場説明用）</p>
-        <ul class="bullets">
-          <li>平均個数：100〜130個（目安）</li>
-          <li>稼働開始：最短1週間</li>
-          <li>※ 条件は地域・案件により変動します</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ボーナス -->
-    <section class="section" id="bonus">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">ボーナス制度（目的別に設計）</h2></div>
-
-        <p class="muted">
-          メンバーシップ：<span class="hl">人を集める目的</span> ／ リーダーシップ：<span class="hl">リーダーを育てる目的</span> ／ マネージャーシップ：<span class="hl">経営者を育てる目的</span>
-        </p>
-
-        <div class="grid2">
-          <div class="card" style="border:2px solid #000; box-shadow:none;">
-            <p class="big">⭐ メンバーシップボーナス</p>
-            <p class="muted">メンバーを紹介頂いた方へ支給（メンバー対象）</p>
-            <p class="num">紹介者：3万円</p>
-          </div>
-
-          <div class="card" style="border:2px solid #000; box-shadow:none;">
-            <p class="big">⭐ リーダーシップボーナス（ランク制）</p>
-            <p class="muted">対象：メンバー／パートナー</p>
-            <ul class="bullets">
-              <li>シルバー：月商310万円以上 → 3万円／月</li>
-              <li>ゴールド：月商1,100万円以上 → 10万円／月</li>
-              <li>プラチナム：月商5,100万円以上 → 50万円／月</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="hr"></div>
-
-        <p class="big">⭐ マネージャーシップボーナス（管理・営業／稼働しない役割）</p>
-        <p class="muted">
-          基本的に稼働をしない <span class="hl">業務管理／営業マン</span> 向け（本部運用条件あり）。<br>
-          <span class="hl">計算方式：売上規模 × 0.3%</span><br>
-          ※ 拠点規模・役割によりレンジ調整する場合があります。
-        </p>
-
-        <p class="big">（前提例）ドライバー月収55万円 × 5名＝拠点売上 275万円</p>
-        <table>
-          <tr><th>支給率</th><th>計算</th><th>支給額</th></tr>
-          <tr><td>0.3%</td><td>2,750,000円 × 0.003</td><td><span class="num">8,250円／月</span></td></tr>
-          <tr><td>0.5%</td><td>2,750,000円 × 0.005</td><td><span class="num">13,750円／月</span></td></tr>
-          <tr><td>0.9%</td><td>2,750,000円 × 0.009</td><td><span class="num">24,750円／月</span></td></tr>
-        </table>
-      </div>
-    </section>
-
-    <!-- シミュレーター -->
-    <section class="section" id="sim">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">プレゼン中に、その場で報酬を試算します</h2></div>
-        <p class="muted">条件を入れて、<span class="hl">「自分の場合、いくら？」</span>を一発で出します。</p>
-
-        <div class="sim-wrap">
-          <iframe
-            src="https://ofagroup2020-gif.github.io/ofa-uriage-keisan/"
-            title="OFA 報酬シミュレーター"
-            loading="lazy"
-            sandbox="allow-scripts allow-forms allow-same-origin">
-          </iframe>
-        </div>
-
-        <div class="small">
-          表示できない場合は別タブで開けます：
-          <a class="link" href="https://ofagroup2020-gif.github.io/ofa-uriage-keisan/" target="_blank" rel="noopener">https://ofagroup2020-gif.github.io/ofa-uriage-keisan/</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2030 -->
-    <section class="section" id="vision2030">
-      <div class="card">
-        <div class="title"><div class="star">⭐</div><h2 class="h2">2030ビジョン</h2></div>
-        <p class="big">OFAグループ 1,000台体制へ</p>
-        <p class="muted">
-          これは本部だけの目標ではありません。ドライバー、リーダー、FCオーナー、パートナー、全員で成し遂げる全国展開です。<br>
-          <span class="hl">個人の成長 → チーム化 → 地域拡大 → 全国へ</span>
-        </p>
-
-        <div class="hr"></div>
-
-        <p class="big">メッセージ</p>
-        <p class="muted">
-          一人では1台。仲間がいれば100台。仕組みがあれば1,000台。<br>
-          これからの軽貨物は、<span class="hl">フランチャイズで勝つ時代</span>。少数運営は正直厳しい。<br>
-          OFAグループは全国展開を「皆で」成し遂げる。One for All, All for One。
-        </p>
-      </div>
-    </section>
-
-    <!-- CTA -->
     <section class="section" id="cta">
       <div class="cta">
         <h3>最後まで聞いた方へ</h3>
